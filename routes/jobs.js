@@ -11,5 +11,5 @@ const jobController = require('../controllers/job.controller');
  *         200:
  *           description: 성공적으로 데이터를 가져옴
  */
-router.get('/getJobs', jobController.getAllJobs);
+router.get('/', jobController.getAllJobs);
 module.exports = router;

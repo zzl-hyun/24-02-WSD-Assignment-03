@@ -2,27 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User'); // User 모델 가져오기
 
-/**
- * @swagger
- * components:
- *   schemas:
- *     User:
- *       type: object
- *       properties:
- *         name:
- *           type: string
- *           description: The user's name
- *         email:
- *           type: string
- *           description: The user's email
- *         password:
- *           type: string
- *           description: The user's password
- *       required:
- *         - name
- *         - email
- *         - password
- */
+
 
 /**
  * @swagger

@@ -1,11 +1,16 @@
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
+const mongooseToSwagger = require("mongoose-to-swagger");
+
+// Mongoose 모델 불러오기
+const Job = require("../models/Job");
+const User = require("../models/User");
 
 const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "WSD assignment 03 Api",
+      title: "WSD Assignment 03 API",
       description: "구인구직 정보를 제공",
       version: "1.0.0",
     },
@@ -17,11 +22,16 @@ const options = {
       {
         url: "http://113.198.66.75:10042/",
         description: "Test Server",
-      }
+      },
     ],
-    // components: {},
+    components: {
+      schemas: {
+        Job: mongooseToSwagger(Job), // Mongoose 스키마를 Swagger 스키마로 변환
+        User: mongooseToSwagger(User),
+      },
+    },
   },
-  apis: ["./routes/*.js", "./swagger/*"],
+  apis: ["./routes/*.js", "./models/*.js"], //차차 추가해나가자
 };
 
 const specs = swaggerJsdoc(options);
