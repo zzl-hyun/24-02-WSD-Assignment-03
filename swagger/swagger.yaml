@@ -1,0 +1,13 @@
+components:
+  schemas:
+    APIResult:
+      properties:
+        code:
+          type: integer
+          description: 호출결과코드
+        data:
+          type: object
+          description: 반환JSON데이터
+        msg:
+          type: string
+          description: 처리결과메시지

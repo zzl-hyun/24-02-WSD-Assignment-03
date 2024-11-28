@@ -16,6 +16,9 @@ Swagger
 Git
 Python
 
+## 접속
+http://113.198.66.75:10042/
+
 ## 설치 및 실행 가이드
 ~~~
 npm install
