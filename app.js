@@ -1,14 +1,14 @@
 // app.js
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var app = express();
 require('dotenv').config();
+const createError = require('http-errors');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const express = require('express');
+const app = express();
 const { swaggerUi, specs } = require("./config/swagger");
+const connectDB = require('./config/db');
+connectDB();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,8 +20,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const jobsRouter = require('./routes/jobs');
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/getjobs', jobsRouter);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 // catch 404 and forward to error handler
