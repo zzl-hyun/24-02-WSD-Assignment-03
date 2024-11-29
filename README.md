@@ -8,19 +8,77 @@
 - 클라우드 배포: JCloud를 사용하여 백엔드 서버를 배포.
 
 ## 기술 스택
-node.js
-Express.js
-mongoDB
-JWT
-Swagger
-Git
-Python
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
 
-## 접속
-http://113.198.66.75:10042/
+<img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=Express&logoColor=white">
+
+<img src="https://img.shields.io/badge/mongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white">
+
+<img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSONWebTokens&logoColor=white">
+
+<img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=Swagger&logoColor=black">
+
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white">
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
+
+<img src="https://img.shields.io/badge/jcloud-ed1944?style=for-the-badge&logo=Openstack&logoColor=white">
+
+
+
+## Swagger 접속
+http://113.198.66.75:10042/api-docs
 
 ## 설치 및 실행 가이드
 ~~~
 npm install
 ~~~
 
+## MVCS 패턴 적용
+### 1. Model
+-   **역할**:
+    - 데이터베이스와 직접 소통하며, 데이터의 구조와 상태를 정의
+    - 데이터를 읽고 쓰는 로직을 포함
+    - 실제 데이터를 표현하기 위한 스키마를 정의
+### 2. View
+- **역할**:
+    - 사용자에게 데이터를 보여주는 UI레이어
+    - API 기반 벡엔드에선 json응답이 뷰의 역할을 대신
+    - 프론트에선 HTML/CSS/JS 파일이 뷰 역할
+### 3. Controller
+- **역할**:
+    - 사용자의 request를 받아 필요한 데이터를 Model에서 가져오고 View로 전달
+    - 비즈니스 로직은 처리하지 않으며, **요청/흐름**만 관리
+### 4. Service
+- **역할**:
+    - 비즈니스 로직과 데이터의 처리 세부 사항을 캡슐화
+    - 복잡한 데이터 처리나 여러 Model을 사용하는 작업을 수행
+    - Controller가 Service를 호출하고, Service는 Model과 소통
+
+## MVCS의 흐름
+요청(Request) 흐름:
+```
+User -> Controller -> Service -> Model
+```
+응답(Response) 흐름:
+```
+User <- View <- Controller <- Service <- Model
+```
+
+
+## 인증 및 보안 구현
+JWT 기반 인증: jsonwebtoken
+<!-- Access Token 발급 및 검증 (필수) -->
+<!-- Refresh Token 구현 (가산점) -->
+<!-- 토큰 갱신 메커니즘 (필수) -->
+<!-- 토큰 블랙리스트 관리 (Optional) -->
+<!-- 보안 미들웨어 구현 -->
+<!-- 인증 미들웨어 -->
+<!-- 권한 검사 미들웨어 -->
+입력 데이터 및 파라미터 검증: joi
+Rate Limiting: express-rate-limit
+<!-- 보안 강화 (Optional) -->
+XSS 방지: xss-clean
+<!-- CSRF 보호 -->
+SQL Injection 방지
+암호화 처리: bcrypt

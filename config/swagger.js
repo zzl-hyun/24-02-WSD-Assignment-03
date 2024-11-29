@@ -1,7 +1,6 @@
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
 const mongooseToSwagger = require("mongoose-to-swagger");
-
 // Mongoose 모델 불러오기
 const Job = require("../models/Job");
 const User = require("../models/User");
@@ -16,12 +15,12 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:8080/",
-        description: "Local Development",
+        url: "http://113.198.66.75:10042/",
+        description: "Real Server",
       },
       {
-        url: "http://113.198.66.75:10042/",
-        description: "Test Server",
+        url: "http://localhost:8080/",
+        description: "Local Development",
       },
     ],
     components: {
@@ -31,7 +30,7 @@ const options = {
       },
     },
   },
-  apis: ["./routes/*.js", "./models/*.js"], //차차 추가해나가자
+  apis: ["./routes/*.js", "./models/*.js","./controllers/*.controller.js", "./services/*.service.js"], //차차 추가해나가자
 };
 
 const specs = swaggerJsdoc(options);
