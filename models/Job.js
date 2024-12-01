@@ -62,23 +62,21 @@ const mongoose = require('mongoose');
 //  *         - location
 //  *         - experienceRequired
 //  */
-
+// 키워드,회사명,제목,링크,지역,경력,학력,연봉,고용형태,마감일,직무분야,연봉정보
 const jobSchema = new mongoose.Schema({
-  company_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Company', required: true },
+  companyId: { type: mongoose.Schema.Types.ObjectId, ref: 'Company', required: true },
   jobTitle: { type: String, required: true },
   link: { type: String, required: true },
   location: { type: String, required: true },
   experienceRequired: { type: String, required: true },
   educationRequired: { type: String },
+  salary: { type: String },
   employmentType: { type: String },
   deadline: { type: Date },
-  salary: { type: String },
   details: {
     skills: [{ type: String }],
     benefits: [{ type: String }]
   },
-  views: { type: Number, default: 0 }, // 조회수
-  createdAt: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model('Job', jobSchema);
