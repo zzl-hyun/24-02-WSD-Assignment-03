@@ -1,84 +1,105 @@
 const mongoose = require('mongoose');
-const Job = require('./models/Job'); // Job 모델 불러오기
 const fs = require('fs');
-const csv = require('csv-parser');
+const csvParser = require('csv-parser');
+const Company = require('./models/Company');
+const Job = require('./models/Job');
 
-// MongoDB 연결 함수
-async function connectDB() {
-    if (mongoose.connection.readyState === 0) {
-      try {
-        await mongoose.connect('mongodb://localhost:27017/wsd', {
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
-        });
-        console.log('MongoDB 연결 성공');
-      } catch (error) {
-        console.error('MongoDB 연결 실패:', error);
-        process.exit(1);
-      }
-    } else {
-      console.log('MongoDB 이미 연결됨');
-    }
-  }
+// MongoDB 연결
+mongoose.connect('mongodb://localhost:27017/wsd', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB 연결 성공'))
+  .catch(err => console.error('MongoDB 연결 실패', err));
 
-// CSV 데이터를 MongoDB에 저장
-async function saveCsvToDB(csvFilePath) {
-    try {
-      if (mongoose.connection.readyState !== 1) {
-        throw new Error('MongoDB 연결이 완료되지 않았습니다.');
-      }
-  
-      const jobs = [];
-      fs.createReadStream(csvFilePath)
-        .pipe(csv())
-        .on('data', (row) => {
-          jobs.push(row);
-        })
-        .on('end', async () => {
-          console.log('CSV 파일 읽기 완료. 데이터 저장 시작...');
-          for (const job of jobs) {
-            const existingJob = await Job.findOne({ link: job['링크'] });
-            if (existingJob) {
-              console.log(`중복 데이터 건너뜀: ${job['제목']}`);
-              continue;
-            }
-  
-            const newJob = new Job({
-              companyId: job['회사명'],
-              jobTitle: job['제목'],
-              link: job['링크'],
-              location: job['지역'],
-              experienceRequired: job['경력'],
-              educationRequired: job['학력'] || null,
-              salary: job['연봉'] || null,
-              employmentType: job['고용형태'],
-              deadline: job['마감일'] ? new Date(job['마감일']) : null,
-              details: {
-                  skills: job['직무분야'] ? job['직무분야'].split(',') : [],
-                benefits: job['연봉정보'] ? job['연봉정보'].split(',') : [],
-              },
-            });
-  
-            await newJob.save();
-            console.log(`저장 완료: ${job['제목']}`);
+// Step 1: corp.csv 처리
+const companyMap = new Map();
+
+function processCompanies() {
+  return new Promise((resolve, reject) => {
+    fs.createReadStream('corp.csv')
+      .pipe(csvParser())
+      .on('data', async (row) => {
+        try {
+          const company = await Company.findOneAndUpdate(
+            { company_name: row['회사명'] }, // 중복 방지
+            {
+              representative_name: row['대표자명'],
+              company_type: row['기업형태'],
+              industry: row['업종'],
+              employee_count: row['사원수'],
+              establishment_date: row['설립일'],
+              revenue: row['매출액'],
+              homepage: row['홈페이지'],
+              company_address: row['기업주소'],
+            },
+            { upsert: true, new: true } // 중복이면 업데이트
+          );
+          companyMap.set(row['회사명'], company._id); // 회사명과 ID를 매핑
+        } catch (error) {
+          console.error('Company 저장 중 오류:', error);
+        }
+      })
+      .on('end', () => {
+        console.log('회사 데이터 처리 완료');
+        resolve();
+      })
+      .on('error', (err) => {
+        reject(err);
+      });
+  });
+}
+
+// Step 2: jobs.csv 처리
+function processJobs() {
+  return new Promise((resolve, reject) => {
+    fs.createReadStream('jobs.csv')
+      .pipe(csvParser())
+      .on('data', async (row) => {
+        try {
+
+          const companyId = companyMap.get(row['회사명']);
+          if (!companyId) {
+            console.warn(`회사명을 찾을 수 없음: ${row['회사명']}`);
+            return;
           }
-          console.log('CSV 데이터 MongoDB 저장 완료');
-        });
-    } catch (error) {
-      console.error('데이터 저장 중 오류 발생:', error);
-    }
-  }
 
-// 실행
+          await Job.create({
+            companyId,
+            jobTitle: row['채용제목'],
+            link: row['링크'],
+            location: row['위치'],
+            experienceRequired: row['경력요구'],
+            educationRequired: row['학력요구'],
+            salary: row['연봉'],
+            employmentType: row['고용형태'],
+            deadline: new Date(row['마감일']),
+            details: {
+              skills: row['요구기술'] ? row['요구기술'].split(',') : [],
+              benefits: row['복리후생'] ? row['복리후생'].split(',') : [],
+            },
+          });
+          console.log(`저장 완료: ${row['채용제목']}`);
+        } catch (error) {
+          console.error('Job 저장 중 오류:', error);
+        }
+      })
+      .on('end', () => {
+        console.log('채용 데이터 처리 완료');
+        resolve();
+      })
+      .on('error', (err) => {
+        reject(err);
+      });
+  });
+}
+
+// 데이터 저장 실행
 (async () => {
-  await connectDB();
-
-  const csvFilePath = 'saramin_jobs_unique.csv'; // CSV 파일 경로
-  // MongoDB 연결 확인 후 CSV 저장
-  if (mongoose.connection.readyState === 1) {
-    await saveCsvToDB(csvFilePath);
-  } else {
-    console.error('MongoDB 연결 상태가 유효하지 않습니다.');
+  try {
+    await processCompanies();
+    await processJobs();
+    console.log('모든 데이터 저장 완료');
+  } catch (error) {
+    console.error('데이터 저장 중 오류:', error);
+  } finally {
+    mongoose.disconnect();
   }
-  mongoose.disconnect(); // 작업 완료 후 연결 해제
 })();
