@@ -37,9 +37,9 @@ const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const jobsRouter = require('./routes/jobs');
 app.use('/', indexRouter);
-app.use('/users', apiLimiter, usersRouter);
-app.use('/auth', authRouter);
-app.use('/jobs', jobsRouter);
+app.use('/api/users', apiLimiter, usersRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/jobs', jobsRouter);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 // catch 404 and forward to error handler

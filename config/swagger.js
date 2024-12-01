@@ -4,7 +4,7 @@ const mongooseToSwagger = require("mongoose-to-swagger");
 // Mongoose 모델 불러오기
 const Job = require("../models/Job");
 const User = require("../models/User");
-
+const Company = require('../models/Company');
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -27,6 +27,7 @@ const options = {
       schemas: {
         Job: mongooseToSwagger(Job), // Mongoose 스키마를 Swagger 스키마로 변환
         User: mongooseToSwagger(User),
+        Company: mongooseToSwagger(Company),
       },
     },
   },
