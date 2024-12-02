@@ -12,6 +12,7 @@ const {
   validateLogin,
   validateProfileUpdate,
 } = require('../middlewares/validators');
+
 /**
  * @swagger
  * tags:
@@ -33,7 +34,7 @@ const {
  *             type: object
  *             required:
  *                - username
- *                - emaail
+ *                - email
  *                - passwordHash
  *                - fullName
  *                - phoneNumber
@@ -42,8 +43,8 @@ const {
  *                  type: string
  *                  example: john_doe
  *                email:
- *                  format: email
  *                  type: string
+ *                  format: email
  *                  example: user@example.com
  *                passwordHash:
  *                  type: string
@@ -117,7 +118,7 @@ router.post('/register', validateRegister, register);
  *               - passwordHash
  *     responses:
  *       200:
- *         description: 로그인 성공. Access Token과 Refresh Token 반환.
+ *         description: 로그인 성공. Access Token 반환.
  *         content:
  *           application/json:
  *             schema:
@@ -168,7 +169,48 @@ router.post('/register', validateRegister, register);
  */
 router.post('/login', validateLogin, login);
 
-// 토큰 갱신
+/**
+ * @swagger
+ * /auth/refresh:
+ *   post:
+ *     summary: Refresh Token
+ *     description: 헤더 또는 본문에 refreshToken을 제공하여 새로운 Access Token을 발급받습니다.
+ *     tags: [Auth]
+ *     security:
+ *       - refreshToken: []
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               refreshToken:
+ *                 type: string
+ *                 example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+ *             required:
+ *               - refreshToken
+ *     responses:
+ *       200:
+ *         description: 새로운 Access Token 발급
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: success
+ *                 data:
+ *                   type: object
+ *                   properties:
+ *                     accessToken:
+ *                       type: string
+ *                       example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+ *       400:
+ *         description: Refresh Token 누락
+ *       403:
+ *         description: Refresh Token 인증 실패
+ */
 router.post('/refresh', refreshToken);
 
 /**
@@ -190,7 +232,7 @@ router.post('/refresh', refreshToken);
  *               fullName:
  *                 type: string
  *                 description: User's full name
- *                 example: John Doe
+ *                 example: Joe Biden
  *               phoneNumber:
  *                 type: string
  *                 description: User's phone number
@@ -198,13 +240,13 @@ router.post('/refresh', refreshToken);
  *               bio:
  *                 type: string
  *                 description: Short bio of the user
- *                 example: "Full stack developer with 5 years of experience"
+ *                 example: "Game developer with 5 years of experience"
  *               skills:
  *                 type: array
  *                 items:
  *                   type: string
  *                 description: List of skills
- *                 example: ["JavaScript", "React", "Node.js"]
+ *                 example: ["C++", "C#", "C"]
  *               resumeUrl:
  *                 type: string
  *                 description: URL of the user's resume
@@ -212,11 +254,11 @@ router.post('/refresh', refreshToken);
  *               oldPassword:
  *                 type: string
  *                 description: The user's current password
- *                 example: oldPassword123
+ *                 example: oldPasswd
  *               newPassword:
  *                 type: string
  *                 description: The user's new password
- *                 example: newPassword456
+ *                 example: newPasswd
  *     responses:
  *       200:
  *         description: Profile and/or password updated successfully
@@ -265,7 +307,6 @@ router.post('/refresh', refreshToken);
  *                   type: string
  *                   example: Token has expired.
  */
-
 router.put('/profile', authenticateToken, validateProfileUpdate, updateProfile);
 
 module.exports = router;

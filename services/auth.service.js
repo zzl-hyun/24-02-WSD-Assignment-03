@@ -72,7 +72,7 @@ exports.refreshToken = async (refreshToken) => {
   const tokenData = await Token.findOne({ refresh_token: refreshToken });
   if (!tokenData) throw new Error('Invalid refresh token.');
 
-  const decoded = jwt.verify(refreshToken, process.env.JWT_SECRET);
+  const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
   const newAccessToken = jwt.sign({ id: decoded.id, role: decoded.role }, process.env.JWT_SECRET, { expiresIn: '15m' });
 
   return { accessToken: newAccessToken };

@@ -35,6 +35,11 @@ const options = {
           scheme: 'bearer',
           bearerFormat: 'JWT'
         },
+        refreshToken: {
+          type: "apiKey",
+          in: "header",
+          name: "x-refresh-token", // API 호출 시 사용할 헤더 이름
+        },
       },
     },
     securitiy: [
@@ -43,7 +48,7 @@ const options = {
       }
     ]
   },
-  apis: ["./routes/*.js", "./models/*.js","./controllers/*.controller.js", "./services/*.service.js"], //차차 추가해나가자
+  apis: ["./swagger/*.swagger.js","./routes/*.js", "./models/*.js","./controllers/*.controller.js", "./services/*.service.js"], //차차 추가해나가자
 };
 
 const specs = swaggerJsdoc(options);
