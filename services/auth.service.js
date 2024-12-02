@@ -5,18 +5,30 @@ const User = require('../models/User');
 const Token = require('../models/Token'); // Token 모델 가져오기
 
 // 회원 가입
-exports.register = async ({ username, email, password, profile }) => {
+exports.register = async ({ username, email, passwordHash, role, profile }) => {
+  // 이메일 중복 확인
   const existingUser = await User.findOne({ email });
   if (existingUser) throw new Error('Email is already registered.');
 
-  const hashedPassword = await bcrypt.hash(password, 10);
+  // 비밀번호 해싱
+  const hashedPassword = await bcrypt.hash(passwordHash, 10);
 
+  // 새 사용자 생성
   const newUser = new User({
     username,
     email,
     passwordHash: hashedPassword,
-    profile,
+    role: role || 'jobseeker', // 기본값 처리
+    profile: {
+      fullName: profile.fullName,
+      phoneNumber: profile.phoneNumber || '', 
+      bio: profile.bio || '', // 기본값 설정
+      skills: profile.skills || [], // 빈 배열로 처리
+      resumeUrl: profile.resumeUrl || '', // 기본값 설정
+    },
   });
+
+  // 데이터 저장
   return await newUser.save();
 };
 

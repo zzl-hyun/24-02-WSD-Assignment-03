@@ -10,7 +10,7 @@ const { swaggerUi, specs } = require("./config/swagger");
 const connectDB = require('./config/db');
 const rateLimit = require('express-rate-limit');
 const xssClean = require('xss-clean');
-
+const cors = require('cors');
 
 connectDB();
 
@@ -18,13 +18,14 @@ connectDB();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+// 추가기능
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(xssClean());
-
+// app.use(xssClean());
+app.use(cors());
 const apiLimiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1분
   max: 5, // 최대 100 요청

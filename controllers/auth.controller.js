@@ -1,20 +1,29 @@
 const authService = require('../services/auth.service');
 
 exports.register = async (req, res) => {
-    try {
-      const { username, email, password, fullName, phoneNumber } = req.body;
-      const result = await authService.register({
-        username,
-        email,
-        password,
-        profile: { fullName, phoneNumber },
-      });
-      res.status(201).json({ status: 'success', data: result });
-    } catch (error) {
-      res.status(400).json({ status: 'error', message: error.message });
-    }
-  };
+  try {
+    const {
+      username,
+      email,
+      passwordHash, // 요청 필드 이름과 맞춤
+      role,
+      profile: { fullName, phoneNumber, bio, skills, resumeUrl } = {}, // profile 내부 파싱
+    } = req.body;
 
+    // 필요한 필드를 service로 전달
+    const result = await authService.register({
+      username,
+      email,
+      passwordHash,
+      role,
+      profile: { fullName, phoneNumber, bio, skills, resumeUrl },
+    });
+
+    res.status(201).json({ status: 'success', data: result });
+  } catch (error) {
+    res.status(400).json({ status: 'error', message: error.message });
+  }
+};
 
 exports.login = async (req, res) => {
   try {

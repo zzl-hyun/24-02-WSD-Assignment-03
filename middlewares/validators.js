@@ -1,25 +1,43 @@
-//middleware/validators.js 
-// 입력데이터 검증
-
 const Joi = require('joi');
 const sanitizeInput = (input) => {
   return input.replace(/[\$]/g, '');
 };
 
-// 데이터베이스 작업 시 필터링 적용
-// const safeEmail = sanitizeInput(email);
-// await User.findOne({ email: safeEmail });
-
+// 회원 가입 유효성 검사
 exports.validateRegister = (req, res, next) => {
   const schema = Joi.object({
-    email: Joi.string().email().required().withMessage('Invalid email format'),
-    password: Joi.string().min(6).required().withMessage('Password must be at least 6 characters'),
-    // 추가하기
+    username: Joi.string().trim().required().messages({
+      'string.empty': 'Username is required',
+    }),
+    email: Joi.string().email().trim().required().messages({
+      'string.email': 'Invalid email format',
+      'any.required': 'Email is required',
+    }),
+    passwordHash: Joi.string().min(4).trim().required().messages({
+      'string.min': 'Password must be at least 4 characters long',
+      'any.required': 'Password is required',
+    }),
+    role: Joi.string().valid('jobseeker', 'admin').default('jobseeker').messages({
+      'any.only': 'Role must be either jobseeker or admin',
+    }),
+    profile: Joi.object({
+      fullName: Joi.string().trim().required().messages({
+        'string.empty': 'Full name is required',
+      }),
+      phoneNumber: Joi.string().trim().optional(),
+      bio: Joi.string().trim().optional(),
+      skills: Joi.array().items(Joi.string().trim()).optional(),
+      resumeUrl: Joi.string().uri().trim().optional(),
+    }).optional(),
   });
 
-  const { error } = schema.validate(req.body);
+  const { error } = schema.validate(req.body, { abortEarly: false });
+
   if (error) {
-    return res.status(400).json({ message: error.details[0].message });
+    // 에러 메시지를 배열로 변환
+    const errorMessages = error.details.map((detail) => detail.message);
+    return res.status(400).json({ status: 'error', errors: errorMessages });
   }
+
   next();
 };

@@ -15,11 +15,11 @@ const options = {
     },
     servers: [
       {
-        url: "http://113.198.66.75:10042/",
+        url: "http://113.198.66.75:10042/api/",
         description: "Real Server",
       },
       {
-        url: "http://localhost:8080/",
+        url: "http://localhost:8080/api/",
         description: "Local Development",
       },
     ],
