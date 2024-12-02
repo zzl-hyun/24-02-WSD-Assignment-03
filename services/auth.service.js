@@ -33,20 +33,34 @@ exports.register = async ({ username, email, passwordHash, role, profile }) => {
 };
 
 // 로그인
-exports.login = async ({ email, password }) => {
+exports.login = async ({ email, passwordHash }) => {
   const user = await User.findOne({ email });
   if (!user) throw new Error('Invalid email or password.');
 
-  const isPasswordValid = await bcrypt.compare(password, user.passwordHash);
+  const isPasswordValid = await bcrypt.compare(passwordHash, user.passwordHash);
   if (!isPasswordValid) throw new Error('Invalid email or password.');
 
-  const accessToken = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '15m' });
-  const refreshToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
+  const accessToken = jwt.sign(
+    { id: user._id, role: user.role },
+    process.env.JWT_SECRET,
+    { expiresIn: '15m' }
+  );
+  const refreshToken = jwt.sign(
+    { id: user._id },
+    process.env.REFRESH_TOKEN_SECRET,
+    { expiresIn: '7d' }
+  );
 
-  await Token.create({ user_id: user._id, access_token: accessToken, refresh_token: refreshToken });
+  // Refresh Token 저장
+  await Token.create({
+    user_id: user._id,
+    refresh_token: refreshToken,
+    expires_at: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7일 뒤
+  });
 
   return { accessToken, refreshToken };
 };
+
 
 // 토큰 갱신
 exports.refreshToken = async (refreshToken) => {

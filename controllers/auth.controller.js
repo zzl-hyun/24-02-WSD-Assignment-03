@@ -27,8 +27,8 @@ exports.register = async (req, res) => {
 
 exports.login = async (req, res) => {
   try {
-    const { email, password } = req.body;
-    const tokens = await authService.login({ email, password });
+    const { email, passwordHash } = req.body;
+    const tokens = await authService.login({ email, passwordHash });
     res.status(200).json({ status: 'success', data: tokens });
   } catch (error) {
     res.status(401).json({ status: 'error', message: error.message });

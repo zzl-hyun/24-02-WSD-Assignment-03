@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(xssClean());
+app.use(xssClean());
 app.use(cors());
 const apiLimiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1분
