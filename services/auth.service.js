@@ -5,6 +5,11 @@ const User = require('../models/User');
 const Token = require('../models/Token'); // Token 모델 가져오기
 
 // 회원 가입
+/**
+ * 
+ * @param {Object} param0 
+ * @returns {Promise<Object>}
+ */
 exports.register = async ({ username, email, passwordHash, role, profile }) => {
   // 이메일 중복 확인
   const existingUser = await User.findOne({ email });
@@ -75,10 +80,34 @@ exports.refreshToken = async (refreshToken) => {
 
 // 프로필 수정
 exports.updateProfile = async (userId, profileData) => {
+  // const filteredProfileData = Object.fromEntries(
+  //   Object.entries(profileData).map(([key, value]) => [`profile.${key}`, value])
+  // );
+
   const updatedUser = await User.findByIdAndUpdate(
     userId,
-    { profile: profileData },
+    {
+      $set: Object.fromEntries(
+        Object.entries(profileData).map(([key, value]) => [`profile.${key}`, value])
+      ),
+    },
     { new: true }
   );
+
+  if (!updatedUser) throw new Error('User not found.');
   return updatedUser.profile;
 };
+
+exports.updatePassword = async (userId, oldPassword, newPassword) => {
+  const user = await User.findById(userId);
+  if (!user) throw new Error('User not found.');
+
+  const isOldPasswordValid = await bcrypt.compare(oldPassword, user.passwordHash);
+  if (!isOldPasswordValid) throw new Error('Old password is incorrect.');
+
+  const hashedNewPassword = await bcrypt.hash(newPassword, 10);
+  user.passwordHash = hashedNewPassword;
+  await user.save();
+};
+
+

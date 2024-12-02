@@ -10,6 +10,7 @@ const authenticateToken = require('../middlewares/authenticateToken');
 const {
   validateRegister,
   validateLogin,
+  validateProfileUpdate,
 } = require('../middlewares/validators');
 /**
  * @swagger
@@ -29,7 +30,52 @@ const {
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/User'
+ *             type: object
+ *             required:
+ *                - username
+ *                - emaail
+ *                - passwordHash
+ *                - fullName
+ *                - phoneNumber
+ *             properties:
+ *                username:
+ *                  type: string
+ *                  example: john_doe
+ *                email:
+ *                  format: email
+ *                  type: string
+ *                  example: user@example.com
+ *                passwordHash:
+ *                  type: string
+ *                  example: securepassword
+ *                role:
+ *                  type: string
+ *                  enum: [jobseeker, admin]
+ *                  example: jobseeker
+ *                profile:
+ *                   type: object
+ *                   required:
+ *                     - fullName
+ *                     - phoneNumber
+ *                   properties:
+ *                     fullName:
+ *                       type: string
+ *                       example: John Doe
+ *                     phoneNumber:
+ *                       type: string
+ *                       example: 123-456-7890
+ *                     bio:
+ *                       type: string
+ *                       example: A passionate developer
+ *                     skills:
+ *                       type: array
+ *                       items:
+ *                         type: string
+ *                       example: ["JavaScript", "React"]
+ *                     resumeUrl:
+ *                       type: string
+ *                       format: uri
+ *                       example: http://example.com/resume.pdf
  *     responses:
  *       201:
  *         description: 성공적으로 회원 가입됨.
@@ -125,7 +171,101 @@ router.post('/login', validateLogin, login);
 // 토큰 갱신
 router.post('/refresh', refreshToken);
 
-// 회원 정보 수정
-router.put('/profile', authenticateToken, updateProfile);
+/**
+ * @swagger
+ * /auth/profile:
+ *   put:
+ *     summary: 사용자 업데이트
+ *     tags:
+ *       - Auth
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               fullName:
+ *                 type: string
+ *                 description: User's full name
+ *                 example: John Doe
+ *               phoneNumber:
+ *                 type: string
+ *                 description: User's phone number
+ *                 example: "123-456-7890"
+ *               bio:
+ *                 type: string
+ *                 description: Short bio of the user
+ *                 example: "Full stack developer with 5 years of experience"
+ *               skills:
+ *                 type: array
+ *                 items:
+ *                   type: string
+ *                 description: List of skills
+ *                 example: ["JavaScript", "React", "Node.js"]
+ *               resumeUrl:
+ *                 type: string
+ *                 description: URL of the user's resume
+ *                 example: "https://example.com/resume.pdf"
+ *               oldPassword:
+ *                 type: string
+ *                 description: The user's current password
+ *                 example: oldPassword123
+ *               newPassword:
+ *                 type: string
+ *                 description: The user's new password
+ *                 example: newPassword456
+ *     responses:
+ *       200:
+ *         description: Profile and/or password updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: success
+ *                 message:
+ *                   type: string
+ *                   example: Profile and/or password updated successfully.
+ *       400:
+ *         description: Invalid input
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: error
+ *                 message:
+ *                   type: string
+ *                   example: Old password is incorrect.
+ *       401:
+ *         description: Unauthorized
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Access Denied. Missing or invalid Authorization header.
+ *       403:
+ *         description: Forbidden
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Token has expired.
+ */
+
+router.put('/profile', authenticateToken, validateProfileUpdate, updateProfile);
 
 module.exports = router;

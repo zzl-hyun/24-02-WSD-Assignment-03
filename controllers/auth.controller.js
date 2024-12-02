@@ -1,5 +1,10 @@
 const authService = require('../services/auth.service');
 
+/**
+ * 
+ * @param {Object} req 
+ * @param {Object} res 
+ */
 exports.register = async (req, res) => {
   try {
     const {
@@ -24,6 +29,7 @@ exports.register = async (req, res) => {
     res.status(400).json({ status: 'error', message: error.message });
   }
 };
+
 
 exports.login = async (req, res) => {
   try {
@@ -51,15 +57,23 @@ exports.refreshToken = async (req, res) => {
 // 프로필 수정
 exports.updateProfile = async (req, res) => {
   try {
-    const { fullName, phoneNumber, bio, skills, resumeUrl } = req.body;
-    const updatedProfile = await authService.updateProfile(req.user.id, {
-      fullName,
-      phoneNumber,
-      bio,
-      skills,
-      resumeUrl,
-    });
-    res.status(200).json({ status: 'success', data: updatedProfile });
+    const { fullName, phoneNumber, bio, skills, resumeUrl, oldPassword, newPassword } = req.body;
+
+    if (fullName || phoneNumber || bio || skills || resumeUrl) {
+      await authService.updateProfile(req.user.id, {
+        fullName,
+        phoneNumber,
+        bio,
+        skills,
+        resumeUrl,
+      });
+    }
+
+    if (oldPassword && newPassword) {
+      await authService.updatePassword(req.user.id, oldPassword, newPassword);
+    }
+
+    res.status(200).json({ status: 'success', message: 'Profile and/or password updated successfully.' });
   } catch (error) {
     res.status(400).json({ status: 'error', message: error.message });
   }

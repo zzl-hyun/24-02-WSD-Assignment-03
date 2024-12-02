@@ -1,6 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const jobController = require('../controllers/job.controller');
+
+/**
+ * @swagger
+ * tags:
+ *   name: Jobs
+ *   description: 회사 API
+ */
 /**
  * @swagger
  *  /jobs:

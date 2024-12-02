@@ -29,7 +29,19 @@ const options = {
         User: mongooseToSwagger(User),
         Company: mongooseToSwagger(Company),
       },
+      securitySchemes:{
+        bearerAuth:{
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT'
+        },
+      },
     },
+    securitiy: [
+      {
+        bearerAuth: [],
+      }
+    ]
   },
   apis: ["./routes/*.js", "./models/*.js","./controllers/*.controller.js", "./services/*.service.js"], //차차 추가해나가자
 };

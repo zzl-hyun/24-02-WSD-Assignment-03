@@ -80,7 +80,6 @@ exports.validateRegister = (req, res, next) => {
   const { error } = schema.validate(req.body, { abortEarly: false });
 
   if (error) {
-    // 에러 메시지를 배열로 변환
     const errorMessages = error.details.map((detail) => detail.message);
     return res.status(400).json({ status: 'error', errors: errorMessages });
   }
@@ -88,6 +87,13 @@ exports.validateRegister = (req, res, next) => {
   next();
 };
 
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns 
+ */
 exports.validateLogin = (req, res, next) => {
   const schema = Joi.object({
     email: Joi.string().email().trim().required().messages({
@@ -100,7 +106,7 @@ exports.validateLogin = (req, res, next) => {
     }),
   });
 
-  const {error} = schema.validate(req.body, { abortEarly: false});
+  const { error } = schema.validate(req.body, { abortEarly: false});
   if (error){
     const errorMessages = error.details.map((detail) => detail.message);
     return res.status(400).json({ status: 'error', errors: errorMessages });
@@ -108,3 +114,38 @@ exports.validateLogin = (req, res, next) => {
 
   next();
 }
+
+
+
+
+
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns 
+ */
+exports.validateProfileUpdate = (req, res, next) => {
+  const schema = Joi.object({
+    fullName: Joi.string().trim().optional(),
+    phoneNumber: Joi.string().trim().optional(),
+    bio: Joi.string().trim().optional(),
+    skills: Joi.array().items(Joi.string().trim()).optional(),
+    resumeUrl: Joi.string().uri().optional(),
+    oldPassword: Joi.string().min(4).optional(),
+    newPassword: Joi.string().min(6).optional(),
+  });
+
+  const { error } = schema.validate(req.body, { abortEarly: false });
+  if (error) {
+    return res.status(400).json({ status: 'error', errors: error.details.map((e) => e.message) });
+  }
+
+  if ((req.body.oldPassword && !req.body.newPassword) || (!req.body.oldPassword && req.body.newPassword)) {
+    return res.status(400).json({ status: 'error', message: 'Both oldPassword and newPassword must be provided for password update.' });
+  }
+
+  next();
+}
+

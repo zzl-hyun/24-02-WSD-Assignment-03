@@ -38,8 +38,12 @@ npm install
 ### 1. Model
 -   **역할**:
     - 데이터베이스와 직접 소통하며, 데이터의 구조와 상태를 정의
-    - 데이터를 읽고 쓰는 로직을 포함
     - 실제 데이터를 표현하기 위한 스키마를 정의
+    ```
+    User.js
+    Token.js
+    Job.js
+    ```
 ### 2. View
 - **역할**:
     - 사용자에게 데이터를 보여주는 UI레이어
@@ -49,12 +53,19 @@ npm install
 - **역할**:
     - 사용자의 request를 받아 필요한 데이터를 Model에서 가져오고 View로 전달
     - 비즈니스 로직은 처리하지 않으며, **요청/흐름**만 관리
+    ```
+    auth.controller.js
+    job.controller.js
+    ```
 ### 4. Service
 - **역할**:
     - 비즈니스 로직과 데이터의 처리 세부 사항을 캡슐화
     - 복잡한 데이터 처리나 여러 Model을 사용하는 작업을 수행
     - Controller가 Service를 호출하고, Service는 Model과 소통
-
+    ```
+    auth.service.js
+    job.service.js
+    ```
 ## MVCS의 흐름
 요청(Request) 흐름:
 ```
@@ -67,18 +78,18 @@ User <- View <- Controller <- Service <- Model
 
 
 ## 인증 및 보안 구현
-JWT 기반 인증: jsonwebtoken
-<!-- Access Token 발급 및 검증 (필수) -->
+- JWT 기반 인증: jsonwebtoken
+- Access Token 발급 및 검증 (필수)
 <!-- Refresh Token 구현 (가산점) -->
 <!-- 토큰 갱신 메커니즘 (필수) -->
 <!-- 토큰 블랙리스트 관리 (Optional) -->
 <!-- 보안 미들웨어 구현 -->
 <!-- 인증 미들웨어 -->
 <!-- 권한 검사 미들웨어 -->
-입력 데이터 및 파라미터 검증: joi
-Rate Limiting: express-rate-limit
+- 입력 데이터 및 파라미터 검증: joi
+- Rate Limiting: express-rate-limit
 <!-- 보안 강화 (Optional) -->
-XSS 방지: xss-clean
+- XSS 방지: xss-clean
 <!-- CSRF 보호 -->
-SQL Injection 방지
-암호화 처리: bcrypt
+- SQL Injection 방지
+- 암호화 처리: bcrypt
