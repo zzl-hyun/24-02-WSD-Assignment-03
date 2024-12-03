@@ -3,7 +3,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const Token = require('../models/Token'); // Token 모델 가져오기
-
+const AppError = require('../utils/AppError');
+const errorCodes = require('../config/errorCodes');
 // 회원 가입
 /**
  * 
@@ -40,10 +41,22 @@ exports.register = async ({ username, email, passwordHash, role, profile }) => {
 // 로그인
 exports.login = async ({ email, passwordHash }) => {
   const user = await User.findOne({ email });
-  if (!user) throw new Error('Invalid email or password.');
+  if (!user) {
+    throw new AppError(
+      errorCodes.INVALID_CREDENTIALS.code,
+      errorCodes.INVALID_CREDENTIALS.message,
+      401
+    );
+  }
 
   const isPasswordValid = await bcrypt.compare(passwordHash, user.passwordHash);
-  if (!isPasswordValid) throw new Error('Invalid email or password.');
+  if (!isPasswordValid) {
+    throw new AppError(
+      errorCodes.INVALID_CREDENTIALS.code,
+      errorCodes.INVALID_CREDENTIALS.message,
+      401
+    );
+  }
 
   const accessToken = jwt.sign(
     { id: user._id, role: user.role },

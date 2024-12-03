@@ -8,6 +8,7 @@ const express = require('express');
 const app = express();
 const { swaggerUi, specs } = require("./swagger/config");
 const connectDB = require('./config/db');
+const errorHandler = require('./middlewares/errorHandler');
 const rateLimit = require('express-rate-limit');
 const xssClean = require('xss-clean');
 const cors = require('cors');
@@ -42,6 +43,7 @@ app.use('/api/users', apiLimiter, usersRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/jobs', jobsRouter);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
+app.use(errorHandler);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

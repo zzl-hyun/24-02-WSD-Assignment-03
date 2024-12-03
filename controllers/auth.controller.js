@@ -1,5 +1,6 @@
 const authService = require('../services/auth.service');
-
+const AppError = require('../utils/AppError');
+const errorCodes = require('../config/errorCodes');
 /**
  * 
  * @param {Object} req 
@@ -31,13 +32,13 @@ exports.register = async (req, res) => {
 };
 
 
-exports.login = async (req, res) => {
+exports.login = async (req, res, next) => {
   try {
     const { email, passwordHash } = req.body;
     const tokens = await authService.login({ email, passwordHash });
     res.status(200).json({ status: 'success', data: tokens });
-  } catch (error) {
-    res.status(401).json({ status: 'error', message: error.message });
+  } catch (err) {
+    next(err); // 글로벌 에러 핸들러로 전달
   }
 };
 
