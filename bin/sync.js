@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const fs = require('fs');
 const csvParser = require('csv-parser');
-const Company = require('./models/Company.js');
-const Job = require('./models/Job.js');
+const Company = require('../models/Company.js');
+const Job = require('../models/Job.js');
 
 // Normalize string
 // const normalize = (str) => str.trim().toLowerCase();
@@ -25,7 +25,7 @@ const connectDB = async () => {
 const importJobs = () => {
   return new Promise((resolve, reject) => {
     const jobData = [];
-    fs.createReadStream('./jobs.csv')
+    fs.createReadStream('./bin/jobs2.csv')
       .pipe(csvParser())
       .on('data', (row) => {
         const normalizedCompanyName = row['회사명'];
@@ -40,10 +40,10 @@ const importJobs = () => {
             link: row['링크'] || 'NA',
             location: row['지역'] || 'NA',
             experienceRequired: row['경력'] || 'NA',
-            educationRequired: row['학력'] || 'NA',
+            educationRequired: row['학력'] ? row['학력'].replace(/↑/, '').trim() : 'NA', // Remove ↑
             salary: row['연봉'] || 'NA',
             employmentType: row['고용형태'] || 'NA',
-            deadline: row['마감일'] || 'NA',
+            deadline: row['마감일'] ? row['마감일'].replace(/~\s*/, '').trim() : 'NA', // Remove ~
             details: {
               skills: (row['직무분야'] || '')
                 .replace(/\s외\s.*$/, '') // "외" 이후 텍스트 제거
@@ -53,7 +53,7 @@ const importJobs = () => {
                 .split(',')
                 .map(benefit => benefit.trim()), // 양쪽 공백 제거
             },
-            
+            createdAt: row['등록일'].replace(/.*(\d{2}\/\d{2}\/\d{2}).*/, '$1') || 'NA',
           };
         });
       })

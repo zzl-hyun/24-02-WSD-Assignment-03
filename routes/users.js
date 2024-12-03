@@ -4,7 +4,7 @@ const User = require('../models/User'); // User 모델 가져오기
 
 /**
  * @swagger
- * /users:
+ * /users/all:
  *   get:
  *     summary: Retrieve a list of users
  *     tags: [Users]
@@ -18,7 +18,7 @@ const User = require('../models/User'); // User 모델 가져오기
  *               items:
  *                 $ref: '#/components/schemas/User'
  */
-router.get('/', async (req, res) => {
+router.get('/all', async (req, res) => {
     try {
         const users = await User.find(); // 모든 사용자 데이터 조회
         res.json(users); // 데이터를 JSON 형식으로 반환

@@ -16,6 +16,7 @@ const jobSchema = new mongoose.Schema({
     skills: [{ type: String }],
     benefits: [{ type: String }]
   },
+  createdAt: { type: String}
 });
 
 module.exports = mongoose.model('Job', jobSchema);
