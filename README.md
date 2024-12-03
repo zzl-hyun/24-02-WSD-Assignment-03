@@ -8,7 +8,7 @@
 - 클라우드 배포: JCloud를 사용하여 백엔드 서버를 배포.
 
 ## 기술 스택
-<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white" alt="dd">
 
 <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=Express&logoColor=white">
 
@@ -32,6 +32,7 @@ http://113.198.66.75:10042/api-docs
 ## 설치 및 실행 가이드
 ~~~
 npm install
+npm start
 ~~~
 
 ## MVCS 패턴 적용
@@ -43,6 +44,7 @@ npm install
     User.js
     Token.js
     Job.js
+    Application.js
     ```
 ### 2. View
 - **역할**:

@@ -1,6 +1,4 @@
 const jobService = require('../services/job.service');
-const AppError = require('../utils/AppError');
-const errorCodes = require('../config/errorCodes');
 
 // Fetch job listings
 exports.getJobs = async (req, res, next) => {

@@ -23,10 +23,13 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(xssClean());
-app.use(cors());
+app.use(cors({
+  origin: 'http://113.198.66.75:10042',
+  credentials: true, // 쿠키 허용
+}));
 const apiLimiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1분
   max: 50, // 최대 50 요청

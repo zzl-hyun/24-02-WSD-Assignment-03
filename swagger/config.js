@@ -1,10 +1,12 @@
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
 const mongooseToSwagger = require("mongoose-to-swagger");
+
 // Mongoose 모델 불러오기
 const Job = require("../models/Job");
 const User = require("../models/User");
 const Company = require('../models/Company');
+
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -29,26 +31,33 @@ const options = {
         User: mongooseToSwagger(User),
         Company: mongooseToSwagger(Company),
       },
-      securitySchemes:{
-        bearerAuth:{
+      securitySchemes: {
+        bearerAuth: {
           type: 'http',
           scheme: 'bearer',
-          bearerFormat: 'JWT'
+          bearerFormat: 'JWT',
         },
-        refreshToken: {
+        csrfAuth: {
           type: "apiKey",
           in: "header",
-          name: "x-refresh-token", // API 호출 시 사용할 헤더 이름
+          name: "X-CSRF-Token",
         },
       },
     },
-    securitiy: [
+    security: [
       {
         bearerAuth: [],
-      }
-    ]
+        csrfAuth: [],
+      },
+    ],
   },
-  apis: ["./swagger/*.swagger.js","./routes/*.js", "./models/*.js","./controllers/*.controller.js", "./services/*.service.js"], //차차 추가해나가자
+  apis: [
+    "./swagger/*.swagger.js",
+    "./routes/*.js",
+    "./models/*.js",
+    "./controllers/*.controller.js",
+    "./services/*.service.js",
+  ], // API 경로 추가
 };
 
 const specs = swaggerJsdoc(options);

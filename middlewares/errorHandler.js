@@ -1,5 +1,5 @@
 const winston = require('winston');
-
+require('winston-logstash');
 // 로깅 설정
 const logger = winston.createLogger({
   level: 'error',
