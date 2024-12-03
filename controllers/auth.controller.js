@@ -6,7 +6,7 @@ const errorCodes = require('../config/errorCodes');
  * @param {Object} req 
  * @param {Object} res 
  */
-exports.register = async (req, res) => {
+exports.register = async (req, res, next) => {
   try {
     const {
       username,
@@ -25,9 +25,9 @@ exports.register = async (req, res) => {
       profile: { fullName, phoneNumber, bio, skills, resumeUrl },
     });
 
-    res.status(201).json({ status: 'success', data: result });
-  } catch (error) {
-    res.status(400).json({ status: 'error', message: error.message });
+    res.status(201).json({ status: 'success', data: result, next });
+  } catch (err) {
+    next(err)
   }
 };
 
@@ -44,18 +44,18 @@ exports.login = async (req, res, next) => {
 
 
 // 토큰 갱신
-exports.refreshToken = async (req, res) => {
+exports.refreshToken = async (req, res, next) => {
   try {
     const { refreshToken } = req.body;
     const newTokens = await authService.refreshToken(refreshToken);
     res.status(200).json({ status: 'success', data: newTokens });
-  } catch (error) {
-    res.status(403).json({ status: 'error', message: error.message });
+  } catch (err) {
+    next(err);
   }
 };
 
 // 프로필 수정
-exports.updateProfile = async (req, res) => {
+exports.updateProfile = async (req, res, next) => {
   try {
     const { fullName, phoneNumber, bio, skills, resumeUrl, oldPassword, newPassword } = req.body;
 
@@ -74,7 +74,7 @@ exports.updateProfile = async (req, res) => {
     }
 
     res.status(200).json({ status: 'success', message: 'Profile and/or password updated successfully.' });
-  } catch (error) {
-    res.status(400).json({ status: 'error', message: error.message });
+  } catch (err) {
+    next(err);
   }
 };

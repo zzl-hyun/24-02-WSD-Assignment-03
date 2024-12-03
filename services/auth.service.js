@@ -14,7 +14,13 @@ const errorCodes = require('../config/errorCodes');
 exports.register = async ({ username, email, passwordHash, role, profile }) => {
   // 이메일 중복 확인
   const existingUser = await User.findOne({ email });
-  if (existingUser) throw new Error('Email is already registered.');
+  if (existingUser) {
+    throw new AppError(
+        errorCodes.ALREADY_REGISTERED.code,
+        errorCodes.ALREADY_REGISTERED.message,
+        errorCodes.ALREADY_REGISTERED.status
+    );
+  }
 
   // 비밀번호 해싱
   const hashedPassword = await bcrypt.hash(passwordHash, 10);
@@ -45,7 +51,7 @@ exports.login = async ({ email, passwordHash }) => {
     throw new AppError(
       errorCodes.INVALID_CREDENTIALS.code,
       errorCodes.INVALID_CREDENTIALS.message,
-      401
+      errorCodes.INVALID_CREDENTIALS.status
     );
   }
 
@@ -54,7 +60,7 @@ exports.login = async ({ email, passwordHash }) => {
     throw new AppError(
       errorCodes.INVALID_CREDENTIALS.code,
       errorCodes.INVALID_CREDENTIALS.message,
-      401
+      errorCodes.INVALID_CREDENTIALS.status
     );
   }
 
@@ -83,7 +89,13 @@ exports.login = async ({ email, passwordHash }) => {
 // 토큰 갱신
 exports.refreshToken = async (refreshToken) => {
   const tokenData = await Token.findOne({ refresh_token: refreshToken });
-  if (!tokenData) throw new Error('Invalid refresh token.');
+  if (!tokenData) {
+    throw new AppError(
+        errorCodes.INVALID_REFRESH_TOKEN.code,
+        errorCodes.INVALID_REFRESH_TOKEN.message,
+        errorCodes.INVALID_REFRESH_TOKEN.status
+    );
+  }
 
   const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
   const newAccessToken = jwt.sign({ id: decoded.id, role: decoded.role }, process.env.JWT_SECRET, { expiresIn: '15m' });
@@ -107,13 +119,26 @@ exports.updateProfile = async (userId, profileData) => {
     { new: true }
   );
 
-  if (!updatedUser) throw new Error('User not found.');
+  if (!updatedUser) {
+    throw new AppError(
+        errorCodes.USER_NOT_FOUND.code,
+        errorCodes.USER_NOT_FOUND.message,
+        errorCodes.USER_NOT_FOUND.status
+    );
+  }
   return updatedUser.profile;
 };
 
 exports.updatePassword = async (userId, oldPassword, newPassword) => {
   const user = await User.findById(userId);
-  if (!user) throw new Error('User not found.');
+  if (!user) {
+    throw new AppError(
+        errorCodes.USER_NOT_FOUND.code,
+        errorCodes.USER_NOT_FOUND.message,
+        errorCodes.USER_NOT_FOUND.status
+    );
+  }
+
 
   const isOldPasswordValid = await bcrypt.compare(oldPassword, user.passwordHash);
   if (!isOldPasswordValid) throw new Error('Old password is incorrect.');

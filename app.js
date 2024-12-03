@@ -29,19 +29,21 @@ app.use(xssClean());
 app.use(cors());
 const apiLimiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1분
-  max: 5, // 최대 100 요청
+  max: 50, // 최대 50 요청
   message: 'Too many requests, please try again later.',
 });
 
 // route
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const authRouter = require('./routes/auth');
-const jobsRouter = require('./routes/jobs');
+const apiRouter = require('./routes/api');
+// const usersRouter = require('./routes/users');
+// const authRouter = require('./routes/auth');
+// const jobsRouter = require('./routes/jobs');
 app.use('/', indexRouter);
-app.use('/api/users', apiLimiter, usersRouter);
-app.use('/api/auth', authRouter);
-app.use('/api/jobs', jobsRouter);
+app.use('/api', apiLimiter, apiRouter);
+// app.use('/api/users', apiLimiter, usersRouter);
+// app.use('/api/auth', authRouter);
+// app.use('/api/jobs', jobsRouter);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 app.use(errorHandler);
 
