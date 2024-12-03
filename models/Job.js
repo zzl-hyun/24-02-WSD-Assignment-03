@@ -16,6 +16,7 @@ const jobSchema = new mongoose.Schema({
     skills: [{ type: String }],
     benefits: [{ type: String }]
   },
+  viewCount: { type: Number, default: 0},
   createdAt: { type: String}
 });
 

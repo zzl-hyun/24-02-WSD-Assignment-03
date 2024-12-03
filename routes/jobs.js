@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const {
     getJobs,
-    getAllJobs
+    getAllJobs,
+    getJobDetails,
 } = require('../controllers/job.controller');
 /**
  * @swagger
@@ -101,7 +102,6 @@ const {
  *                      totalPages:
  *                          type: integer
  */
-
 router.get('/', getJobs);
 
 /**
@@ -127,5 +127,55 @@ router.get('/', getJobs);
  *                          $ref: '#/components/schemas/Job'
  */
 router.get('/all', getAllJobs);
+
+/**
+ * @swagger
+ * /jobs/{id}:
+ *   get:
+ *     summary: Get job details
+ *     tags:
+ *       - Jobs
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         description: Job ID
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Successfully retrieved job details
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: success
+ *                 data:
+ *                   type: object
+ *                   properties:
+ *                     jobDetails:
+ *                       $ref: '#/components/schemas/Job'
+ *                     relatedJobs:
+ *                       type: array
+ *                       items:
+ *                         $ref: '#/components/schemas/Job'
+ *       404:
+ *         description: Job not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: error
+ *                 message:
+ *                   type: string
+ *                   example: Job not found.
+ */
+router.get('/:id', getJobDetails);
 
 module.exports = router;

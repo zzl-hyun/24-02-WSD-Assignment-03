@@ -1,11 +1,4 @@
 module.exports = {
-
-    ALREADY_REGISTERED: { code: 'ALREADY_REGISTERED', message: 'Email is already registered.', status: 400 },
-    INVALID_CREDENTIALS: { code: 'INVALID_CREDENTIALS', message: 'Invalid email or password.', status: 401 },
-    USER_NOT_FOUND: { code: 'USER_NOT_FOUND', message: 'User not found.', status: 404 },
-    SERVER_ERROR: { code: 'SERVER_ERROR', message: 'An unexpected error occurred.', status: 500 },
-
-
     // MISSING_FIELDS: 클라이언트에서 필수 필드가 누락된 경우 발생.
     // UNAUTHORIZED_ACCESS: 사용자가 인증되지 않은 경우 발생.
     // FORBIDDEN_ACTION: 인증은 되었으나 특정 작업에 대한 권한이 없는 경우.
@@ -15,6 +8,11 @@ module.exports = {
     // BAD_GATEWAY: 서버 간 통신 에러.
     // SERVICE_UNAVAILABLE: 서버 과부하 또는 유지보수 상태.
     // REQUEST_TIMEOUT: 요청 시간이 초과된 경우.
+    ALREADY_REGISTERED: { code: 'ALREADY_REGISTERED', message: 'Email is already registered.', status: 400 },
+    INVALID_CREDENTIALS: { code: 'INVALID_CREDENTIALS', message: 'Invalid email or password.', status: 401 },
+    USER_NOT_FOUND: { code: 'USER_NOT_FOUND', message: 'User not found.', status: 404 },
+    JOB_NOT_FOUND: { code: 'JOB_NOT_FOUND', message: 'Job not found.', status: 404 },
+    SERVER_ERROR: { code: 'SERVER_ERROR', message: 'An unexpected error occurred.', status: 500 },
     MISSING_FIELDS: { code: 'MISSING_FIELDS', message: 'Required fields are missing.', status: 400 },
     UNAUTHORIZED_ACCESS: { code: 'UNAUTHORIZED_ACCESS', message: 'Access denied. Please log in.', status: 401 },
     FORBIDDEN_ACTION: { code: 'FORBIDDEN_ACTION', message: 'You do not have permission to perform this action.', status: 403 },
