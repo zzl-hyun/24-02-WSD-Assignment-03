@@ -143,8 +143,7 @@ exports.updatePassword = async (userId, oldPassword, newPassword) => {
   const isOldPasswordValid = await bcrypt.compare(oldPassword, user.passwordHash);
   if (!isOldPasswordValid) throw new Error('Old password is incorrect.');
 
-  const hashedNewPassword = await bcrypt.hash(newPassword, 10);
-  user.passwordHash = hashedNewPassword;
+  user.passwordHash = await bcrypt.hash(newPassword, 10);
   await user.save();
 };
 
