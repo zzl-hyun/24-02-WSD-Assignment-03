@@ -218,10 +218,12 @@ router.post('/refresh', refreshToken);
  * /auth/profile:
  *   put:
  *     summary: 사용자 업데이트
+ *     description: CSRF로 보호됨
  *     tags:
  *       - Auth
  *     security:
  *       - bearerAuth: []
+ *       - csrfAuth: []
  *     requestBody:
  *       required: true
  *       content:
