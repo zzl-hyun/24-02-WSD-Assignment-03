@@ -6,6 +6,25 @@ const Job = require('../models/Job.js');
 
 // Normalize string
 // const normalize = (str) => str.trim().toLowerCase();
+const parseSalary = (salaryString) => {
+  if (!salaryString) return null;
+
+  const regex = /([\d,]+)\s*(만원|원)/i;
+  const match = salaryString.match(regex);
+
+  if (!match) return null;
+
+  const rawValue = parseInt(match[1].replace(/,/g, ''), 10); // Remove commas and parse the number
+  const unit = match[2];
+
+  if (unit === '만원') {
+    return rawValue * 10000; // Convert 만원 to 원
+  } else if (unit === '원') {
+    return rawValue; // Already in 원
+  }
+
+  return null;
+};
 
 // MongoDB connection
 const connectDB = async () => {
@@ -42,6 +61,7 @@ const importJobs = () => {
             experienceRequired: row['경력'] || 'NA',
             educationRequired: row['학력'] ? row['학력'].replace(/↑/, '').trim() : 'NA', // Remove ↑
             salary: row['연봉'] || 'NA',
+            normalizedSalary: parseSalary(row['연봉']),
             employmentType: row['고용형태'] || 'NA',
             deadline: row['마감일'] ? row['마감일'].replace(/~\s*/, '').trim() : 'NA', // Remove ~
             details: {

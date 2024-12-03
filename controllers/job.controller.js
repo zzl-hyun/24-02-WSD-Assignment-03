@@ -15,6 +15,7 @@ exports.getJobs = async (req, res, next) => {
       position,
       location,
       experience,
+      education,
       salary,
       skills
     } = req.query;
@@ -25,6 +26,7 @@ exports.getJobs = async (req, res, next) => {
       position,
       location,
       experience,
+      education,
       salary,
       skills,
     };

@@ -6,6 +6,25 @@ const errorCodes = require('../config/errorCodes');
 // Fetch job listings with pagination, filtering, and sorting
 exports.getJobs = async ({ page, size, sortBy, sortOrder, filters }) => {
   const query = {};
+  const parseSalary = (salaryString) => {
+    if (!salaryString) return null;
+
+    const regex = /([\d,]+)\s*(만원|원)/i;
+    const match = salaryString.match(regex);
+
+    if (!match) return null;
+
+    const rawValue = parseInt(match[1].replace(/,/g, ''), 10); // Remove commas and parse the number
+    const unit = match[2];
+
+    if (unit === '만원') {
+      return rawValue * 10000; // Convert 만원 to 원
+    } else if (unit === '원') {
+      return rawValue; // Already in 원
+    }
+
+    return null;
+  };
 
   // Filtering
   if (filters.keyword) {
@@ -18,7 +37,11 @@ exports.getJobs = async ({ page, size, sortBy, sortOrder, filters }) => {
     query.companyId = filters.company; // Assuming companyId is provided as a filter
   }
   if (filters.position) {
-    query.jobTitle = { $regex: filters.position, $options: 'i' };
+    query.$or = [
+    { jobTitle : { $regex: filters.position, $options: 'i' }},
+    {  employmentType: { $regex: filters.position, $options: 'i' }},
+    ]
+
   }
   if (filters.location) {
     query.location = { $regex: filters.location, $options: 'i' };
@@ -26,8 +49,14 @@ exports.getJobs = async ({ page, size, sortBy, sortOrder, filters }) => {
   if (filters.experience) {
     query.experienceRequired = filters.experience;
   }
+  if (filters.education) {
+    query.educationRequired = {$regex: filters.education, $options: 'i'};
+  }
   if (filters.salary) {
-    query.salary = { $regex: filters.salary, $options: 'i' };
+    const minSalary = parseSalary(filters.salary);
+    if (minSalary !== null) {
+      query.normalizedSalary = { $gte: minSalary }; // Filter for salaries greater than or equal to the specified value
+    }
   }
   if (filters.skills) {
     query['details.skills'] = { $all: filters.skills.split(',') };

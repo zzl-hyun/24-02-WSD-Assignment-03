@@ -55,27 +55,32 @@ const {
  *           type: string
  *       - name: position
  *         in: query
- *         description: Filter by job position
+ *         description: (정규직...)
  *         schema:
  *           type: string
  *       - name: location
  *         in: query
- *         description: Filter by job location
+ *         description: (안양...)
  *         schema:
  *           type: string
  *       - name: experience
  *         in: query
- *         description: Filter by required experience
+ *         description:  (신입, 경력...)
  *         schema:
  *           type: string
+ *       - name: education
+ *         in: query
+ *         description: (고졸...)
+ *         schema:
+ *            type: string
  *       - name: salary
  *         in: query
- *         description: Filter by salary range
+ *         description: (3000만원...)
  *         schema:
  *           type: string
  *       - name: skills
  *         in: query
- *         description: Filter by required skills (comma-separated)
+ *         description: comma-separated (C, Java...)
  *         schema:
  *           type: string
  *     responses:

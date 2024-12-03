@@ -10,6 +10,7 @@ const jobSchema = new mongoose.Schema({
   experienceRequired: { type: String, required: true },
   educationRequired: { type: String },
   salary: { type: String },
+  normalizedSalary: { type: Number },
   employmentType: { type: String },
   deadline: { type: String },
   details: {

@@ -79,8 +79,8 @@ User <- View <- Controller <- Service <- Model
 
 ## 인증 및 보안 구현
 - JWT 기반 인증: jsonwebtoken
-- Access Token 발급 및 검증 (필수)
-<!-- Refresh Token 구현 (가산점) -->
+- Access Token 발급 및 검증
+- Refresh Token 구현
 <!-- 토큰 갱신 메커니즘 (필수) -->
 <!-- 토큰 블랙리스트 관리 (Optional) -->
 <!-- 보안 미들웨어 구현 -->
@@ -93,3 +93,4 @@ User <- View <- Controller <- Service <- Model
 <!-- CSRF 보호 -->
 - SQL Injection 방지
 - 암호화 처리: bcrypt
+
