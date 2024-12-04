@@ -14,7 +14,8 @@ const authenticateToken = require('../middlewares/authenticateToken');
  * @swagger
  * /applications:
  *   post:
- *     summary: Apply for a job
+ *     summary: 지원
+ *     description: 공고된 내역에 지원합니다
  *     tags:
  *       - Applications
  *     requestBody:
@@ -33,8 +34,30 @@ const authenticateToken = require('../middlewares/authenticateToken');
  *     responses:
  *       201:
  *         description: Application created successfully
+ *         content:
+ *          application/json:
+ *              schema: 
+ *                  type:
+ *                  properties:
+ *                      status:
+ *                          type: string
+ *                      data:
+ *                          type: array
+ *                          items:
+ *                              $ref: '#/components/schemas/Application'
  *       400:
  *         description: Bad request or duplicate application
+ *         content:
+ *          application/json:
+ *              schema: 
+ *                  type:
+ *                  properties:
+ *                      status:
+ *                          type: string
+ *                      message:
+ *                          type: string
+ *                      code:
+ *                          type: string
  */
 router.post('/', authenticateToken, createApplication);
 
@@ -42,7 +65,8 @@ router.post('/', authenticateToken, createApplication);
  * @swagger
  * /applications:
  *   get:
- *     summary: Get user applications
+ *     summary: 지원목록 조회
+ *     description: 지원한 목록들을 조회합니다.
  *     tags:
  *       - Applications
  *     parameters:
@@ -73,7 +97,8 @@ router.get('/', authenticateToken, getApplications);
  * @swagger
  * /applications/{id}:
  *   delete:
- *     summary: Cancel an application
+ *     summary: 지원 취소
+ *     description: Application의 status를 cancle로 바꿈
  *     tags:
  *       - Applications
  *     parameters:

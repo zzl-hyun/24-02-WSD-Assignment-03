@@ -50,6 +50,6 @@ router.get('/csrf-token', csrfProtextion, (req, res) => {
 router.use('/users', usersRouter); // /api/users
 router.use('/auth', csrfProtextion, authRouter);   // /api/auth
 router.use('/jobs', jobsRouter);   // /api/jobs
-router.use('/applications', applicationRouter);
+router.use('/applications', csrfProtextion, applicationRouter);
 
 module.exports = router;

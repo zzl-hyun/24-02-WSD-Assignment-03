@@ -1,5 +1,5 @@
 # 24-02-WSD-Assignment-03
-
+### 구인구직 백엔드 서버 만들기 (사람인..?)
 ## 프로젝트 기본 정보
 - 웹 크롤링 이해 및 적용: 사람인에서 채용 공고 데이터를 크롤링하여 수집.
 - 데이터베이스 설계: 크롤링한 데이터를 SQL (MySQL) 또는 NoSQL (MongoDB)로 구조화.
@@ -28,6 +28,10 @@
 
 ## Swagger 접속
 http://113.198.66.75:10042/api-docs
+
+- 접속 후 Authorize 칸에  JWT Access Token, CSRF Token을 기입해야 함
+  ![alt text](image.png)
+
 
 ## 설치 및 실행 가이드
 ~~~
@@ -58,6 +62,7 @@ npm start
     ```
     auth.controller.js
     job.controller.js
+    application.controller.js
     ```
 ### 4. Service
 - **역할**:
@@ -67,6 +72,7 @@ npm start
     ```
     auth.service.js
     job.service.js
+    application.service.js
     ```
 ## MVCS의 흐름
 요청(Request) 흐름:
@@ -85,14 +91,11 @@ User <- View <- Controller <- Service <- Model
 - Refresh Token 구현
 <!-- 토큰 갱신 메커니즘 (필수) -->
 <!-- 토큰 블랙리스트 관리 (Optional) -->
-<!-- 보안 미들웨어 구현 -->
-<!-- 인증 미들웨어 -->
+- 인증 미들웨어: authenticatedToken.js
 <!-- 권한 검사 미들웨어 -->
 - 입력 데이터 및 파라미터 검증: joi
 - Rate Limiting: express-rate-limit
-<!-- 보안 강화 (Optional) -->
 - XSS 방지: xss-clean
-<!-- CSRF 보호 -->
-- SQL Injection 방지
+- CSRF 보호: csurf
 - 암호화 처리: bcrypt
 

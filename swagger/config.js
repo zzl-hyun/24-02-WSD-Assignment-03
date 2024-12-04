@@ -6,6 +6,7 @@ const mongooseToSwagger = require("mongoose-to-swagger");
 const Job = require("../models/Job");
 const User = require("../models/User");
 const Company = require('../models/Company');
+const Application = require('../models/Application');
 
 const options = {
   definition: {
@@ -30,6 +31,7 @@ const options = {
         Job: mongooseToSwagger(Job), // Mongoose 스키마를 Swagger 스키마로 변환
         User: mongooseToSwagger(User),
         Company: mongooseToSwagger(Company),
+        Application: mongooseToSwagger(Application),
       },
       securitySchemes: {
         bearerAuth: {
