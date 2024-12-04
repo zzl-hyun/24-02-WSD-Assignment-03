@@ -6,7 +6,13 @@ const csrfProtextion = csrf({cookie: true});
 const usersRouter = require('./users');
 const authRouter = require('./auth');
 const jobsRouter = require('./jobs');
-
+const applicationRouter = require('./applications');
+/**
+ * @swagger
+ * tags:
+ *   name: CSRF
+ *   description: CSRF 토큰 발급
+ */
 /**
  * @swagger
  * /csrf-token:
@@ -44,5 +50,6 @@ router.get('/csrf-token', csrfProtextion, (req, res) => {
 router.use('/users', usersRouter); // /api/users
 router.use('/auth', csrfProtextion, authRouter);   // /api/auth
 router.use('/jobs', jobsRouter);   // /api/jobs
+router.use('/applications', applicationRouter);
 
 module.exports = router;

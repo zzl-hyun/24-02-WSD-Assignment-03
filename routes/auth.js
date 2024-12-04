@@ -178,6 +178,7 @@ router.post('/login', validateLogin, login);
  *     tags: [Auth]
  *     security:
  *       - refreshToken: []
+ *       - csrfAuth: []
  *     requestBody:
  *       content:
  *         application/json:

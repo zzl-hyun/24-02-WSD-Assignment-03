@@ -85,7 +85,6 @@ exports.login = async ({ email, passwordHash }) => {
   return { accessToken, refreshToken };
 };
 
-
 // 토큰 갱신
 exports.refreshToken = async (refreshToken) => {
   const tokenData = await Token.findOne({ refresh_token: refreshToken });
@@ -126,9 +125,18 @@ exports.updateProfile = async (userId, profileData) => {
         errorCodes.USER_NOT_FOUND.status
     );
   }
+  
   return updatedUser.profile;
 };
 
+/**
+ * 
+ * @param {String} userId 
+ * @param {String} oldPassword 
+ * @param {String} newPassword 
+ * @description 
+ * 비밀번호 수정
+ */
 exports.updatePassword = async (userId, oldPassword, newPassword) => {
   const user = await User.findById(userId);
   if (!user) {

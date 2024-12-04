@@ -23,4 +23,8 @@ module.exports = {
     SERVICE_UNAVAILABLE: { code: 'SERVICE_UNAVAILABLE', message: 'The service is temporarily unavailable.', status: 503 },
     REQUEST_TIMEOUT: { code: 'REQUEST_TIMEOUT', message: 'The request took too long to process.', status: 408 },
     INVALID_REFRESH_TOKEN: { code: 'INVALID_REFRESH_TOKEN', message: 'The provided refresh token is invalid.', status: 401},
+    ALREADY_APPLIED: { code: 'ALREADY_APPLIED', message: 'You have already applied for this job.', status: 400},
+    INVALID_TOKEN_FORMAT: { code: 'INVALID_TOKEN_FORMAT', message: 'Invalid token format.', status: 401},
+    INVALID_ACCESS_TOKEN: { code: 'INVALID_ACCESS_TOKEN', message: 'Invalid token.', status: 403},
+    RESUME_REQUIRED: { code: 'RESUME_REQUIRED', message: 'Required resume', status: 400},
 };
