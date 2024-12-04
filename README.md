@@ -29,8 +29,8 @@
 ## Swagger 접속
 http://113.198.66.75:10042/api-docs
 
-- 접속 후 Authorize 칸에  JWT Access Token, CSRF Token을 기입해야 함
 ![alt text](image.png)
+- 접속 후 Authorize 칸에  JWT Access Token, CSRF Token을 기입해야 함
 
 
 ## 설치 및 실행 가이드
