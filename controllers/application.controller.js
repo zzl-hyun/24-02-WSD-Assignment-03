@@ -4,7 +4,7 @@ const applicationService = require('../services/application.service');
 exports.createApplication = async (req, res, next) => {
   try {
     const { link, resume } = req.body;
-    const userId = req.user.id; // From authentication middleware
+    const userId = req.user.id; // 인증 확인 from /middleware/authenticateToken
 
     const application = await applicationService.createApplication({ userId, link, resume });
     res.status(201).json({ status: 'success', data: application });

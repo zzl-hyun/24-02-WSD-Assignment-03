@@ -15,7 +15,7 @@ const authenticateToken = require('../middlewares/authenticateToken');
  * /applications:
  *   post:
  *     summary: 지원
- *     description: 공고된 내역에 지원합니다
+ *     description: 채용 공고에 지원합니다.
  *     tags:
  *       - Applications
  *     requestBody:
@@ -48,16 +48,9 @@ const authenticateToken = require('../middlewares/authenticateToken');
  *       400:
  *         description: Bad request or duplicate application
  *         content:
- *          application/json:
- *              schema: 
- *                  type:
- *                  properties:
- *                      status:
- *                          type: string
- *                      message:
- *                          type: string
- *                      code:
- *                          type: string
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 router.post('/', authenticateToken, createApplication);
 
@@ -98,7 +91,7 @@ router.get('/', authenticateToken, getApplications);
  * /applications/{id}:
  *   delete:
  *     summary: 지원 취소
- *     description: Application의 status를 cancle로 바꿈
+ *     description: 취소 가능 여부를 확인 후 Application의 status를 업데이트 함
  *     tags:
  *       - Applications
  *     parameters:
@@ -111,6 +104,19 @@ router.get('/', authenticateToken, getApplications);
  *     responses:
  *       200:
  *         description: Application cancelled successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: success
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     $ref: '#/components/schemas/Application'
+ *         
  *       400:
  *         description: Bad request or cancellation not allowed
  */

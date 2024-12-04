@@ -11,6 +11,7 @@ exports.register = async (req, res, next) => {
       email,
       passwordHash, // 요청 필드 이름과 맞춤
       role,
+      companyId,
       profile: { fullName, phoneNumber, bio, skills, resumeUrl } = {}, // profile 내부 파싱
     } = req.body;
 
@@ -20,10 +21,11 @@ exports.register = async (req, res, next) => {
       email,
       passwordHash,
       role,
+      companyId,
       profile: { fullName, phoneNumber, bio, skills, resumeUrl },
     });
 
-    res.status(201).json({ status: 'success', data: result, next });
+    res.status(201).json({ status: 'success', data: result });
   } catch (err) {
     next(err)
   }

@@ -53,6 +53,8 @@ const {
  *                  type: string
  *                  enum: [jobseeker, admin]
  *                  example: jobseeker
+ *                companyId:
+ *                  type: objectId
  *                profile:
  *                   type: object
  *                   required:
@@ -85,9 +87,17 @@ const {
  *            schema:
  *              $ref: '#/components/schemas/User'
  *       400:
- *         description: 잘못된 요청.
+ *         description: Email is already registered.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  *       500:
  *         description: Failed to create user
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 router.post('/register', validateRegister, register);
 
@@ -281,34 +291,25 @@ router.post('/refresh', refreshToken);
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: string
- *                   example: error
- *                 message:
- *                   type: string
- *                   example: Old password is incorrect.
+ *               $ref: '#/components/schemas/ErrorResponse'
  *       401:
  *         description: Unauthorized
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: Access Denied. Missing or invalid Authorization header.
+ *               $ref: '#/components/schemas/ErrorResponse'
  *       403:
- *         description: Forbidden
+ *         description: Token has expired.
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: Token has expired.
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       404:
+ *         description: User not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 router.put('/profile', authenticateToken, validateProfileUpdate, updateProfile);
 

@@ -33,7 +33,7 @@ exports.createApplication = async ({ userId, link, resume }) => {
     );
   }
 
-  // Check for duplicate applications
+  // 중복지원 체크
   const existingApplication = await Application.findOne({ userId, jobId: job._id });
   if (existingApplication) {
     throw new AppError(

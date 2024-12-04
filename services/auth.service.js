@@ -2,6 +2,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const Company = require('../models/Company');
 const Token = require('../models/Token'); // Token 모델 가져오기
 const AppError = require('../utils/AppError');
 const errorCodes = require('../config/errorCodes');
@@ -11,7 +12,7 @@ const errorCodes = require('../config/errorCodes');
  * @param {Object} param0 
  * @returns {Promise<Object>}
  */
-exports.register = async ({ username, email, passwordHash, role, profile }) => {
+exports.register = async ({ username, email, passwordHash, role, companyId, profile }) => {
   // 이메일 중복 확인
   const existingUser = await User.findOne({ email });
   if (existingUser) {
@@ -22,6 +23,14 @@ exports.register = async ({ username, email, passwordHash, role, profile }) => {
     );
   }
 
+  //admin일 경우
+  if (role === 'admin'){
+    const company = await Company.findById({companyId});
+    if (!company){
+      throw new AppError(errorCodes.COMPANY_NOT_FOUND.code, errorCodes.COMPANY_NOT_FOUND.message, errorCodes.COMPANY_NOT_FOUND.status);
+    }
+  }
+    
   // 비밀번호 해싱
   const hashedPassword = await bcrypt.hash(passwordHash, 10);
 
@@ -31,6 +40,7 @@ exports.register = async ({ username, email, passwordHash, role, profile }) => {
     email,
     passwordHash: hashedPassword,
     role: role || 'jobseeker', // 기본값 처리
+    companyId: companyId || '',
     profile: {
       fullName: profile.fullName,
       phoneNumber: profile.phoneNumber || '', 
@@ -149,7 +159,13 @@ exports.updatePassword = async (userId, oldPassword, newPassword) => {
 
 
   const isOldPasswordValid = await bcrypt.compare(oldPassword, user.passwordHash);
-  if (!isOldPasswordValid) throw new Error('Old password is incorrect.');
+  if (!isOldPasswordValid) {
+    throw new AppError(
+      errorCodes.INCORRECT_OLD_PASSWORD.code, 
+      errorCodes.INCORRECT_OLD_PASSWORD.message, 
+      errorCodes.INCORRECT_OLD_PASSWORD.status
+    );
+  }
 
   user.passwordHash = await bcrypt.hash(newPassword, 10);
   await user.save();

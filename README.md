@@ -94,7 +94,7 @@ User <- View <- Controller <- Service <- Model
 - 인증 미들웨어: authenticatedToken.js
 <!-- 권한 검사 미들웨어 -->
 - 입력 데이터 및 파라미터 검증: joi
-- Rate Limiting: express-rate-limit
+- Rate Limiting: express-rate-limit (50 회/분)
 - XSS 방지: xss-clean
 - CSRF 보호: csurf
 - 암호화 처리: bcrypt

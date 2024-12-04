@@ -1,4 +1,6 @@
 const Joi = require('joi');
+const AppError = require('../utils/AppError');
+const errorCodes = require('../config/errorCodes');
 const sanitizeInput = (input) => {
   return input.replace(/[\$]/g, '');
 };
@@ -13,6 +15,7 @@ const sanitizeInput = (input) => {
  * @param {string} req.body.email - 사용자 이메일 (필수, 이메일 형식이어야 함)
  * @param {string} req.body.passwordHash - 사용자 비밀번호 (필수, 최소 4자 이상)
  * @param {string} [req.body.role='jobseeker'] - 사용자 역할 (jobseeker 또는 admin 중 하나, 기본값: jobseeker)
+ * @param {ObjjectId} req.body.companyId - 소속 회사 ID (admin일 때) 
  * @param {Object} [req.body.profile] - 사용자 프로필 데이터 (선택 사항)
  * @param {string} req.body.profile.fullName - 전체 이름 (필수, 공백 불가)
  * @param {string} [req.body.profile.phoneNumber] - 전화번호 (선택 사항)
@@ -44,7 +47,8 @@ const sanitizeInput = (input) => {
  * // 에러 응답 예시
  * {
  *   "status": "error",
- *   "errors": [
+ *   "code": "ERROR_CODES"
+ *   "message": [
  *     "Username is required",
  *     "Invalid email format"
  *   ]
@@ -66,6 +70,12 @@ exports.validateRegister = (req, res, next) => {
     role: Joi.string().valid('jobseeker', 'admin').default('jobseeker').messages({
       'any.only': 'Role must be either jobseeker or admin',
     }),
+    companyId: Joi.string().optional().when('role', { 
+      is: 'admin', // 'role'이 'admin'일 때
+      then: Joi.required().messages({
+        'any.required': 'Company ID is required for admin role',
+      })
+    }),
     profile: Joi.object({
       fullName: Joi.string().trim().required().messages({
         'string.empty': 'Full name is required',
@@ -81,7 +91,7 @@ exports.validateRegister = (req, res, next) => {
 
   if (error) {
     const errorMessages = error.details.map((detail) => detail.message);
-    return res.status(400).json({ status: 'error', errors: errorMessages });
+    throw new AppError(errorCodes.VALIDATION_ERROR.code, errorMessages, errorCodes.VALIDATION_ERROR.status);
   }
 
   next();
@@ -109,7 +119,7 @@ exports.validateLogin = (req, res, next) => {
   const { error } = schema.validate(req.body, { abortEarly: false});
   if (error){
     const errorMessages = error.details.map((detail) => detail.message);
-    return res.status(400).json({ status: 'error', errors: errorMessages });
+    throw new AppError(errorCodes.VALIDATION_ERROR.code, errorMessages, errorCodes.VALIDATION_ERROR.status);
   }
 
   next();

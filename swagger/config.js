@@ -1,12 +1,27 @@
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
 const mongooseToSwagger = require("mongoose-to-swagger");
-
-// Mongoose 모델 불러오기
 const Job = require("../models/Job");
 const User = require("../models/User");
 const Company = require('../models/Company');
 const Application = require('../models/Application');
+const ErrorResponse = {
+  type: 'object',
+  properties: {
+    status: {
+      type: 'string',
+      example: 'error',
+    },
+    code: {
+      type: 'string',
+      example: 'ERROR_CODES',
+    },
+    message: {
+      type: 'string',
+      example: 'Error message.',
+    },
+  },
+};
 
 const options = {
   definition: {
@@ -32,6 +47,7 @@ const options = {
         User: mongooseToSwagger(User),
         Company: mongooseToSwagger(Company),
         Application: mongooseToSwagger(Application),
+        ErrorResponse: ErrorResponse,
       },
       securitySchemes: {
         bearerAuth: {
@@ -54,7 +70,7 @@ const options = {
     ],
   },
   apis: [
-    "./swagger/*.swagger.js",
+    "./swagger/*",
     "./routes/*.js",
     "./models/*.js",
     "./controllers/*.controller.js",
