@@ -5,6 +5,7 @@ const {
   login,
   refreshToken,
   updateProfile,
+  deleteProfile,
 } = require('../controllers/auth.controller');
 const authenticateToken = require('../middlewares/authenticateToken');
 const {
@@ -312,5 +313,84 @@ router.post('/refresh', refreshToken);
  *               $ref: '#/components/schemas/ErrorResponse'
  */
 router.put('/profile', authenticateToken, validateProfileUpdate, updateProfile);
+
+/**
+ * @swagger
+ * /auth/delete:
+ *   delete:
+ *     summary: Delete user profile
+ *     description: This endpoint allows the authenticated user to delete their profile by providing their password.
+ *     tags:
+ *       - Auth
+ *     security:
+ *       - bearerAuth: []  # Authentication via JWT
+ *       - csrfAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               passwordHash:
+ *                 type: string
+ *                 description: The user's password to confirm identity before deleting the profile
+ *                 example: "userPassword123"
+ *     responses:
+ *       200:
+ *         description: Profile successfully deleted
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: "success"
+ *                 message:
+ *                   type: string
+ *                   example: "Profile deleted successfully"
+ *       400:
+ *         description: Incorrect password or validation error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: "error"
+ *                 message:
+ *                   type: string
+ *                   example: "Incorrect password"
+ *       401:
+ *         description: Unauthorized access, authentication failed
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: "error"
+ *                 message:
+ *                   type: string
+ *                   example: "Authentication failed"
+ *       404:
+ *         description: User not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: "error"
+ *                 message:
+ *                   type: string
+ *                   example: "User not found"
+ */
+router.delete('/delete', authenticateToken, deleteProfile);
+
 
 module.exports = router;

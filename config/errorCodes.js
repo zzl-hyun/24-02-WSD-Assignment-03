@@ -31,4 +31,5 @@ module.exports = {
     INVALID_ACCESS_TOKEN: { code: 'INVALID_ACCESS_TOKEN', message: 'Invalid token.', status: 403},
     RESUME_REQUIRED: { code: 'RESUME_REQUIRED', message: 'Required resume', status: 400},
     INCORRECT_OLD_PASSWORD: { code : 'INCORRECT_OLD_PASSWORD', message: 'The old password you provided is incorrect.', status: 400},
+    INCORRECT_PASSWORD: { code : 'INCORRECT_PASSWORD', message: 'The password you provided is incorrect.', status: 400},
 };

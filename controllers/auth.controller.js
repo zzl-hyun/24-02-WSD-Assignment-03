@@ -76,3 +76,17 @@ exports.updateProfile = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.deleteProfile = async (req, res, next) => {
+  try{
+    const userId = req.user.id;
+    const { passwordHash } = req.body;
+
+    await authService.deleteProfile(userId, passwordHash);
+
+    res.status(200).json({ status: 'success', message: 'Profile deleted successfully' });
+
+  } catch (err) {
+    next(err);
+  }
+}

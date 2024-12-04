@@ -172,3 +172,22 @@ exports.updatePassword = async (userId, oldPassword, newPassword) => {
 };
 
 
+exports.deleteProfile = async (userId, passwordHash) => {
+  // 사용자가 존재하는지 확인
+  const user = await User.findById(userId);
+  if (!user) {
+    throw new AppError(errorCodes.USER_NOT_FOUND.code, errorCodes.USER_NOT_FOUND.message, errorCodes.USER_NOT_FOUND.status);
+  }
+
+  const isPasswordValid = await bcrypt.compare(passwordHash, user.passwordHash);
+  if (!isPasswordValid) {
+    throw new AppError(
+      errorCodes.INCORRECT_PASSWORD.code, 
+      errorCodes.INCORRECT_PASSWORD.message, 
+      errorCodes.INCORRECT_PASSWORD.status
+    );
+  }
+
+  // 사용자가 존재하면 삭제
+  await User.findByIdAndDelete(userId);
+};
