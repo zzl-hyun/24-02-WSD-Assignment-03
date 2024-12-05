@@ -31,10 +31,11 @@ const authenticateToken = async (req, res, next) => {
       throw new AppError('TOKEN_BLACKLISTED', 'Access token is invalid', 403);
     }
 
-    // JWT 토큰 검증
+   
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; // 디코딩된 사용자 정보 추가
+    req.user = decoded;
     next();
+    
   } catch (error) {
     // JWT 에러 처리
     if (error.name === 'TokenExpiredError') {
@@ -56,7 +57,7 @@ const authenticateToken = async (req, res, next) => {
     } else if (error instanceof AppError) {
       next(error); // AppError는 그대로 전달
     } else {
-      next(new AppError('UNKNOWN_ERROR', 'Authentication failed.', 500));
+      next(new AppError(error.code, error.message, 500));
     }
   }
 };
