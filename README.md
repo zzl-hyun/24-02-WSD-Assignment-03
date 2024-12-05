@@ -47,16 +47,20 @@ npm start
     - 데이터베이스와 직접 소통하며, 데이터의 구조와 상태를 정의
     - 실제 데이터를 표현하기 위한 스키마를 정의
     ```
-    User.js
-    Token.js
     Job.js
+    Company.js
+    User.js
     Application.js
+    Bookmark.js
+    Token.js
+    LoginHistory.js
     ```
 ### 2. View
 - **역할**:
     - 사용자에게 데이터를 보여주는 UI레이어
     - API 기반 벡엔드에선 json응답이 뷰의 역할을 대신
     - 프론트에선 HTML/CSS/JS 파일이 뷰 역할
+
 ### 3. Controller
 - **역할**:
     - 사용자의 request를 받아 필요한 데이터를 Model에서 가져오고 View로 전달
