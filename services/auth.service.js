@@ -1,6 +1,7 @@
 // services/auth.service.js
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { addToBlacklist } = require('../utils/tokenBlacklist');
 const User = require('../models/User');
 const Company = require('../models/Company');
 const Token = require('../models/Token'); // Token 모델 가져오기
@@ -134,11 +135,23 @@ exports.refreshToken = async (refreshToken) => {
   try {
     const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
 
+    // 이전 Access Token 블랙리스트에 추가
+    const previousAccessToken = tokenData.access_token;
+    if (previousAccessToken) {
+      const expirationTime = jwt.decode(previousAccessToken).exp - Math.floor(Date.now() / 1000);
+      await addToBlacklist(previousAccessToken, expirationTime);
+    }
+
+    // 새 Access Token 발급
     const newAccessToken = jwt.sign(
       { id: decoded.id, role: decoded.role },
       process.env.JWT_SECRET,
       { expiresIn: '15m' }
     );
+
+      // DB에 새 Access Token 저장
+      tokenData.access_token = newAccessToken;
+      await tokenData.save();
 
     return { accessToken: newAccessToken };
   } catch (error) {

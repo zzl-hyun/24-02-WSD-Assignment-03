@@ -8,12 +8,24 @@ const express = require('express');
 const app = express();
 const { swaggerUi, specs } = require("./swagger/config");
 const connectDB = require('./config/db');
+const redisClient = require('./config/redis');
 const errorHandler = require('./middlewares/errorHandler');
 const rateLimit = require('express-rate-limit');
 const xssClean = require('xss-clean');
 const cors = require('cors');
 
+// MongoDB 연결
 connectDB();
+
+// Redis 연결
+// Redis 클라이언트 연결 확인
+(async () => {
+  try {
+    await redisClient.connect(); // Redis 연결
+  } catch (err) {
+    console.error(err);
+  }
+})();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

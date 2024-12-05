@@ -44,7 +44,6 @@ exports.login = async (req, res, next) => {
     // Refresh Token을 쿠키에 저장
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production', // HTTPS에서만 사용 (프로덕션 환경)
       sameSite: 'strict',
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7일
     });
@@ -132,3 +131,22 @@ exports.logout = async (req, res, next) => {
   }
 };
 
+exports.token = async (req, res, next) => {
+  try {
+    // Authorization 헤더에서 Access Token 가져오기
+    const authHeader = req.header('Authorization');
+    const accessToken = authHeader ? authHeader.split(' ')[1] : null;
+
+    // 쿠키에서 Refresh Token 가져오기
+    const refreshToken = req.cookies.refreshToken;
+
+    // 토큰 반환
+    res.status(200).json({
+      status: 'success',
+      access: accessToken || 'No access token provided',
+      refresh: refreshToken || 'No refresh token provided',
+    });
+  } catch (err) {
+    next(err); // 에러 미들웨어로 전달
+  }
+};
