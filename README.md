@@ -14,6 +14,8 @@
 
 <img src="https://img.shields.io/badge/mongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white">
 
+<img src="https://img.shields.io/badge/Redis-FF4438?style=for-the-badge&logo=redis&logoColor=white">
+
 <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSONWebTokens&logoColor=white">
 
 <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=Swagger&logoColor=black">
@@ -86,16 +88,17 @@ User <- View <- Controller <- Service <- Model
 
 
 ## 인증 및 보안 구현
-- JWT 기반 인증: jsonwebtoken
-- Access Token 발급 및 검증
-- Refresh Token 구현
-<!-- 토큰 갱신 메커니즘 (필수) -->
-<!-- 토큰 블랙리스트 관리 (Optional) -->
-- 인증 미들웨어: authenticatedToken.js
+
+- 인증 미들웨어: middlewares/authenticateToken.js
+  - Access Token 발급 및 검증 : 
+  - JWT 기반 인증: <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSONWebTokens&logoColor=white">
+  - Refresh Token 구현
+  - 토큰 갱신 메커니즘 (필수)
+- 토큰 블랙리스트 관리 : utils/tokenBlacklist.js
 <!-- 권한 검사 미들웨어 -->
-- 입력 데이터 및 파라미터 검증: joi
-- Rate Limiting: express-rate-limit (50 회/분)
-- XSS 방지: xss-clean
-- CSRF 보호: csurf
-- 암호화 처리: bcrypt
+- 입력 데이터 및 파라미터 검증: middlewares/validators.js
+- Rate Limiting: [express-rate-limit (50 회/분)](https://express-rate-limit.mintlify.app/overview)
+- XSS 방지: [xss-clean](https://www.npmjs.com/package/xss-clean)
+- CSRF 보호: [csurf](https://github.com/expressjs/csurf)
+- 암호화 처리: [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
 
