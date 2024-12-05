@@ -3,10 +3,12 @@ const router = express.Router();
 const csrf = require('csurf');
 const csrfProtextion = csrf({cookie: true});
 
-const usersRouter = require('./api/users');
+const adminRouter = require('./api/admin');
 const authRouter = require('./api/auth');
-const jobsRouter = require('./api/jobs');
 const applicationRouter = require('./api/applications');
+const bookmarkRouter = require('./api/bookmarks');
+const jobsRouter = require('./api/jobs');
+// const usersRouter = require('./api/users');
 const debugRouter = require('./api/debug');
 /**
  * @swagger
@@ -48,10 +50,12 @@ router.get('/csrf-token', csrfProtextion, (req, res) => {
     res.status(200).json({ csrfToken: req.csrfToken() });
 });
 
-router.use('/users', usersRouter); // /api/users
+// router.use('/users', usersRouter); // /api/users
+router.use('/admin',csrfProtextion, adminRouter);
 router.use('/auth', csrfProtextion, authRouter);   // /api/auth
-router.use('/jobs', jobsRouter);   // /api/jobs
 router.use('/applications', csrfProtextion, applicationRouter);
+router.use('/bookmarks', csrfProtextion, bookmarkRouter);
+router.use('/jobs', jobsRouter);   // /api/jobs
 router.use('/debug', csrfProtextion, debugRouter);
 
 module.exports = router;

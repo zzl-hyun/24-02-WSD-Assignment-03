@@ -2,10 +2,13 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../../controllers/auth.controller');
 const jobController = require('../../controllers/job.controller');
-const User = require('../../models/User'); // User 모델 가져오기
-const Token = require('../../models/Token');
-const LoginHistory = require('../../models/LoginHistory');
+const Application = require('../../models/Application');
+const Bookmark = require('../../models/Bookmark');
+const Company = require('../../models/Company');
 const Job = require('../../models/Job');
+const LoginHistory = require('../../models/LoginHistory');
+const Token = require('../../models/Token');
+const User = require('../../models/User'); // User 모델 가져오기
 const authenticateToken = require('../../middlewares/authenticateToken');
 
 
@@ -18,25 +21,81 @@ const authenticateToken = require('../../middlewares/authenticateToken');
 
 /**
  * @swagger
- * /debug/user:
+ * /debug/application:
  *   get:
- *     summary: User collection 조회
+ *     summary: Application collection 조회
  *     tags: [Debug]
  *     responses:
  *       200:
- *         description: A list of users
+ *         description: A list of Applications
  *         content:
  *           application/json:
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/User'
+ *                 $ref: '#/components/schemas/Application'
  */
-router.get('/user', async (req, res, next) => {
+router.get('/application', async (req, res, next) => {
     try {
-        const users = await User.find(); // 모든 사용자 데이터 조회
-        res.status(200).json({status: 'success', data: users}); // 데이터를 JSON 형식으로 반환
+        const applications = await Application.find(); // 모든 사용자 데이터 조회
+        res.status(200).json({status: 'success', data: applications}); // 데이터를 JSON 형식으로 반환
     } catch (err) {
+        next(err);
+    }
+});
+
+/**
+ * @swagger
+ * /debug/bookmark:
+ *   get:
+ *     summary: Bookmark collection 조회
+ *     tags: [Debug]
+ *     responses:
+ *       200:
+ *         description: A list of bookmarks
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Bookmark'
+ */
+router.get('/bookmark', async (req, res, next) => {
+    try {
+        const bookmarks = await Bookmark.find(); // 모든 사용자 데이터 조회
+        res.status(200).json({status: 'success', data: bookmarks}); // 데이터를 JSON 형식으로 반환
+    } catch (err) {
+        next(err);
+    }
+});
+
+/**
+ * @swagger
+ *  /debug/job:
+ *    get:
+ *      summary: Job collection 조회
+ *      tags: [Debug]
+ *      responses:
+ *         200:
+ *           description: 성공적으로 데이터를 가져옴
+ *           content:
+ *              application/json:
+ *                schema:
+ *                  type: object
+ *                  properties:
+ *                    status:
+ *                      type: string
+ *                      example: success
+ *                    data:
+ *                      type: array
+ *                      items:
+ *                          $ref: '#/components/schemas/Job'
+ */
+router.get('/job', async(req, res, next) => {
+    try{
+        const jobs = await Job.find();
+        res.status(200).json({status: 'success', data: jobs});
+    }catch (err){
         next(err);
     }
 });
@@ -145,36 +204,32 @@ router.post('/token', authenticateToken, async(req, res, next) => {
       }
 });
 
-
 /**
  * @swagger
- *  /debug/job:
- *    get:
- *      summary: 채용 공고 리스트 조회
- *      tags: [Debug]
- *      responses:
- *         200:
- *           description: 성공적으로 데이터를 가져옴
- *           content:
- *              application/json:
- *                schema:
- *                  type: object
- *                  properties:
- *                    status:
- *                      type: string
- *                      example: success
- *                    data:
- *                      type: array
- *                      items:
- *                          $ref: '#/components/schemas/Job'
+ * /debug/user:
+ *   get:
+ *     summary: User collection 조회
+ *     tags: [Debug]
+ *     responses:
+ *       200:
+ *         description: A list of users
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/User'
  */
-router.get('/job', async(req, res, next) => {
-    try{
-        const jobs = await Job.find();
-        res.status(200).json({status: 'success', data: jobs});
-    }catch (err){
+router.get('/user', async (req, res, next) => {
+    try {
+        const users = await User.find(); // 모든 사용자 데이터 조회
+        res.status(200).json({status: 'success', data: users}); // 데이터를 JSON 형식으로 반환
+    } catch (err) {
         next(err);
     }
 });
+
+
+
 
 module.exports = router;
