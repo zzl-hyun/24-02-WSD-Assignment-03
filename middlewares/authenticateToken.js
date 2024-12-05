@@ -25,6 +25,7 @@ const authenticateToken = async (req, res, next) => {
       );
     }
 
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     // 블랙리스트 확인
     const blacklisted = await isBlacklisted(token);
     if (blacklisted) {
@@ -32,7 +33,6 @@ const authenticateToken = async (req, res, next) => {
     }
 
    
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
     next();
     

@@ -97,11 +97,13 @@ exports.login = async ({ email, passwordHash, ip }) => {
   const tokenEntry = await Token.findOne({ user_id: user._id });
   if (tokenEntry) {
     tokenEntry.refresh_token = refreshToken;
+    tokenEntry.access_token = accessToken;
     tokenEntry.expires_at = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7일 뒤
     await tokenEntry.save();
   } else {
     await Token.create({
       user_id: user._id,
+      access_token: accessToken,
       refresh_token: refreshToken,
       expires_at: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7일 뒤
     });
@@ -139,6 +141,7 @@ exports.refreshToken = async (refreshToken) => {
     const previousAccessToken = tokenData.access_token;
     if (previousAccessToken) {
       const expirationTime = jwt.decode(previousAccessToken).exp - Math.floor(Date.now() / 1000);
+      console.log('Expiration time for blacklist:', expirationTime);
       await addToBlacklist(previousAccessToken, expirationTime);
     }
 
