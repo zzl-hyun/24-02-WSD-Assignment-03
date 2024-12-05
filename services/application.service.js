@@ -23,7 +23,6 @@ exports.createApplication = async ({ userId, link, resume }) => {
     );
   }
 
-  // Fetch the job using the provided link
   const job = await Job.findOne({ link });
   if (!job) {
     throw new AppError(
@@ -58,10 +57,10 @@ exports.createApplication = async ({ userId, link, resume }) => {
   return await application.save();
 };
 
-
 /**
- * 
- * @param {*} param0 
+ * 지원 내역 조회
+ * @param {ObjectID} userId 
+ * @param {String} status
  * @returns 
  */
 exports.getApplications = async ({ userId, status, sortBy = 'appliedAt', sortOrder = 'desc' }) => {
@@ -77,8 +76,9 @@ exports.getApplications = async ({ userId, status, sortBy = 'appliedAt', sortOrd
 };
 
 /**
- * 
- * @param {*} param0 
+ * 지원 취소
+ * @param {ObjectID} applicationId 
+ * @param {ObjectID} userId 
  * @returns 
  */
 exports.deleteApplication = async ({ applicationId, userId }) => {
@@ -86,17 +86,29 @@ exports.deleteApplication = async ({ applicationId, userId }) => {
     const application = await Application.findById(applicationId);
 
     if (!application) {
-        throw new Error('Application not found.');
+        throw new AppError(
+          errorCodes.NOT_FOUND.code, 
+          'Application not found.', 
+          errorCodes.NOT_FOUND.status
+        );
     }
 
     // Check if the user is the owner
     if (!application.userId.equals(userId)) {
-        throw new Error('You are not authorized to cancel this application.');
+        throw new AppError(
+          errorCodes.FORBIDDEN_ACTION.code, 
+          'You are not authorized to cancel this application.', 
+          errorCodes.FORBIDDEN_ACTION.status
+        );
     }
 
     // Check if cancellation is allowed (e.g., status is not 'Accepted' or 'Rejected')
     if (application.status === 'Accepted' || application.status === 'Rejected') {
-        throw new Error('Application cannot be cancelled at this stage.');
+        throw new AppError(
+          errorCodes.FORBIDDEN_ACTION.code, 
+          'Application cannot be cancelled at this stage.', 
+          errorCodes.FORBIDDEN_ACTION.status
+        );
     }
 
     // Update status to 'Cancelled'

@@ -116,9 +116,18 @@ router.get('/', authenticateToken, getApplications);
  *                   type: array
  *                   items:
  *                     $ref: '#/components/schemas/Application'
- *         
- *       400:
- *         description: Bad request or cancellation not allowed
+ *       403:
+ *         description: You do not have permission to perform this action.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       404:
+ *         description: Application not found.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 router.delete('/:id', authenticateToken, deleteApplication);
 

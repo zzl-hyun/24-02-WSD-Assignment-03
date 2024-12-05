@@ -7,6 +7,7 @@ const usersRouter = require('./api/users');
 const authRouter = require('./api/auth');
 const jobsRouter = require('./api/jobs');
 const applicationRouter = require('./api/applications');
+const debugRouter = require('./api/debug');
 /**
  * @swagger
  * tags:
@@ -51,5 +52,6 @@ router.use('/users', usersRouter); // /api/users
 router.use('/auth', csrfProtextion, authRouter);   // /api/auth
 router.use('/jobs', jobsRouter);   // /api/jobs
 router.use('/applications', csrfProtextion, applicationRouter);
+router.use('/debug', csrfProtextion, debugRouter);
 
 module.exports = router;

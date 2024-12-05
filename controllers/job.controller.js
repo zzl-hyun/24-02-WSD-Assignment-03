@@ -66,15 +66,3 @@ exports.getJobDetails = async (req, res, next) => {
   }
 };
 
-// debug
-exports.getAllJobs = async (req, res) => {
-  try {
-      const jobs = await jobService.getAllJobs(); // 서비스 호출
-      res.status(200).json({
-        status: 'success',
-        data: jobs,
-      });
-    } catch (err) {
-        next(err);
-    }
-};

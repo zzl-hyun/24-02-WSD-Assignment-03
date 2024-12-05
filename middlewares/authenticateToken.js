@@ -29,7 +29,10 @@ const authenticateToken = async (req, res, next) => {
     // 블랙리스트 확인
     const blacklisted = await isBlacklisted(token);
     if (blacklisted) {
-      throw new AppError('TOKEN_BLACKLISTED', 'Access token is invalid', 403);
+      throw new AppError(
+        errorCodes.TOKEN_BLACKLISTED.code, 
+        errorCodes.TOKEN_BLACKLISTED.message, 
+        errorCodes.TOKEN_BLACKLISTED.status);
     }
 
    

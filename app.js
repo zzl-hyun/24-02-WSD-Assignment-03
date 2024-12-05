@@ -18,14 +18,7 @@ const cors = require('cors');
 connectDB();
 
 // Redis 연결
-// Redis 클라이언트 연결 확인
-(async () => {
-  try {
-    await redisClient.connect(); // Redis 연결
-  } catch (err) {
-    console.error(err);
-  }
-})();
+redisClient.connect();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

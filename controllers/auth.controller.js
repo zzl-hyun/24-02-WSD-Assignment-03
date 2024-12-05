@@ -54,7 +54,6 @@ exports.login = async (req, res, next) => {
   }
 };
 
-// 토큰 갱신
 exports.refreshToken = async (req, res, next) => {
   try {
     const refreshToken = req.cookies.refreshToken; // 쿠키에서 Refresh Token 읽기
@@ -70,7 +69,6 @@ exports.refreshToken = async (req, res, next) => {
   }
 };
 
-// 프로필 수정
 exports.updateProfile = async (req, res, next) => {
   try {
     const { fullName, phoneNumber, bio, skills, resumeUrl, oldPassword, newPassword } = req.body;
@@ -131,22 +129,4 @@ exports.logout = async (req, res, next) => {
   }
 };
 
-exports.token = async (req, res, next) => {
-  try {
-    // Authorization 헤더에서 Access Token 가져오기
-    const authHeader = req.header('Authorization');
-    const accessToken = authHeader ? authHeader.split(' ')[1] : null;
 
-    // 쿠키에서 Refresh Token 가져오기
-    const refreshToken = req.cookies.refreshToken;
-
-    // 토큰 반환
-    res.status(200).json({
-      status: 'success',
-      access: accessToken || 'No access token provided',
-      refresh: refreshToken || 'No refresh token provided',
-    });
-  } catch (err) {
-    next(err); // 에러 미들웨어로 전달
-  }
-};

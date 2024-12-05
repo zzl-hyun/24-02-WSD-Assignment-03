@@ -3,7 +3,12 @@ const Job = require('../models/Job'); // Job 스키마 불러오기
 const AppError = require('../utils/AppError');
 const errorCodes = require('../config/errorCodes');
 
-// Fetch job listings with pagination, filtering, and sorting
+
+/**
+ * 채용공고 조회
+ * @param {*} param0 
+ * @returns 
+ */
 exports.getJobs = async ({ page, size, sortBy, sortOrder, filters }) => {
   const query = {};
   const parseSalary = (salaryString) => {
@@ -88,34 +93,32 @@ exports.getJobs = async ({ page, size, sortBy, sortOrder, filters }) => {
   };
 };
 
-// Fetch job details and update view count
+
+/**
+ * 공고 상세 조회
+ * @param {ObjectId} jobId 
+ * @returns 
+ */
 exports.getJobDetails = async (jobId) => {
-  // Fetch the job details by ID
   const jobDetails = await Job.findById(jobId);
   if (!jobDetails) {
-    throw new AppError(errorCodes.JOB_NOT_FOUND.code, errorCodes.JOB_NOT_FOUND.message, errorCodes.JOB_NOT_FOUND.status);
+    throw new AppError(errorCodes.NOT_FOUND.code, 'Job not found.', errorCodes.NOT_FOUND.status);
   }
 
-  // Increment the view count (add a viewCount field if not present)
+  // 조회수 증가
   jobDetails.viewCount = (jobDetails.viewCount || 0) + 1;
   await jobDetails.save();
 
-  // Find related jobs based on similar skills and location
+  // 관련공고 탐색
   const relatedJobs = await Job.find({
-    _id: { $ne: jobId }, // Exclude the current job
+    _id: { $ne: jobId }, 
     location: jobDetails.location,
     'details.skills': { $in: jobDetails.details.skills },
   })
-      .limit(5) // Limit to 5 related jobs
+      .limit(5) 
       .exec();
 
   return { jobDetails, relatedJobs };
 };
 
-
-// debug
-// MongoDB에서 모든 Job 데이터 조회
-exports.getAllJobs = async () => {
-    return await Job.find();
-};
 

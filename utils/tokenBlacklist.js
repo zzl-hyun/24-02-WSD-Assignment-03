@@ -1,9 +1,12 @@
 const redisClient = require('../config/redis');
+const AppError = require('../utils/AppError');
+const errorCodes = require('../config/errorCodes');
 
-// Promise 기반 메서드 사용
 const setAsync = (key, value, expiry) =>
   redisClient.set(key, value, { EX: expiry });
-const getAsync = (key) => redisClient.get(key);
+
+const getAsync = (key) => 
+  redisClient.get(key);
 
 const addToBlacklist = async (token, expirationTime) => {
   try {
@@ -12,7 +15,11 @@ const addToBlacklist = async (token, expirationTime) => {
     return reply;
   } catch (err) {
     console.error('Redis error while adding to blacklist:', err);
-    throw new Error('Failed to add token to blacklist');
+    throw new AppError(
+      errorCodes.SERVER_ERROR.code, 
+      err.message, 
+      errorCodes.SERVER_ERROR.status
+    );
   }
 };
 
@@ -24,7 +31,11 @@ const isBlacklisted = async (token) => {
     return result === 'blacklisted';
   } catch (err) {
     console.error('Redis error while checking blacklist:', err);
-    throw new Error('Failed to check token in blacklist');
+    throw new AppError(
+      errorCodes.SERVER_ERROR.code, 
+      err.message, 
+      errorCodes.SERVER_ERROR.status
+    );
   }
 };
 

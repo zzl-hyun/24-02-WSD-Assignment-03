@@ -10,6 +10,7 @@ module.exports = {
     // REQUEST_TIMEOUT: 요청 시간이 초과된 경우.
     ALREADY_APPLIED: { code: 'ALREADY_APPLIED', message: 'You have already applied for this job.', status: 400},
     ALREADY_REGISTERED: { code: 'ALREADY_REGISTERED', message: 'Email is already registered.', status: 400 },
+    ALREADY_PROCESSED: { code: 'ALREADY_PROCESSED', message: '이미 처리된 작업입니다.', status: 409},
     BAD_GATEWAY: { code: 'BAD_GATEWAY', message: 'Invalid response received from the upstream server.', status: 502 },
     COMPANY_NOT_FOUND: { code: 'COMPANY_NOT_FOUND', message: 'Company not found', status: 404},
     EXPIRED_TOKEN: { code: "EXPIRED_TOKEN", message: 'Token has expired.', status: 403},
@@ -26,11 +27,13 @@ module.exports = {
     SERVER_ERROR: { code: 'SERVER_ERROR', message: 'An unexpected error occurred.', status: 500 },
     MISSING_FIELDS: { code: 'MISSING_FIELDS', message: 'Required fields are missing.', status: 400 },
     NOT_IMPLEMENTED: { code: 'NOT_IMPLEMENTED', message: 'This functionality is not yet implemented.', status: 501 },
+    NOT_FOUND: { code: 'NOT_FOUND', message: 'Not found.', status: 404 },
     RESOURCE_CONFLICT: { code: 'RESOURCE_CONFLICT', message: 'The resource already exists.', status: 409 },
     RESUME_REQUIRED: { code: 'RESUME_REQUIRED', message: 'Required resume', status: 400},
     REQUEST_TIMEOUT: { code: 'REQUEST_TIMEOUT', message: 'The request took too long to process.', status: 408 },
     SERVICE_UNAVAILABLE: { code: 'SERVICE_UNAVAILABLE', message: 'The service is temporarily unavailable.', status: 503 },
     TOKEN_NOT_FOUND: { code: 'TOKEN_NOT_FOUND', message: 'Token not found', status: 404},
+    TOKEN_BLACKLISTED: { code: 'TOKEN_BLACKLISTED', message: 'Access token is invalid', status: 403},
     UNAUTHORIZED_ACCESS: { code: 'UNAUTHORIZED_ACCESS', message: 'Access denied. Please log in.', status: 401 },
     VALIDATION_ERROR: { code: 'VALIDATION_ERROR', status: 422 },
 };

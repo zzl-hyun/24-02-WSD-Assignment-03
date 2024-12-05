@@ -387,41 +387,4 @@ router.delete('/delete', authenticateToken, deleteProfile);
 router.post('/logout', authenticateToken, logout);
 
 
-/**
- * @swagger
- * /auth/token:
- *   post:
- *     summary: Test token
- *     description: JWT token 테스트
- *     tags: [Auth]
- *     security:
- *       - bearerAuth: []
- *       - csrfAuth: []
- *     responses:
- *       200:
- *         description: tokens
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: string
- *                   example: success
- *                 data:
- *                   type: object
- *                   properties:
- *                     accessToken:
- *                       type: string
- *                       example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
- *       400:
- *         description: Refresh Token 누락
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/ErrorResponse'
- */
-
-router.post('/token', authenticateToken, token);
-
 module.exports = router;

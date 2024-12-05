@@ -8,9 +8,9 @@ const Token = require('../models/Token'); // Token 모델 가져오기
 const LoginHistory = require('../models/LoginHistory');
 const AppError = require('../utils/AppError');
 const errorCodes = require('../config/errorCodes');
-// 회원 가입
+
 /**
- * 
+ * 회원가입 
  * @param {Object} param0 
  * @returns {Promise<Object>}
  */
@@ -25,11 +25,15 @@ exports.register = async ({ username, email, passwordHash, role, companyId, prof
     );
   }
 
-  //admin일 경우
+  //admin일 경우 소속회사를 기입해야 함
   if (role === 'admin'){
     const company = await Company.findById(companyId);
     if (!company){
-      throw new AppError(errorCodes.COMPANY_NOT_FOUND.code, errorCodes.COMPANY_NOT_FOUND.message, errorCodes.COMPANY_NOT_FOUND.status);
+      throw new AppError(
+        errorCodes.COMPANY_NOT_FOUND.code, 
+        errorCodes.COMPANY_NOT_FOUND.message, 
+        errorCodes.COMPANY_NOT_FOUND.status
+      );
     }
   }
     
@@ -57,7 +61,7 @@ exports.register = async ({ username, email, passwordHash, role, companyId, prof
 };
 
 /**
- * 
+ * 로그인
  * @param {String} email
  * @param {String} passwordHash
  * @param {String} ip
@@ -109,6 +113,7 @@ exports.login = async ({ email, passwordHash, ip }) => {
     });
   }
 
+  // 로그인 내역 추가
   await LoginHistory.create({
     user_id: user._id,
     login_at: Date.now(),
@@ -120,11 +125,12 @@ exports.login = async ({ email, passwordHash, ip }) => {
 
 
 /**
- * 
+ * accessToken 갱신
  * @param {String} refreshToken 
  * @returns accessToken
  */
 exports.refreshToken = async (refreshToken) => {
+  //서버와 대조
   const tokenData = await Token.findOne({ refresh_token: refreshToken });
   if (!tokenData) {
     throw new AppError(
@@ -137,7 +143,7 @@ exports.refreshToken = async (refreshToken) => {
   try {
     const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
 
-    // 이전 Access Token 블랙리스트에 추가
+    // 이전 Access Token을 블랙리스트에 추가
     const previousAccessToken = tokenData.access_token;
     if (previousAccessToken) {
       const expirationTime = jwt.decode(previousAccessToken).exp - Math.floor(Date.now() / 1000);
@@ -152,16 +158,24 @@ exports.refreshToken = async (refreshToken) => {
       { expiresIn: '15m' }
     );
 
-      // DB에 새 Access Token 저장
+      // DB에 새 Access Token 기록
       tokenData.access_token = newAccessToken;
       await tokenData.save();
 
     return { accessToken: newAccessToken };
   } catch (error) {
     if (error.name === 'TokenExpiredError') {
-      throw new AppError(errorCodes.EXPIRED_REFRESH_TOKEN.code, errorCodes.EXPIRED_REFRESH_TOKEN.message, errorCodes.EXPIRED_REFRESH_TOKEN.status);
+      throw new AppError(
+        errorCodes.EXPIRED_TOKEN.code, 
+        errorCodes.EXPIRED_TOKEN.message, 
+        errorCodes.EXPIRED_TOKEN.status
+      );
     }
-    throw new AppError(errorCodes.INVALID_REFRESH_TOKEN.code, errorCodes.INVALID_REFRESH_TOKEN.message, errorCodes.INVALID_REFRESH_TOKEN.status);
+    throw new AppError(
+      errorCodes.INVALID_REFRESH_TOKEN.code, 
+      errorCodes.INVALID_REFRESH_TOKEN.message, 
+      errorCodes.INVALID_REFRESH_TOKEN.status
+    );
   }
 };
 
@@ -203,7 +217,6 @@ exports.updateProfile = async (userId, profileData) => {
  * @param {String} oldPassword 
  * @param {String} newPassword 
  * @description 
- * 
  */
 exports.updatePassword = async (userId, oldPassword, newPassword) => {
   const user = await User.findById(userId);
@@ -238,7 +251,11 @@ exports.deleteProfile = async (userId, passwordHash) => {
   // 사용자가 존재하는지 확인
   const user = await User.findById(userId);
   if (!user) {
-    throw new AppError(errorCodes.USER_NOT_FOUND.code, errorCodes.USER_NOT_FOUND.message, errorCodes.USER_NOT_FOUND.status);
+    throw new AppError(
+      errorCodes.USER_NOT_FOUND.code, 
+      errorCodes.USER_NOT_FOUND.message, 
+      errorCodes.USER_NOT_FOUND.status
+    );
   }
 
   const isPasswordValid = await bcrypt.compare(passwordHash, user.passwordHash);
@@ -254,15 +271,26 @@ exports.deleteProfile = async (userId, passwordHash) => {
   await User.findByIdAndDelete(userId);
 };
 
+/**
+ * 로그아웃
+ * @param {String} refreshToken 
+ */
 exports.logout = async (refreshToken) => {
-  const token = await Token.findOne({ refresh_token: refreshToken });
-
-  if (!token) {
+  const tokenData = await Token.findOne({ refresh_token: refreshToken });
+  if (!tokenData) {
     throw new AppError(
-      errorCodes.TOKEN_NOT_FOUND.code,
-      'Refresh token not found',
-      errorCodes.TOKEN_NOT_FOUND.status
+      errorCodes.INVALID_REFRESH_TOKEN.code,
+      errorCodes.INVALID_REFRESH_TOKEN.message,
+      errorCodes.INVALID_REFRESH_TOKEN.status
     );
+  }
+
+  // 이전 Access Token을 블랙리스트에 추가
+  const previousAccessToken = tokenData.access_token;
+  if (previousAccessToken) {
+    const expirationTime = jwt.decode(previousAccessToken).exp - Math.floor(Date.now() / 1000);
+    // console.log('Expiration time for blacklist:', expirationTime);
+    await addToBlacklist(previousAccessToken, expirationTime);
   }
 
   // Refresh token 삭제

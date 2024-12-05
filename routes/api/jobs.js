@@ -9,7 +9,7 @@ const {
  * @swagger
  * tags:
  *   name: Jobs
- *   description: 회사 API
+ *   description: 채용공고 API
  */
 /**
  * @swagger
@@ -108,30 +108,6 @@ const {
  *                          type: integer
  */
 router.get('/', getJobs);
-
-/**
- * @swagger
- *  /jobs/all:
- *    get:
- *      summary: 채용 공고 리스트 조회
- *      tags: [Jobs]
- *      responses:
- *         200:
- *           description: 성공적으로 데이터를 가져옴
- *           content:
- *              application/json:
- *                schema:
- *                  type: object
- *                  properties:
- *                    status:
- *                      type: string
- *                      example: success
- *                    data:
- *                      type: array
- *                      items:
- *                          $ref: '#/components/schemas/Job'
- */
-router.get('/all', getAllJobs);
 
 /**
  * @swagger
