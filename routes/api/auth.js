@@ -3,16 +3,17 @@ const router = express.Router();
 const {
   register,
   login,
+  logout,
   refreshToken,
   updateProfile,
   deleteProfile,
-} = require('../controllers/auth.controller');
-const authenticateToken = require('../middlewares/authenticateToken');
+} = require('../../controllers/auth.controller');
+const authenticateToken = require('../../middlewares/authenticateToken');
 const {
   validateRegister,
   validateLogin,
   validateProfileUpdate,
-} = require('../middlewares/validators');
+} = require('../../middlewares/validators');
 
 /**
  * @swagger
@@ -27,6 +28,8 @@ const {
  *   post:
  *     summary: 회원 가입
  *     tags: [Auth]
+ *     security:
+ *       - csrfAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -107,8 +110,10 @@ router.post('/register', validateRegister, register);
  * /auth/login:
  *   post:
  *     summary: 사용자 로그인
- *     description: 사용자 인증 후 JWT Access Token과 Refresh Token을 반환합니다.
+ *     description: 사용자 인증 후 Access Token과 Refresh Token을 반환합니다. Refresh Token은 쿠키에 저장됩니다.
  *     tags: [Auth]
+ *     security:
+ *       - csrfAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -130,6 +135,11 @@ router.post('/register', validateRegister, register);
  *     responses:
  *       200:
  *         description: 로그인 성공. Access Token 반환.
+ *         headers:
+ *           Set-Cookie:
+ *             description: Refresh Token이 쿠키에 저장됩니다.
+ *             schema:
+ *               type: string
  *         content:
  *           application/json:
  *             schema:
@@ -145,38 +155,18 @@ router.post('/register', validateRegister, register);
  *                       type: string
  *                       description: 인증을 위한 JWT Access Token
  *                       example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
- *                     refreshToken:
- *                       type: string
- *                       description: 새로운 Access Token을 발급받기 위한 Refresh Token
- *                       example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
  *       400:
  *         description: 유효성 검사 실패
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: string
- *                   example: error
- *                 errors:
- *                   type: array
- *                   items:
- *                     type: string
- *                   example: ["Invalid email format", "Password must be at least 4 characters long"]
+ *               $ref: '#/components/schemas/ErrorResponse'
  *       401:
  *         description: 인증 실패
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: string
- *                   example: error
- *                 message:
- *                   type: string
- *                   example: Invalid email or password.
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 router.post('/login', validateLogin, login);
 
@@ -185,22 +175,11 @@ router.post('/login', validateLogin, login);
  * /auth/refresh:
  *   post:
  *     summary: Refresh Token
- *     description: 헤더 또는 본문에 refreshToken을 제공하여 새로운 Access Token을 발급받습니다.
+ *     description: 쿠키에 저장된 Refresh Token을 사용하여 새로운 Access Token을 발급받습니다.
  *     tags: [Auth]
  *     security:
- *       - refreshToken: []
+ *       - bearerAuth: []
  *       - csrfAuth: []
- *     requestBody:
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               refreshToken:
- *                 type: string
- *                 example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
- *             required:
- *               - refreshToken
  *     responses:
  *       200:
  *         description: 새로운 Access Token 발급
@@ -220,10 +199,18 @@ router.post('/login', validateLogin, login);
  *                       example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
  *       400:
  *         description: Refresh Token 누락
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  *       403:
  *         description: Refresh Token 인증 실패
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
-router.post('/refresh', refreshToken);
+router.post('/refresh', authenticateToken, refreshToken);
 
 /**
  * @swagger
@@ -323,7 +310,7 @@ router.put('/profile', authenticateToken, validateProfileUpdate, updateProfile);
  *     tags:
  *       - Auth
  *     security:
- *       - bearerAuth: []  # Authentication via JWT
+ *       - bearerAuth: []
  *       - csrfAuth: []
  *     requestBody:
  *       required: true
@@ -355,29 +342,35 @@ router.put('/profile', authenticateToken, validateProfileUpdate, updateProfile);
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: string
- *                   example: "error"
- *                 message:
- *                   type: string
- *                   example: "Incorrect password"
+ *               $ref: '#/components/schemas/ErrorResponse'
  *       401:
  *         description: Unauthorized access, authentication failed
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: string
- *                   example: "error"
- *                 message:
- *                   type: string
- *                   example: "Authentication failed"
+ *               $ref: '#/components/schemas/ErrorResponse'
  *       404:
  *         description: User not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ */
+router.delete('/delete', authenticateToken, deleteProfile);
+
+/**
+ * @swagger
+ * /auth/logout:
+ *   post:
+ *     summary: Logout
+ *     description: 헤더 또는 본문에 refreshToken을 제공하여 refresh token을 DB에서 찾아 삭제합니다.
+ *     tags: [Auth]
+ *     security:
+ *       - bearerAuth: []
+ *       - csrfAuth: []
+ *     responses:
+ *       200:
+ *         description: Successfully logged out
  *         content:
  *           application/json:
  *             schema:
@@ -385,12 +378,11 @@ router.put('/profile', authenticateToken, validateProfileUpdate, updateProfile);
  *               properties:
  *                 status:
  *                   type: string
- *                   example: "error"
+ *                   example: "success"
  *                 message:
  *                   type: string
- *                   example: "User not found"
+ *                   example: "Logged out successfully"
  */
-router.delete('/delete', authenticateToken, deleteProfile);
-
+router.post('/logout', authenticateToken, logout);
 
 module.exports = router;

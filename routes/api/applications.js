@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { createApplication, getApplications, deleteApplication } = require('../controllers/application.controller');
-const authenticateToken = require('../middlewares/authenticateToken');
+const { createApplication, getApplications, deleteApplication } = require('../../controllers/application.controller');
+const authenticateToken = require('../../middlewares/authenticateToken');
 
 /**
  * @swagger

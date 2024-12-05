@@ -3,8 +3,12 @@ const swaggerJsdoc = require("swagger-jsdoc");
 const mongooseToSwagger = require("mongoose-to-swagger");
 const Job = require("../models/Job");
 const User = require("../models/User");
+const Token = require('../models/Token');
 const Company = require('../models/Company');
 const Application = require('../models/Application');
+const Bookmark = require('../models/Bookmark');
+const LoginHistory = require('../models/LoginHistory');
+const { default: mongoose } = require("mongoose");
 const ErrorResponse = {
   type: 'object',
   properties: {
@@ -44,9 +48,12 @@ const options = {
     components: {
       schemas: {
         Job: mongooseToSwagger(Job), // Mongoose 스키마를 Swagger 스키마로 변환
-        User: mongooseToSwagger(User),
         Company: mongooseToSwagger(Company),
+        User: mongooseToSwagger(User),
         Application: mongooseToSwagger(Application),
+        Bookmark: mongooseToSwagger(Bookmark),
+        Token: mongooseToSwagger(Token),
+        LoginHistory: mongooseToSwagger(LoginHistory),
         ErrorResponse: ErrorResponse,
       },
       securitySchemes: {
@@ -72,6 +79,7 @@ const options = {
   apis: [
     "./swagger/*",
     "./routes/*.js",
+    "./routes/api/*.js",
     "./models/*.js",
     "./controllers/*.controller.js",
     "./services/*.service.js",

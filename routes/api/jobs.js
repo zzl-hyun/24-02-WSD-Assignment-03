@@ -4,7 +4,7 @@ const {
     getJobs,
     getAllJobs,
     getJobDetails,
-} = require('../controllers/job.controller');
+} = require('../../controllers/job.controller');
 /**
  * @swagger
  * tags:

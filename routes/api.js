@@ -3,10 +3,10 @@ const router = express.Router();
 const csrf = require('csurf');
 const csrfProtextion = csrf({cookie: true});
 
-const usersRouter = require('./users');
-const authRouter = require('./auth');
-const jobsRouter = require('./jobs');
-const applicationRouter = require('./applications');
+const usersRouter = require('./api/users');
+const authRouter = require('./api/auth');
+const jobsRouter = require('./api/jobs');
+const applicationRouter = require('./api/applications');
 /**
  * @swagger
  * tags:

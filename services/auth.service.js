@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const Company = require('../models/Company');
 const Token = require('../models/Token'); // Token 모델 가져오기
+const LoginHistory = require('../models/LoginHistory');
 const AppError = require('../utils/AppError');
 const errorCodes = require('../config/errorCodes');
 // 회원 가입
@@ -25,7 +26,7 @@ exports.register = async ({ username, email, passwordHash, role, companyId, prof
 
   //admin일 경우
   if (role === 'admin'){
-    const company = await Company.findById({companyId});
+    const company = await Company.findById(companyId);
     if (!company){
       throw new AppError(errorCodes.COMPANY_NOT_FOUND.code, errorCodes.COMPANY_NOT_FOUND.message, errorCodes.COMPANY_NOT_FOUND.status);
     }
@@ -54,8 +55,14 @@ exports.register = async ({ username, email, passwordHash, role, companyId, prof
   return await newUser.save();
 };
 
-// 로그인
-exports.login = async ({ email, passwordHash }) => {
+/**
+ * 
+ * @param {String} email
+ * @param {String} passwordHash
+ * @param {String} ip
+ * @returns accessToken, refreshTOken
+ */
+exports.login = async ({ email, passwordHash, ip }) => {
   const user = await User.findOne({ email });
   if (!user) {
     throw new AppError(
@@ -85,34 +92,69 @@ exports.login = async ({ email, passwordHash }) => {
     { expiresIn: '7d' }
   );
 
-  // Refresh Token 저장
-  await Token.create({
+  // Refresh Token 저장 또는 업데이트
+  const tokenEntry = await Token.findOne({ user_id: user._id });
+  if (tokenEntry) {
+    tokenEntry.refresh_token = refreshToken;
+    tokenEntry.expires_at = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7일 뒤
+    await tokenEntry.save();
+  } else {
+    await Token.create({
+      user_id: user._id,
+      refresh_token: refreshToken,
+      expires_at: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7일 뒤
+    });
+  }
+
+  await LoginHistory.create({
     user_id: user._id,
-    refresh_token: refreshToken,
-    expires_at: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7일 뒤
+    login_at: Date.now(),
+    ip_address: ip,
   });
 
   return { accessToken, refreshToken };
 };
 
-// 토큰 갱신
+
+/**
+ * 
+ * @param {String} refreshToken 
+ * @returns accessToken
+ */
 exports.refreshToken = async (refreshToken) => {
   const tokenData = await Token.findOne({ refresh_token: refreshToken });
   if (!tokenData) {
     throw new AppError(
-        errorCodes.INVALID_REFRESH_TOKEN.code,
-        errorCodes.INVALID_REFRESH_TOKEN.message,
-        errorCodes.INVALID_REFRESH_TOKEN.status
+      errorCodes.INVALID_REFRESH_TOKEN.code,
+      errorCodes.INVALID_REFRESH_TOKEN.message,
+      errorCodes.INVALID_REFRESH_TOKEN.status
     );
   }
 
-  const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
-  const newAccessToken = jwt.sign({ id: decoded.id, role: decoded.role }, process.env.JWT_SECRET, { expiresIn: '15m' });
+  try {
+    const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
 
-  return { accessToken: newAccessToken };
+    const newAccessToken = jwt.sign(
+      { id: decoded.id, role: decoded.role },
+      process.env.JWT_SECRET,
+      { expiresIn: '15m' }
+    );
+
+    return { accessToken: newAccessToken };
+  } catch (error) {
+    if (error.name === 'TokenExpiredError') {
+      throw new AppError(errorCodes.EXPIRED_REFRESH_TOKEN.code, errorCodes.EXPIRED_REFRESH_TOKEN.message, errorCodes.EXPIRED_REFRESH_TOKEN.status);
+    }
+    throw new AppError(errorCodes.INVALID_REFRESH_TOKEN.code, errorCodes.INVALID_REFRESH_TOKEN.message, errorCodes.INVALID_REFRESH_TOKEN.status);
+  }
 };
 
-// 프로필 수정
+/**
+ * 회원 정보 수정
+ * @param {ObjectId} userId 
+ * @param {Array} profileData 
+ * @returns 
+ */
 exports.updateProfile = async (userId, profileData) => {
   // const filteredProfileData = Object.fromEntries(
   //   Object.entries(profileData).map(([key, value]) => [`profile.${key}`, value])
@@ -140,12 +182,12 @@ exports.updateProfile = async (userId, profileData) => {
 };
 
 /**
- * 
+ * 비밀번호 수정
  * @param {String} userId 
  * @param {String} oldPassword 
  * @param {String} newPassword 
  * @description 
- * 비밀번호 수정
+ * 
  */
 exports.updatePassword = async (userId, oldPassword, newPassword) => {
   const user = await User.findById(userId);
@@ -171,7 +213,11 @@ exports.updatePassword = async (userId, oldPassword, newPassword) => {
   await user.save();
 };
 
-
+/**
+ * 회원 탈퇴
+ * @param {ObjectId} userId 
+ * @param {String} passwordHash 
+ */
 exports.deleteProfile = async (userId, passwordHash) => {
   // 사용자가 존재하는지 확인
   const user = await User.findById(userId);
@@ -190,4 +236,19 @@ exports.deleteProfile = async (userId, passwordHash) => {
 
   // 사용자가 존재하면 삭제
   await User.findByIdAndDelete(userId);
+};
+
+exports.logout = async (refreshToken) => {
+  const token = await Token.findOne({ refresh_token: refreshToken });
+
+  if (!token) {
+    throw new AppError(
+      errorCodes.TOKEN_NOT_FOUND.code,
+      'Refresh token not found',
+      errorCodes.TOKEN_NOT_FOUND.status
+    );
+  }
+
+  // Refresh token 삭제
+  await Token.deleteOne({ refresh_token: refreshToken });
 };

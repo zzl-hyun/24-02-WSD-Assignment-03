@@ -34,19 +34,38 @@ exports.register = async (req, res, next) => {
 exports.login = async (req, res, next) => {
   try {
     const { email, passwordHash } = req.body;
-    const tokens = await authService.login({ email, passwordHash });
-    res.status(200).json({ status: 'success', data: tokens });
+    const ip = req.ip;
+    const { accessToken, refreshToken } = await authService.login({
+      email,
+      passwordHash,
+      ip,
+    });
+
+    // Refresh Token을 쿠키에 저장
+    res.cookie('refreshToken', refreshToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production', // HTTPS에서만 사용 (프로덕션 환경)
+      sameSite: 'strict',
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7일
+    });
+
+    res.status(200).json({ status: 'success', data: { accessToken } });
   } catch (err) {
-    next(err); // 글로벌 에러 핸들러로 전달
+    next(err);
   }
 };
 
 // 토큰 갱신
 exports.refreshToken = async (req, res, next) => {
   try {
-    const { refreshToken } = req.body;
-    const newTokens = await authService.refreshToken(refreshToken);
-    res.status(200).json({ status: 'success', data: newTokens });
+    const refreshToken = req.cookies.refreshToken; // 쿠키에서 Refresh Token 읽기
+    if (!refreshToken) {
+      return res.status(401).json({ message: 'Refresh Token is missing' });
+    }
+
+    const { accessToken } = await authService.refreshToken(refreshToken);
+
+    res.status(200).json({ status: 'success', data: { accessToken } });
   } catch (err) {
     next(err);
   }
@@ -90,3 +109,26 @@ exports.deleteProfile = async (req, res, next) => {
     next(err);
   }
 }
+
+exports.logout = async (req, res, next) => {
+  try {
+    const refreshToken = req.cookies.refreshToken; // 쿠키에서 Refresh Token 읽기
+    if (!refreshToken) {
+      return res.status(400).json({ message: 'No Refresh Token provided' });
+    }
+
+    await authService.logout(refreshToken);
+
+    // Refresh Token 쿠키 삭제
+    res.clearCookie('refreshToken', {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+    });
+
+    res.status(200).json({ status: 'success', message: 'Successfully logged out' });
+  } catch (err) {
+    next(err);
+  }
+};
+
