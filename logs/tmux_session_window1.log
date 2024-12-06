@@ -1,0 +1,418 @@
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api/debug/token [32m200 [0m43.197 ms - 30[0m
+[0mGET /api/debug/user [36m304 [0m27.330 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api/csrf-token [32m200 [0m26.760 ms - 52[0m
+[0mGET /api/debug/job [36m304 [0m140.460 ms - -[0m
+{"level":"error","message":"Expected ',' or '}' after property value in JSON at position 255 (line 11 column 2)","route":"/api/auth/register","stack":"SyntaxError: Expected ',' or '}' after property value in JSON at position 255 (line 11 column 2)\n    at JSON.parse (<anonymous>)\n    at parse (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/body-parser/lib/types/json.js:89:19)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/body-parser/lib/read.js:121:18\n    at invokeCallback (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/raw-body/index.js:224:16)\n    at done (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)","timestamp":"2024-12-06T15:50:08.276Z"}
+[0mPOST /api/auth/register [33m400 [0m37.271 ms - 136[0m
+[0mPOST /api/auth/register [32m201 [0m252.342 ms - 492[0m
+{"level":"error","message":"User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.","route":"/api/auth/register","stack":"ValidationError: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.\n    at Document.invalidate (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3318:32)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3079:17\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2024-12-06T15:51:11.573Z"}
+[0mPOST /api/auth/register [31m500 [0m131.400 ms - 193[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mPOST /api/auth/register [32m201 [0m255.779 ms - 464[0m
+{"level":"error","message":"User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.","route":"/api/auth/register","stack":"ValidationError: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.\n    at Document.invalidate (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3318:32)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3079:17\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2024-12-06T15:55:19.557Z"}
+[0mPOST /api/auth/register [31m500 [0m141.244 ms - 193[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/app.js:58
+pp.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
+^
+
+ReferenceError: pp is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/app.js:58:1[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mbin/www:7:11[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[B^[[B^[[B[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Error Object Error: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.
+    at ValidationError.inspect [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/error/validation.js:52:26[90m)[39m
+[90m    at formatValue (node:internal/util/inspect:809:19)[39m
+[90m    at inspect (node:internal/util/inspect:368:10)[39m
+[90m    at formatWithOptionsInternal (node:internal/util/inspect:2307:40)[39m
+[90m    at formatWithOptions (node:internal/util/inspect:2169:10)[39m
+[90m    at console.value (node:internal/console/constructor:331:14)[39m
+[90m    at console.log (node:internal/console/constructor:376:61)[39m
+    at errorHandler [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/middlewares/errorHandler.js:17:11[90m)[39m
+    at Layer.handle_error [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/layer.js:71:5[90m)[39m
+    at trim_prefix [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/index.js:315:13[90m)[39m {
+  errors: {
+    [32m'profile.phoneNumber'[39m: ValidatorError: Path `profile.phoneNumber` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.phoneNumber'[39m,
+      value: [32m''[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    },
+    [32m'profile.fullName'[39m: ValidatorError: Path `profile.fullName` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.fullName'[39m,
+      value: [90mundefined[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    }
+  },
+  _message: [32m'User validation failed'[39m
+}
+{"level":"error","message":"User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.","route":"/api/auth/register","stack":"ValidationError: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.\n    at Document.invalidate (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3318:32)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3079:17\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2024-12-06T16:05:54.077Z"}
+[0mPOST /api/auth/register [31m500 [0m244.512 ms - 193[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Error Object Error: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.
+    at ValidationError.inspect [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/error/validation.js:52:26[90m)[39m
+[90m    at formatValue (node:internal/util/inspect:809:19)[39m
+[90m    at inspect (node:internal/util/inspect:368:10)[39m
+[90m    at formatWithOptionsInternal (node:internal/util/inspect:2307:40)[39m
+[90m    at formatWithOptions (node:internal/util/inspect:2169:10)[39m
+[90m    at console.value (node:internal/console/constructor:331:14)[39m
+[90m    at console.log (node:internal/console/constructor:376:61)[39m
+    at errorHandler [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/middlewares/errorHandler.js:17:11[90m)[39m
+    at Layer.handle_error [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/layer.js:71:5[90m)[39m
+    at trim_prefix [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/index.js:315:13[90m)[39m {
+  errors: {
+    [32m'profile.phoneNumber'[39m: ValidatorError: Path `profile.phoneNumber` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.phoneNumber'[39m,
+      value: [32m''[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    },
+    [32m'profile.fullName'[39m: ValidatorError: Path `profile.fullName` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.fullName'[39m,
+      value: [90mundefined[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    }
+  },
+  _message: [32m'User validation failed'[39m
+}
+{"level":"error","message":"User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.","route":"/api/auth/register","stack":"ValidationError: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.\n    at Document.invalidate (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3318:32)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3079:17\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2024-12-06T16:08:30.203Z"}
+[0mPOST /api/auth/register [31m500 [0m231.251 ms - 193[0m
+Error Object Error: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.
+    at ValidationError.inspect [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/error/validation.js:52:26[90m)[39m
+[90m    at formatValue (node:internal/util/inspect:809:19)[39m
+[90m    at inspect (node:internal/util/inspect:368:10)[39m
+[90m    at formatWithOptionsInternal (node:internal/util/inspect:2307:40)[39m
+[90m    at formatWithOptions (node:internal/util/inspect:2169:10)[39m
+[90m    at console.value (node:internal/console/constructor:331:14)[39m
+[90m    at console.log (node:internal/console/constructor:376:61)[39m
+    at errorHandler [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/middlewares/errorHandler.js:17:11[90m)[39m
+    at Layer.handle_error [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/layer.js:71:5[90m)[39m
+    at trim_prefix [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/index.js:315:13[90m)[39m {
+  errors: {
+    [32m'profile.phoneNumber'[39m: ValidatorError: Path `profile.phoneNumber` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.phoneNumber'[39m,
+      value: [32m''[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    },
+    [32m'profile.fullName'[39m: ValidatorError: Path `profile.fullName` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.fullName'[39m,
+      value: [90mundefined[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    }
+  },
+  _message: [32m'User validation failed'[39m
+}
+{"level":"error","message":"User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.","route":"/api/auth/register","stack":"ValidationError: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.\n    at Document.invalidate (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3318:32)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3079:17\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2024-12-06T16:08:34.306Z"}
+[0mPOST /api/auth/register [31m500 [0m130.129 ms - 193[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Error Object Error: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.
+    at ValidationError.inspect [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/error/validation.js:52:26[90m)[39m
+[90m    at formatValue (node:internal/util/inspect:809:19)[39m
+[90m    at inspect (node:internal/util/inspect:368:10)[39m
+[90m    at formatWithOptionsInternal (node:internal/util/inspect:2307:40)[39m
+[90m    at formatWithOptions (node:internal/util/inspect:2169:10)[39m
+[90m    at console.value (node:internal/console/constructor:331:14)[39m
+[90m    at console.log (node:internal/console/constructor:376:61)[39m
+    at errorHandler [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/middlewares/errorHandler.js:17:11[90m)[39m
+    at Layer.handle_error [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/layer.js:71:5[90m)[39m
+    at trim_prefix [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/index.js:315:13[90m)[39m {
+  errors: {
+    [32m'profile.phoneNumber'[39m: ValidatorError: Path `profile.phoneNumber` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.phoneNumber'[39m,
+      value: [32m''[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    },
+    [32m'profile.fullName'[39m: ValidatorError: Path `profile.fullName` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.fullName'[39m,
+      value: [90mundefined[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    }
+  },
+  _message: [32m'User validation failed'[39m
+}
+{"level":"error","message":"User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.","route":"/api/auth/register","stack":"ValidationError: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.\n    at Document.invalidate (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3318:32)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3079:17\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2024-12-06T16:09:37.928Z"}
+[0mPOST /api/auth/register [31m500 [0m228.573 ms - 193[0m
+Error Object Error: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.
+    at ValidationError.inspect [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/error/validation.js:52:26[90m)[39m
+[90m    at formatValue (node:internal/util/inspect:809:19)[39m
+[90m    at inspect (node:internal/util/inspect:368:10)[39m
+[90m    at formatWithOptionsInternal (node:internal/util/inspect:2307:40)[39m
+[90m    at formatWithOptions (node:internal/util/inspect:2169:10)[39m
+[90m    at console.value (node:internal/console/constructor:331:14)[39m
+[90m    at console.log (node:internal/console/constructor:376:61)[39m
+    at errorHandler [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/middlewares/errorHandler.js:17:11[90m)[39m
+    at Layer.handle_error [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/layer.js:71:5[90m)[39m
+    at trim_prefix [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/index.js:315:13[90m)[39m {
+  errors: {
+    [32m'profile.phoneNumber'[39m: ValidatorError: Path `profile.phoneNumber` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.phoneNumber'[39m,
+      value: [32m''[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    },
+    [32m'profile.fullName'[39m: ValidatorError: Path `profile.fullName` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.fullName'[39m,
+      value: [90mundefined[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    }
+  },
+  _message: [32m'User validation failed'[39m
+}
+{"level":"error","message":"User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.","route":"/api/auth/register","stack":"ValidationError: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.\n    at Document.invalidate (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3318:32)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3079:17\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2024-12-06T16:09:39.995Z"}
+[0mPOST /api/auth/register [31m500 [0m129.705 ms - 193[0m
+Error Object Error: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.
+    at ValidationError.inspect [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/error/validation.js:52:26[90m)[39m
+[90m    at formatValue (node:internal/util/inspect:809:19)[39m
+[90m    at inspect (node:internal/util/inspect:368:10)[39m
+[90m    at formatWithOptionsInternal (node:internal/util/inspect:2307:40)[39m
+[90m    at formatWithOptions (node:internal/util/inspect:2169:10)[39m
+[90m    at console.value (node:internal/console/constructor:331:14)[39m
+[90m    at console.log (node:internal/console/constructor:376:61)[39m
+    at errorHandler [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/middlewares/errorHandler.js:17:11[90m)[39m
+    at Layer.handle_error [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/layer.js:71:5[90m)[39m
+    at trim_prefix [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/index.js:315:13[90m)[39m {
+  errors: {
+    [32m'profile.phoneNumber'[39m: ValidatorError: Path `profile.phoneNumber` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.phoneNumber'[39m,
+      value: [32m''[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    },
+    [32m'profile.fullName'[39m: ValidatorError: Path `profile.fullName` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.fullName'[39m,
+      value: [90mundefined[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    }
+  },
+  _message: [32m'User validation failed'[39m
+}
+{"level":"error","message":"User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.","route":"/api/auth/register","stack":"ValidationError: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.\n    at Document.invalidate (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3318:32)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3079:17\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2024-12-06T16:09:41.882Z"}
+[0mPOST /api/auth/register [31m500 [0m127.165 ms - 193[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Error Object Error: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.
+    at ValidationError.inspect [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/error/validation.js:52:26[90m)[39m
+[90m    at formatValue (node:internal/util/inspect:809:19)[39m
+[90m    at inspect (node:internal/util/inspect:368:10)[39m
+[90m    at formatWithOptionsInternal (node:internal/util/inspect:2307:40)[39m
+[90m    at formatWithOptions (node:internal/util/inspect:2169:10)[39m
+[90m    at console.value (node:internal/console/constructor:331:14)[39m
+[90m    at console.log (node:internal/console/constructor:376:61)[39m
+    at errorHandler [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/middlewares/errorHandler.js:17:11[90m)[39m
+    at Layer.handle_error [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/layer.js:71:5[90m)[39m
+    at trim_prefix [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/index.js:315:13[90m)[39m {
+  errors: {
+    [32m'profile.phoneNumber'[39m: ValidatorError: Path `profile.phoneNumber` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.phoneNumber'[39m,
+      value: [32m''[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    },
+    [32m'profile.fullName'[39m: ValidatorError: Path `profile.fullName` is required.
+        at validate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1385:13[90m)[39m
+        at SchemaType.doValidate [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/schemaType.js:1369:7[90m)[39m
+        at [90m/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mmongoose[24m/lib/document.js:3071:18
+    [90m    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)[39m {
+      properties: [36m[Object][39m,
+      kind: [32m'required'[39m,
+      path: [32m'profile.fullName'[39m,
+      value: [90mundefined[39m,
+      reason: [90mundefined[39m,
+      [[32mSymbol(mongoose#validatorError)[39m]: [33mtrue[39m
+    }
+  },
+  _message: [32m'User validation failed'[39m
+}
+{"level":"error","message":"User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.","route":"/api/auth/register","stack":"ValidationError: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.\n    at Document.invalidate (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3318:32)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3079:17\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2024-12-06T16:11:14.043Z"}
+[0mPOST /api/auth/register [31m500 [0m239.742 ms - 193[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+{"level":"error","message":"User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.","route":"/api/auth/register","stack":"ValidationError: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.\n    at Document.invalidate (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3318:32)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3079:17\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2024-12-06T16:11:43.637Z"}
+[0mPOST /api/auth/register [31m500 [0m225.613 ms - 193[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+{"level":"error","message":"User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.","route":"/api/auth/register","stack":"ValidationError: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.\n    at Document.invalidate (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3318:32)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3079:17\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2024-12-06T16:16:43.444Z"}
+[0mPOST /api/auth/register [31m500 [0m231.755 ms - 193[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","route":"/api/auth/register","stack":"TypeError: Cannot read properties of undefined (reading 'map')\n    at exports.validateRegister (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:98:41)\n    at Layer.handle [as handle_request] (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:112:3)\n    at Layer.handle [as handle_request] (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/layer.js:95:5)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:275:10)\n    at Function.handle (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:47:12)","timestamp":"2024-12-06T16:17:21.051Z"}
+[0mPOST /api/auth/register [31m500 [0m90.247 ms - 104[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+validation error
+{"code":"VALIDATION_ERROR","level":"error","message":"validation error","route":"/api/auth/register","stack":"Error: validation error\n    at exports.validateRegister (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:100:11)\n    at Layer.handle [as handle_request] (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:112:3)\n    at Layer.handle [as handle_request] (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/layer.js:95:5)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:275:10)\n    at Function.handle (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:47:12)","timestamp":"2024-12-06T16:18:03.974Z"}
+[0mPOST /api/auth/register [33m422 [0m80.385 ms - 73[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+{"level":"error","message":"User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.","route":"/api/auth/register","stack":"ValidationError: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.\n    at Document.invalidate (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3318:32)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3079:17\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2024-12-06T16:18:33.805Z"}
+[0mPOST /api/auth/register [31m500 [0m229.897 ms - 193[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+{"level":"error","message":"User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.","route":"/api/auth/register","stack":"ValidationError: User validation failed: profile.phoneNumber: Path `profile.phoneNumber` is required., profile.fullName: Path `profile.fullName` is required.\n    at Document.invalidate (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3318:32)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/document.js:3079:17\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schemaType.js:1388:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2024-12-06T16:25:25.598Z"}
+[0mPOST /api/auth/register [31m500 [0m229.517 ms - 193[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+validation error
+{"code":"VALIDATION_ERROR","level":"error","message":"validation error","route":"/api/auth/register","stack":"Error: validation error\n    at exports.validateRegister (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:100:11)\n    at Layer.handle [as handle_request] (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:112:3)\n    at Layer.handle [as handle_request] (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/layer.js:95:5)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:275:10)\n    at Function.handle (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:47:12)","timestamp":"2024-12-06T16:34:07.408Z"}
+[0mPOST /api/auth/register [33m422 [0m75.405 ms - 73[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+validation error
+{"code":"VALIDATION_ERROR","level":"error","message":"\"profile\" is required","route":"/api/auth/register","stack":"Error: \"profile\" is required\n    at exports.validateRegister (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:100:11)\n    at Layer.handle [as handle_request] (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:112:3)\n    at Layer.handle [as handle_request] (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/layer.js:95:5)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:275:10)\n    at Function.handle (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:47:12)","timestamp":"2024-12-06T16:34:30.749Z"}
+[0mPOST /api/auth/register [33m422 [0m73.612 ms - 80[0m
+[0mPOST /api/auth/register [32m201 [0m181.765 ms - 391[0m
+{"level":"error","message":"Expected double-quoted property name in JSON at position 135 (line 9 column 3)","route":"/api/auth/register","stack":"SyntaxError: Expected double-quoted property name in JSON at position 135 (line 9 column 3)\n    at JSON.parse (<anonymous>)\n    at parse (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/body-parser/lib/types/json.js:89:19)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/body-parser/lib/read.js:121:18\n    at invokeCallback (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/raw-body/index.js:224:16)\n    at done (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)","timestamp":"2024-12-06T16:36:18.466Z"}
+[0mPOST /api/auth/register [33m400 [0m6.092 ms - 131[0m
+validation error
+{"code":"VALIDATION_ERROR","level":"error","message":"\"profile.phoneNumber\" is required","route":"/api/auth/register","stack":"Error: \"profile.phoneNumber\" is required\n    at exports.validateRegister (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:100:11)\n    at Layer.handle [as handle_request] (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:112:3)\n    at Layer.handle [as handle_request] (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/layer.js:95:5)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:281:22\n    at Function.process_params (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:335:12)\n    at next (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:275:10)\n    at Function.handle (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:174:3)\n    at router (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/index.js:47:12)","timestamp":"2024-12-06T16:36:28.784Z"}
+[0mPOST /api/auth/register [33m422 [0m11.604 ms - 92[0m
+{"level":"error","message":"Expected double-quoted property name in JSON at position 134 (line 8 column 3)","route":"/api/auth/register","stack":"SyntaxError: Expected double-quoted property name in JSON at position 134 (line 8 column 3)\n    at JSON.parse (<anonymous>)\n    at parse (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/body-parser/lib/types/json.js:89:19)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/body-parser/lib/read.js:121:18\n    at invokeCallback (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/raw-body/index.js:224:16)\n    at done (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)","timestamp":"2024-12-06T16:36:40.155Z"}
+[0mPOST /api/auth/register [33m400 [0m2.664 ms - 131[0m
