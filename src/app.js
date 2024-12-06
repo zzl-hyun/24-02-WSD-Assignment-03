@@ -48,15 +48,14 @@ const apiRouter = require('./routes/api');
 // const authRouter = require('./routes/auth');
 // const jobsRouter = require('./routes/jobs');
 app.use('/', indexRouter);
-/**
- * /api로 통합
- */
+
+//api로 통합
 app.use('/api', apiLimiter, apiRouter);
 // app.use('/api/users', apiLimiter, usersRouter);
 // app.use('/api/auth', authRouter);
 // app.use('/api/jobs', jobsRouter);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 app.use(errorHandler);
 
 /**
