@@ -14,6 +14,8 @@ const logger = winston.createLogger({
 });
 
 const errorHandler = (err, req, res, next) => {
+  // console.log('Error Object', err);
+
   logger.error({
     message: err.message,
     code: err.code,

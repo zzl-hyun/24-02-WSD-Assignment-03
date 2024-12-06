@@ -85,17 +85,18 @@ exports.validateRegister = (req, res, next) => {
       fullName: Joi.string().trim().required().messages({
         'string.empty': 'Full name is required',
       }),
-      phoneNumber: Joi.string().trim().optional(),
+      phoneNumber: Joi.string().trim().required(),
       bio: Joi.string().trim().optional(),
       skills: Joi.array().items(Joi.string().trim()).optional(),
       resumeUrl: Joi.string().uri().trim().optional(),
-    }).optional(),
+    }).required(),
   });
 
   const { error } = schema.validate(req.body, { abortEarly: false });
 
   if (error) {
     const errorMessages = error.details.map((detail) => detail.message);
+    console.log('validation error');
     throw new AppError(errorCodes.VALIDATION_ERROR.code, errorMessages, errorCodes.VALIDATION_ERROR.status);
   }
 
