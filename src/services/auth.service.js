@@ -146,7 +146,7 @@ exports.refreshToken = async (refreshToken) => {
     // 이전 Access Token을 블랙리스트에 추가
     const previousAccessToken = tokenData.access_token;
     if (previousAccessToken) {
-      const expirationTime = jwt.decode(previousAccessToken).exp - Math.floor(Date.now() / 1000);
+      const expirationTime = jwt.decode(previousAccessToken).exp;
       console.log('Expiration time for blacklist:', expirationTime);
       await addToBlacklist(previousAccessToken, expirationTime);
     }
@@ -288,7 +288,7 @@ exports.logout = async (refreshToken) => {
   // 이전 Access Token을 블랙리스트에 추가
   const previousAccessToken = tokenData.access_token;
   if (previousAccessToken) {
-    const expirationTime = jwt.decode(previousAccessToken).exp - Math.floor(Date.now() / 1000);
+    const expirationTime = jwt.decode(previousAccessToken).exp;
     // console.log('Expiration time for blacklist:', expirationTime);
     await addToBlacklist(previousAccessToken, expirationTime);
   }
