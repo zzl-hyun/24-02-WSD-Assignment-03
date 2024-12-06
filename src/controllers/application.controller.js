@@ -17,8 +17,9 @@ exports.getApplications = async (req, res) => {
     try {
       const { status, sortBy, sortOrder } = req.query;
       const userId = req.user.id; // From authentication middleware
-  
-      const applications = await applicationService.getApplications({ userId, status, sortBy, sortOrder });
+      const role = req.user.role;
+
+      const applications = await applicationService.getApplications({ userId, role, status, sortBy, sortOrder });
       res.status(200).json({ status: 'success', data: applications });
     } catch (error) {
       res.status(400).json({ status: 'error', message: error.message });

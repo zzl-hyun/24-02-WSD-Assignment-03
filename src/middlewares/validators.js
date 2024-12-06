@@ -70,12 +70,17 @@ exports.validateRegister = (req, res, next) => {
     role: Joi.string().valid('jobseeker', 'admin').default('jobseeker').messages({
       'any.only': 'Role must be either jobseeker or admin',
     }),
-    companyId: Joi.string().optional().when('role', { 
-      is: 'admin', // 'role'이 'admin'일 때
-      then: Joi.required().messages({
-        'any.required': 'Company ID is required for admin role',
-      })
-    }),
+    companyId: Joi.string()
+      .optional()
+      .allow(null, '')
+      .empty('')
+      .default(null)
+      .when('role', {
+        is: 'admin',
+        then: Joi.required().messages({
+          'any.required': 'Company ID is required for admin role',
+        }),
+      }),
     profile: Joi.object({
       fullName: Joi.string().trim().required().messages({
         'string.empty': 'Full name is required',

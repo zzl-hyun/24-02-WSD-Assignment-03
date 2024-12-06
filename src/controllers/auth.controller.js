@@ -15,6 +15,7 @@ exports.register = async (req, res, next) => {
       profile: { fullName, phoneNumber, bio, skills, resumeUrl } = {}, // profile 내부 파싱
     } = req.body;
 
+    // console.log(req.body);
     // 필요한 필드를 service로 전달
     const result = await authService.register({
       username,

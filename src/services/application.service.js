@@ -63,17 +63,35 @@ exports.createApplication = async ({ userId, link, resume }) => {
  * @param {String} status
  * @returns 
  */
-exports.getApplications = async ({ userId, status, sortBy = 'appliedAt', sortOrder = 'desc' }) => {
-    const query = { userId };
-  
-    if (status) {
-      query.status = status;
+exports.getApplications = async ({ userId, role, status, sortBy = 'appliedAt', sortOrder = 'desc' }) => {
+  const query = {};
+
+  if (role === 'admin') {
+    const company = await User.findById(userId, {companyId: 1});
+    if (!company) {
+        throw new Error('Admin user must be associated with a company.');
     }
-  
-    const sort = { [sortBy]: sortOrder === 'asc' ? 1 : -1 };
-  
-    return await Application.find(query).sort(sort).populate('jobId');
+    const companyId = company.companyId;
+
+    // Admin: 회사의 모든 Applications 조회
+    // 먼저 해당 회사의 jobId들을 가져옴
+    const jobIds = await Job.find({ companyId }).select('_id');
+    query.jobId = { $in: jobIds.map(job => job._id) };
+    console.log(jobIds);
+  } else {
+      // 일반 사용자: 본인의 Applications만 조회
+      query.userId = userId;
+  }
+
+  if (status) {
+      query.status = status; // 상태 필터 추가
+  }
+
+  const sort = { [sortBy]: sortOrder === 'asc' ? 1 : -1 };
+
+  return await Application.find(query).sort(sort);
 };
+
 
 /**
  * 지원 취소

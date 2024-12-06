@@ -211,7 +211,7 @@ router.post('/login', validateLogin, login);
  *             schema:
  *               $ref: '#/components/schemas/ErrorResponse'
  */
-router.post('/refresh', authenticateToken, refreshToken);
+router.post('/refresh', refreshToken);
 
 /**
  * @swagger

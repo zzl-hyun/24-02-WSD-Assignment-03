@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const authenticateToken = require('../../middlewares/authenticateToken');
 const isAdmin = require('../../middlewares/isAdmin');
-const { route } = require('./applications');
+const { getApplications } = require('../../controllers/application.controller');
 
 /**
  * @swagger
@@ -33,6 +33,6 @@ const { route } = require('./applications');
  *                          items:
  *                              $ref: '#/components/schemas/Application'
  */
-// route.get('/jobs', authenticateToken, isAdmin);
+router.get('/jobs', authenticateToken, isAdmin, getApplications);
 
 module.exports = router;

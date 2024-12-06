@@ -46,7 +46,7 @@ exports.register = async ({ username, email, passwordHash, role, companyId, prof
     email,
     passwordHash: hashedPassword,
     role: role || 'jobseeker', // 기본값 처리
-    companyId: companyId || '',
+    companyId: companyId || null,
     profile: {
       fullName: profile.fullName,
       phoneNumber: profile.phoneNumber || '', 
@@ -92,7 +92,7 @@ exports.login = async ({ email, passwordHash, ip }) => {
     { expiresIn: '15m' }
   );
   const refreshToken = jwt.sign(
-    { id: user._id },
+    { id: user._id, role: user.role },
     process.env.REFRESH_TOKEN_SECRET,
     { expiresIn: '7d' }
   );
@@ -100,8 +100,8 @@ exports.login = async ({ email, passwordHash, ip }) => {
   // Refresh Token 저장 또는 업데이트
   const tokenEntry = await Token.findOne({ user_id: user._id });
   if (tokenEntry) {
-    tokenEntry.refresh_token = refreshToken;
     tokenEntry.access_token = accessToken;
+    tokenEntry.refresh_token = refreshToken;
     tokenEntry.expires_at = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7일 뒤
     await tokenEntry.save();
   } else {
