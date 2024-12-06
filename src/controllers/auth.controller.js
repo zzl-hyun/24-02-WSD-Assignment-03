@@ -27,8 +27,8 @@ exports.register = async (req, res, next) => {
     });
 
     res.status(201).json({ status: 'success', data: result });
-  } catch (err) {
-    next(err)
+  } catch (error) {
+    next(error)
   }
 };
 
@@ -36,17 +36,13 @@ exports.login = async (req, res, next) => {
   try {
     const { email, passwordHash } = req.body;
     const ip = req.ip;
-    const { accessToken, refreshToken } = await authService.login({
-      email,
-      passwordHash,
-      ip,
-    });
+    const { accessToken, refreshToken } = await authService.login({ email, passwordHash, ip,});
 
     // Refresh Token을 쿠키에 저장
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
       sameSite: 'strict',
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7일
+      maxAge: 1 * 24 * 60 * 60 * 1000, // 1일
     });
 
     res.status(200).json({ status: 'success', data: { accessToken } });
