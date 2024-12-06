@@ -28,6 +28,7 @@ const authenticateToken = async (req, res, next) => {
     // 블랙리스트 확인
     const blacklisted = await isBlacklisted(token);
     if (blacklisted) {
+      console.log("line 31");
       throw new AppError(
         errorCodes.TOKEN_BLACKLISTED.code, 
         errorCodes.TOKEN_BLACKLISTED.message, 
@@ -35,34 +36,27 @@ const authenticateToken = async (req, res, next) => {
       }
       
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-  
     req.user = decoded;
     next();
     
   } catch (error) {
-    // JWT 에러 처리
     if (error.name === 'TokenExpiredError') {
-      next(
-        new AppError(
-          errorCodes.EXPIRED_TOKEN.code,
-          errorCodes.EXPIRED_TOKEN.message,
-          errorCodes.EXPIRED_TOKEN.status
-        )
-      );
+      return next(new AppError(
+        errorCodes.EXPIRED_TOKEN.code,
+        errorCodes.EXPIRED_TOKEN.message,
+        errorCodes.EXPIRED_TOKEN.status
+      ));
     } else if (error.name === 'JsonWebTokenError') {
-      next(
-        new AppError(
-          errorCodes.INVALID_ACCESS_TOKEN.code,
-          errorCodes.INVALID_ACCESS_TOKEN.message,
-          errorCodes.INVALID_ACCESS_TOKEN.status
-        )
-      );
-    } else if (error instanceof AppError) {
-      next(error); // AppError는 그대로 전달
+      return next(new AppError(
+        errorCodes.INVALID_ACCESS_TOKEN.code,
+        errorCodes.INVALID_ACCESS_TOKEN.message,
+        errorCodes.INVALID_ACCESS_TOKEN.status
+      ));
     } else {
-      next(new AppError(error.code, error.message, 500));
+      return next(new AppError(error.code, error.message, 500)); // 기타 에러 처리
     }
   }
+  
 };
 
 module.exports = authenticateToken;
