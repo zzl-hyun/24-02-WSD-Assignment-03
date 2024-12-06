@@ -131,10 +131,6 @@ exports.validateLogin = (req, res, next) => {
   next();
 }
 
-
-
-
-
 /**
  * 
  * @param {*} req 
@@ -154,12 +150,13 @@ exports.validateProfileUpdate = (req, res, next) => {
   });
 
   const { error } = schema.validate(req.body, { abortEarly: false });
-  if (error) {
-    return res.status(400).json({ status: 'error', errors: error.details.map((e) => e.message) });
+  if (error){
+    const errorMessages = error.details.map((detail) => detail.message);
+    throw new AppError(errorCodes.VALIDATION_ERROR.code, errorMessages, errorCodes.VALIDATION_ERROR.status);
   }
 
   if ((req.body.oldPassword && !req.body.newPassword) || (!req.body.oldPassword && req.body.newPassword)) {
-    return res.status(400).json({ status: 'error', message: 'Both oldPassword and newPassword must be provided for password update.' });
+    throw new AppError(errorCodes.MISSING_FIELDS.code, 'Both oldPassword and newPassword must be provided for password update.', errorCodes.MISSING_FIELDS.status);
   }
 
   next();
