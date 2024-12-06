@@ -8,9 +8,10 @@ const setAsync = (key, value, expiry) =>
 const getAsync = (key) => 
   redisClient.get(key);
 
-const addToBlacklist = async (token, expirationTime) => {
+const addToBlacklist = async (token, previousExpirationTime) => {
   try {
-    const reply = await setAsync(token, 'blacklisted', expirationTime);
+    expirationTime = previousExpirationTime - Math.floor(Date.now() / 1000);
+    const reply = await setAsync(token, 'blacklisted', expirationTime );
     console.log('Adding to blacklist:', token, expirationTime);
     return reply;
   } catch (err) {
