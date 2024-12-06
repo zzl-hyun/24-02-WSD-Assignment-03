@@ -43,8 +43,8 @@ const debugRouter = require('./api/debug');
  */
 router.get('/csrf-token', csrfProtextion, (req, res) => {
     res.cookie('XSRF-TOKEN', req.csrfToken(), {
-        httpOnly: false, // JavaScript에서 접근 가능
-        sameSite: 'strict', // CSRF 공격 완화
+        httpOnly: false, 
+        sameSite: 'strict',
     });
 
     res.status(200).json({ csrfToken: req.csrfToken() });
@@ -55,7 +55,7 @@ router.use('/admin',csrfProtextion, adminRouter);
 router.use('/auth', csrfProtextion, authRouter);   // /api/auth
 router.use('/applications', csrfProtextion, applicationRouter);
 router.use('/bookmarks', csrfProtextion, bookmarkRouter);
-router.use('/jobs', jobsRouter);   // /api/jobs
-router.use('/debug', csrfProtextion, debugRouter);
+router.use('/jobs', csrfProtextion, jobsRouter);   // /api/jobs
+router.use('/debug', debugRouter);
 
 module.exports = router;
