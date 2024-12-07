@@ -5,6 +5,7 @@ const {
     getAllJobs,
     getJobDetails,
 } = require('../../controllers/job.controller');
+const { validateID } = require('../../middlewares/validators');
 /**
  * @swagger
  * tags:
@@ -157,6 +158,6 @@ router.get('/', getJobs);
  *                   type: string
  *                   example: Job not found.
  */
-router.get('/:id', getJobDetails);
+router.get('/:id', validateID, getJobDetails);
 
 module.exports = router;

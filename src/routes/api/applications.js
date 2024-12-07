@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { createApplication, getApplications, deleteApplication } = require('../../controllers/application.controller');
 const authenticateToken = require('../../middlewares/authenticateToken');
+const { validateID } = require('../../middlewares/validators');
 
 /**
  * @swagger
@@ -129,6 +130,6 @@ router.get('/', authenticateToken, getApplications);
  *             schema:
  *               $ref: '#/components/schemas/ErrorResponse'
  */
-router.delete('/:id', authenticateToken, deleteApplication);
+router.delete('/:id', authenticateToken, validateID, deleteApplication);
 
 module.exports = router;
