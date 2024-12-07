@@ -2243,3 +2243,680 @@ MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
 [0mGET /api-docs/swagger-ui-init.js [36m304 [0m1.913 ms - -[0m
 [0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m4.067 ms - -[0m
 [0mGET /api-docs/favicon-32x32.png [36m304 [0m1.625 ms - -[0m
+[0mGET /api/debug/application [36m304 [0m25.212 ms - -[0m
+[0mGET /api/csrf-token [32m200 [0m5.419 ms - 52[0m
+[0mGET /api/debug/user [36m304 [0m16.266 ms - -[0m
+[0mPOST /api/auth/login [32m200 [0m230.389 ms - 242[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1Nzc4MDQsImV4cCI6MTczMzU3ODcwNH0.0wU2adG1GCdIq6kEBvn8hiN7m_ZPIoaU90Fq14V_aXY
+Redis result: [1mnull[22m
+[0mGET /api/applications?status=Accepted [32m200 [0m22.000 ms - 321[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1Nzc4MDQsImV4cCI6MTczMzU3ODcwNH0.0wU2adG1GCdIq6kEBvn8hiN7m_ZPIoaU90Fq14V_aXY
+Redis result: [1mnull[22m
+[0mGET /api/applications [32m200 [0m20.160 ms - 612[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1Nzc4MDQsImV4cCI6MTczMzU3ODcwNH0.0wU2adG1GCdIq6kEBvn8hiN7m_ZPIoaU90Fq14V_aXY
+Redis result: [1mnull[22m
+[0mGET /api/applications?status=we [32m200 [0m22.607 ms - 30[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m12.835 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.336 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.429 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.497 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.443 ms - 66174[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.851 ms - -[0m
+[2024-12-07T13:28:52.267Z] [ERROR] Code: MISSING_TOKEN, Message: Access Denied. Missing or invalid Authorization header., Route: /api/applications?status=All, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
+[0mGET /api/applications?status=All [31m500 [0m13.761 ms - 109[0m
+[2024-12-07T13:29:03.499Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/login, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/login [33m403 [0m29.734 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m6.563 ms - 52[0m
+[0mPOST /api/auth/login [32m200 [0m240.652 ms - 242[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[0mGET /api/applications?status=All [32m200 [0m22.261 ms - 612[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[0mGET /api/applications?status=Accepted [36m304 [0m12.343 ms - -[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[0mGET /api/applications?status=Pending [32m200 [0m12.584 ms - 320[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[0mGET /api/applications?status=Rejected [32m200 [0m11.164 ms - 30[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[0mGET /api/applications?status=Cancled [32m200 [0m12.197 ms - 30[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[0mGET /api/applications?status=Accepted [36m304 [0m25.195 ms - -[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:30:07.200Z] [ERROR] Code: VALIDATION_ERROR, Message: Job ID is required., Route: /api/applications/6753d22ebfa617d0e259a3c4, Location:     at exports.validateID (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:169:11)
+[0mDELETE /api/applications/6753d22ebfa617d0e259a3c4 [33m422 [0m11.714 ms - 76[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:30:23.774Z] [ERROR] Code: VALIDATION_ERROR, Message: Job ID is required., Route: /api/applications/674e7990de126bae7c37a1e0, Location:     at exports.validateID (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:169:11)
+[0mDELETE /api/applications/674e7990de126bae7c37a1e0 [33m422 [0m8.138 ms - 76[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:32:18.104Z] [ERROR] Code: SERVER_ERROR, Message: Application not found., Route: /api/applications/674e7990de126bae7c37a1e0, Location:     at exports.deleteApplication (/home/ubuntu/24-02-WSD-Assignment-03/src/services/application.service.js:150:11)
+[0mDELETE /api/applications/674e7990de126bae7c37a1e0 [31m500 [0m48.754 ms - 75[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:32:43.107Z] [ERROR] Code: SERVER_ERROR, Message: Application cannot be cancelled at this stage., Route: /api/applications/6753d22ebfa617d0e259a3c4, Location:     at exports.deleteApplication (/home/ubuntu/24-02-WSD-Assignment-03/src/services/application.service.js:150:11)
+[0mDELETE /api/applications/6753d22ebfa617d0e259a3c4 [31m500 [0m58.943 ms - 99[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:35:01.190Z] [ERROR] Code: VALIDATION_ERROR, Message: Invalid Job ID format. It must be a valid MongoDB ObjectId., Route: /api/applications/%E3%84%B4%E3%85%87%E3%84%B9%E3%84%B4%E3%85%87%E3%84%B9, Location:     at exports.validateID (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:176:11)
+[0mDELETE /api/applications/%E3%84%B4%E3%85%87%E3%84%B9%E3%84%B4%E3%85%87%E3%84%B9 [33m422 [0m18.839 ms - 116[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:35:07.369Z] [ERROR] Code: VALIDATION_ERROR, Message: Invalid Job ID format. It must be a valid MongoDB ObjectId., Route: /api/applications/asdfasdf, Location:     at exports.validateID (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:176:11)
+[0mDELETE /api/applications/asdfasdf [33m422 [0m9.555 ms - 116[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:07.090Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m12.539 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:27.948Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m7.800 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:28.091Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.991 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:28.246Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m9.607 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:28.381Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.824 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:28.530Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m13.819 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:28.659Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m8.110 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:28.814Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.883 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:28.970Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.352 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:29.118Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m7.369 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:29.247Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.078 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:29.413Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.956 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:29.705Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m7.106 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:29.864Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m9.996 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:30.024Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.889 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:30.317Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.665 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:30.480Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.132 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:30.625Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.134 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:30.783Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m11.176 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:30.932Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m7.883 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:31.077Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m7.152 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:33.218Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.174 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:33.389Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.405 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:33.621Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.471 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:33.769Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.348 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:33.930Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.642 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:34.092Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.460 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:34.258Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.427 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:34.423Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m7.371 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:34.585Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.743 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:34.916Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m7.730 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:35.084Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.568 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:35.263Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.710 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:35.426Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.546 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:35.608Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.523 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:35.788Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m7.389 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:35.968Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m6.501 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:36.136Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.376 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:36.322Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.321 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:36.505Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.353 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:36.693Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.900 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:36.880Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m7.323 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:37.046Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.553 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:37.244Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.799 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:37.440Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.534 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:37.623Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.491 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:37.799Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.228 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:37.978Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m7.189 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:38.173Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.541 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:36:38.349Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m5.725 ms - 107[0m
+[0mGET /api/admin/applications [33m429 [0m2.528 ms - 42[0m
+[0mGET /api/admin/applications [33m429 [0m2.066 ms - 42[0m
+[0mGET /api/admin/applications [33m429 [0m1.986 ms - 42[0m
+[0mGET /api/admin/applications [33m429 [0m1.408 ms - 42[0m
+[0mGET /api/admin/applications [33m429 [0m1.508 ms - 42[0m
+[0mGET /api/admin/applications [33m429 [0m1.415 ms - 42[0m
+[0mGET /api/admin/applications [33m429 [0m1.525 ms - 42[0m
+[0mGET /api/admin/applications [33m429 [0m1.543 ms - 42[0m
+[0mGET /api/admin/applications [33m429 [0m1.570 ms - 42[0m
+[0mGET /api/admin/applications [33m429 [0m1.334 ms - 42[0m
+[0mGET /api/admin/applications [33m429 [0m1.197 ms - 42[0m
+[0mGET /api/admin/applications [33m429 [0m1.450 ms - 42[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[0mGET /api/auth/profile [32m200 [0m80.284 ms - 196[0m
+[0mGET /api/debug/user [36m304 [0m21.238 ms - -[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzgxNjAsImV4cCI6MTczMzU3OTA2MH0.po4tSDOfhWv3B1iR6TTJQ5kjyFzKZsledFDQAEq_fvM
+Redis result: [1mnull[22m
+[2024-12-07T13:45:59.987Z] [ERROR] Code: EXPIRED_TOKEN, Message: Token has expired., Route: /api/auth/profile, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:44:19)
+[0mGET /api/auth/profile [33m403 [0m25.972 ms - 72[0m
+Expiration time for blacklist: [33m1733579060[39m
+Redis error while adding to blacklist: [ErrorReply: ERR invalid expire time in 'set' command]
+[2024-12-07T13:47:14.930Z] [ERROR] Code: INVALID_REFRESH_TOKEN, Message: The provided refresh token is invalid., Route: /api/auth/refresh, Location:     at exports.refreshToken (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:187:11)
+[0mPOST /api/auth/refresh [33m401 [0m32.744 ms - 100[0m
+Expiration time for blacklist: [33m1733579060[39m
+Redis error while adding to blacklist: [ErrorReply: ERR invalid expire time in 'set' command]
+[2024-12-07T13:47:40.283Z] [ERROR] Code: INVALID_REFRESH_TOKEN, Message: The provided refresh token is invalid., Route: /api/auth/refresh, Location:     at exports.refreshToken (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:187:11)
+[0mPOST /api/auth/refresh [33m401 [0m15.042 ms - 100[0m
+[0mPOST /api/auth/login [32m200 [0m255.383 ms - 242[0m
+[0mGET /api/csrf-token [32m200 [0m3.211 ms - 52[0m
+Expiration time for blacklist: [33m1733580172[39m
+Adding to blacklist: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkyNzIsImV4cCI6MTczMzU4MDE3Mn0.BuFXNsP8sPMgjCC7aY4Rvd7SdzSlwJCce_pFlaerWno [33m869[39m
+[0mPOST /api/auth/refresh [32m200 [0m18.752 ms - 242[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mGET /api/auth/profile [32m200 [0m12.574 ms - 196[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mGET /api/auth/profile [32m200 [0m54.626 ms - 464[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mGET /api/auth/profile [32m200 [0m58.559 ms - 267[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mGET /api/auth/profile [36m304 [0m44.971 ms - -[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[2024-12-07T13:56:16.389Z] [ERROR] Code: VALIDATION_ERROR, Message: "newPassword" length must be at least 6 characters long, Route: /api/auth/profile, Location:     at exports.validateProfileUpdate (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:155:11)
+[0mPUT /api/auth/profile [33m422 [0m85.437 ms - 114[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mPUT /api/auth/profile [32m200 [0m287.921 ms - 78[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mGET /api/auth/profile [32m200 [0m11.961 ms - 285[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [32m200 [0m33.227 ms - 75[0m
+[0mGET /api/debug/job [36m304 [0m127.127 ms - -[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[2024-12-07T13:58:31.725Z] [ERROR] Code: VALIDATION_ERROR, Message: ID  required., Route: /api/bookmarks, Location:     at exports.validateID (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:169:11)
+[0mPOST /api/bookmarks [33m422 [0m13.376 ms - 70[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[2024-12-07T13:59:08.717Z] [ERROR] Code: VALIDATION_ERROR, Message: Invalid Job ID format. It must be a valid MongoDB ObjectId., Route: /api/bookmarks, Location:     at exports.validateID (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:176:11)
+[0mPOST /api/bookmarks [33m422 [0m45.811 ms - 116[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[2024-12-07T13:59:48.477Z] [ERROR] Code: VALIDATION_ERROR, Message: ID  required., Route: /api/bookmarks, Location:     at exports.validateID (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:169:11)
+[0mPOST /api/bookmarks [33m422 [0m48.407 ms - 70[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [33m400 [0m46.528 ms - 49[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[2024-12-07T14:00:29.195Z] [ERROR] Code: VALIDATION_ERROR, Message: ID  required., Route: /api/bookmarks, Location:     at exports.validateID (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:169:11)
+[0mPOST /api/bookmarks [33m422 [0m45.978 ms - 70[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m58.872 ms - 60[0m
+{
+  details: {
+    skills: [ [32m'Python'[39m, [32m'Java'[39m, [32m'웹개발'[39m, [32m'백엔드/서버개발'[39m, [32m'앱개발'[39m ],
+    benefits: [ [32m'인기있는'[39m ]
+  },
+  _id: new ObjectId([32m'674e7990de126bae7c37a1e0'[39m),
+  companyId: new ObjectId([32m'674c5a602237c36805591bec'[39m),
+  jobTitle: [32m'지속 성장가능한 개발 인력 모집-Flutter,Python,JAVA,재택가능'[39m,
+  link: [32m'https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=49472340&location=ts&searchword=python&searchType=search&paid_fl=n&search_uuid=e9d2aba4-58d9-443c-b0d8-ffa2cdb85756'[39m,
+  location: [32m'경기 안양시 동안구'[39m,
+  experienceRequired: [32m'경력무관'[39m,
+  educationRequired: [32m'대졸'[39m,
+  salary: [32m'3,000 만원'[39m,
+  employmentType: [32m'정규직'[39m,
+  deadline: [32m'채용시'[39m,
+  createdAt: [32m'24/11/26'[39m,
+  __v: [33m0[39m,
+  viewCount: [33m33[39m,
+  normalizedSalary: [33m30000000[39m
+}
+[0mGET /api/jobs/674e7990de126bae7c37a1e0 [32m200 [0m74.106 ms - 4361[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m26.227 ms - 62[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m40.326 ms - 60[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m15.345 ms - 62[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m16.884 ms - 60[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m17.613 ms - 62[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m16.324 ms - 60[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m16.894 ms - 62[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [36m304 [0m24.898 ms - -[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [36m304 [0m12.813 ms - -[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [36m304 [0m13.535 ms - -[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [36m304 [0m11.489 ms - -[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [36m304 [0m11.948 ms - -[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[2024-12-07T14:03:23.124Z] [ERROR] Code: EXPIRED_TOKEN, Message: Token has expired., Route: /api/bookmarks?page=1&limit=10, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:44:19)
+[0mGET /api/bookmarks?page=1&limit=10 [33m403 [0m7.936 ms - 72[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[2024-12-07T14:03:23.450Z] [ERROR] Code: EXPIRED_TOKEN, Message: Token has expired., Route: /api/bookmarks?page=1&limit=10, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:44:19)
+[0mGET /api/bookmarks?page=1&limit=10 [33m403 [0m8.455 ms - 72[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[2024-12-07T14:03:32.684Z] [ERROR] Code: EXPIRED_TOKEN, Message: Token has expired., Route: /api/bookmarks, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:44:19)
+[0mPOST /api/bookmarks [33m403 [0m6.845 ms - 72[0m
+Expiration time for blacklist: [33m1733580203[39m
+Redis error while adding to blacklist: [ErrorReply: ERR invalid expire time in 'set' command]
+[2024-12-07T14:03:41.017Z] [ERROR] Code: INVALID_REFRESH_TOKEN, Message: The provided refresh token is invalid., Route: /api/auth/refresh, Location:     at exports.refreshToken (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:187:11)
+[0mPOST /api/auth/refresh [33m401 [0m14.804 ms - 100[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI
+Redis result: [1mnull[22m
+[2024-12-07T14:04:49.988Z] [ERROR] Code: EXPIRED_TOKEN, Message: Token has expired., Route: /api/debug/token, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:44:19)
+[0mPOST /api/debug/token [33m403 [0m20.049 ms - 72[0m
+[0mGET /api/debug/token [32m200 [0m17.149 ms - 1666[0m
+[0mGET /api/debug/user [32m200 [0m14.121 ms - 1767[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.341 ms - -[0m
+[0mGET /api-docs/swagger-ui.css.map [36m304 [0m1.775 ms - -[0m
+[0mGET /api/debug/token [36m304 [0m15.510 ms - -[0m
+Expiration time for blacklist: [33m1733580203[39m
+Redis error while adding to blacklist: [ErrorReply: ERR invalid expire time in 'set' command]
+[2024-12-07T14:09:54.229Z] [ERROR] Code: INVALID_REFRESH_TOKEN, Message: The provided refresh token is invalid., Route: /api/auth/refresh, Location:     at exports.refreshToken (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:187:11)
+[0mPOST /api/auth/refresh [33m401 [0m20.927 ms - 100[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Expiration time for blacklist: [33m1733580203[39m
+Redis error while adding to blacklist: [ErrorReply: ERR invalid expire time in 'set' command]
+[2024-12-07T14:10:11.269Z] [ERROR] Code: INVALID_REFRESH_TOKEN, Message: The provided refresh token is invalid., Route: /api/auth/refresh, Location:     at exports.refreshToken (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:187:11)
+[0mPOST /api/auth/refresh [33m401 [0m57.952 ms - 100[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Expiration time for blacklist: [33m1733580203[39m
+Redis error while adding to blacklist: [ErrorReply: ERR invalid expire time in 'set' command]
+[2024-12-07T14:10:42.259Z] [ERROR] Code: INVALID_REFRESH_TOKEN, Message: The provided refresh token is invalid., Route: /api/auth/refresh, Location:     at exports.refreshToken (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:188:11)
+[0mPOST /api/auth/refresh [33m401 [0m55.438 ms - 100[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Expiration time for blacklist: [33m-588[39m
+Redis error while adding to blacklist: [ErrorReply: ERR invalid expire time in 'set' command]
+[2024-12-07T14:13:11.271Z] [ERROR] Code: INVALID_REFRESH_TOKEN, Message: The provided refresh token is invalid., Route: /api/auth/refresh, Location:     at exports.refreshToken (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:187:11)
+[0mPOST /api/auth/refresh [33m401 [0m59.352 ms - 100[0m
+[0mGET /api-docs [36m301 [0m6.329 ms - 183[0m
+[0mGET /api-docs/ [32m200 [0m3.584 ms - 3106[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.899 ms - 66133[0m
+[0mGET /api-docs/swagger-ui.css [32m200 [0m6.808 ms - 152072[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [32m200 [0m18.313 ms - 230007[0m
+[0mGET /api-docs/swagger-ui-bundle.js [32m200 [0m7.079 ms - 1426050[0m
+Expiration time for blacklist: [33m-687[39m
+Redis error while adding to blacklist: [ErrorReply: ERR invalid expire time in 'set' command]
+[2024-12-07T14:14:50.840Z] [ERROR] Code: INVALID_REFRESH_TOKEN, Message: The provided refresh token is invalid., Route: /api/auth/refresh, Location:     at exports.refreshToken (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:187:11)
+[0mPOST /api/auth/refresh [33m401 [0m17.312 ms - 100[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Expiration time for blacklist: [33m-707[39m
+Redis error while adding to blacklist: [ErrorReply: ERR invalid expire time in 'set' command]
+[2024-12-07T14:15:10.369Z] [ERROR] Code: INVALID_REFRESH_TOKEN, Message: The provided refresh token is invalid., Route: /api/auth/refresh, Location:     at exports.refreshToken (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:187:11)
+[0mPOST /api/auth/refresh [33m401 [0m59.584 ms - 100[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Expiration time for blacklist: [33m1733580203[39m
+Redis error while adding to blacklist: [ErrorReply: ERR invalid expire time in 'set' command]
+[2024-12-07T14:15:34.279Z] [ERROR] Code: INVALID_REFRESH_TOKEN, Message: The provided refresh token is invalid., Route: /api/auth/refresh, Location:     at exports.refreshToken (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:187:11)
+[0mPOST /api/auth/refresh [33m401 [0m70.592 ms - 100[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Expiration time for blacklist: [33m1733580203[39m
+Adding to blacklist: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1NzkzMDMsImV4cCI6MTczMzU4MDIwM30.TipBOTXmDy32SYP_UffkIvYAK76SYv-sYTBILQmB3dI [33m1733580203[39m
+[0mPOST /api/auth/refresh [32m200 [0m79.812 ms - 242[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Expiration time for blacklist: [33m892[39m
+Adding to blacklist: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NDMsImV4cCI6MTczMzU4MTg0M30.VcIM2QAb0iWvj3ykBzGXtO3XevnHoJnHpFrIMSl5nxQ [33m892[39m
+[0mPOST /api/auth/refresh [32m200 [0m79.013 ms - 242[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.666 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.172 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m3.410 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m4.942 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m4.839 ms - -[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [32m200 [0m51.367 ms - 75[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m62.676 ms - 60[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[2024-12-07T14:17:39.614Z] [ERROR] Code: N/A, Message: Schema hasn't been registered for model "Jobs".
+Use mongoose.model(name, schema), Route: /api/bookmarks?page=1&limit=10, Location:     at Connection.model (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/connection.js:1230:13)
+[0mGET /api/bookmarks?page=1&limit=10 [31m500 [0m26.391 ms - 136[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[2024-12-07T14:17:44.276Z] [ERROR] Code: N/A, Message: Schema hasn't been registered for model "Jobs".
+Use mongoose.model(name, schema), Route: /api/bookmarks?page=1&limit=10, Location:     at Connection.model (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/connection.js:1230:13)
+[0mGET /api/bookmarks?page=1&limit=10 [31m500 [0m15.600 ms - 136[0m
+[0mGET /api/debug/bookmark [32m200 [0m15.450 ms - 185[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m28.583 ms - 62[0m
+[0mGET /api/debug/bookmark [32m200 [0m7.118 ms - 30[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m18.213 ms - 60[0m
+[0mGET /api/debug/bookmark [32m200 [0m9.769 ms - 185[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[2024-12-07T14:19:11.725Z] [ERROR] Code: N/A, Message: Schema hasn't been registered for model "Jobs".
+Use mongoose.model(name, schema), Route: /api/bookmarks?page=1&limit=10, Location:     at Connection.model (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/connection.js:1230:13)
+[0mGET /api/bookmarks?page=1&limit=10 [31m500 [0m14.791 ms - 136[0m
+{
+  details: {
+    skills: [ [32m'Python'[39m, [32m'Java'[39m, [32m'웹개발'[39m, [32m'백엔드/서버개발'[39m, [32m'앱개발'[39m ],
+    benefits: [ [32m'인기있는'[39m ]
+  },
+  _id: new ObjectId([32m'674e7990de126bae7c37a1e0'[39m),
+  companyId: new ObjectId([32m'674c5a602237c36805591bec'[39m),
+  jobTitle: [32m'지속 성장가능한 개발 인력 모집-Flutter,Python,JAVA,재택가능'[39m,
+  link: [32m'https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=49472340&location=ts&searchword=python&searchType=search&paid_fl=n&search_uuid=e9d2aba4-58d9-443c-b0d8-ffa2cdb85756'[39m,
+  location: [32m'경기 안양시 동안구'[39m,
+  experienceRequired: [32m'경력무관'[39m,
+  educationRequired: [32m'대졸'[39m,
+  salary: [32m'3,000 만원'[39m,
+  employmentType: [32m'정규직'[39m,
+  deadline: [32m'채용시'[39m,
+  createdAt: [32m'24/11/26'[39m,
+  __v: [33m0[39m,
+  viewCount: [33m34[39m,
+  normalizedSalary: [33m30000000[39m
+}
+[0mGET /api/jobs/674e7990de126bae7c37a1e0 [32m200 [0m47.500 ms - 4361[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[2024-12-07T14:23:28.661Z] [ERROR] Code: N/A, Message: Schema hasn't been registered for model "Jobs".
+Use mongoose.model(name, schema), Route: /api/bookmarks?page=1&limit=10, Location:     at Connection.model (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/connection.js:1230:13)
+[0mGET /api/bookmarks?page=1&limit=10 [31m500 [0m18.013 ms - 136[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [32m200 [0m64.106 ms - 230[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [36m304 [0m63.673 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [32m200 [0m78.258 ms - 938[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [36m304 [0m73.962 ms - -[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m75.242 ms - 62[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [32m200 [0m31.853 ms - 75[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m34.906 ms - 60[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1ODA5NTEsImV4cCI6MTczMzU4MTg1MX0.ya-wxBbA4MGBAQ_72xCf2wnIw080bqe6WxEi9S01a0M
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [32m200 [0m25.000 ms - 938[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
