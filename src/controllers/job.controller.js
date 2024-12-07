@@ -66,3 +66,16 @@ exports.getJobDetails = async (req, res, next) => {
   }
 };
 
+exports.deleteJob = async (req, res, next) => {
+  try {
+    const userId = req.user.id;
+    const jobId = req.params.id;
+    const { passwordHash } = req.body;
+
+    await jobService.deleteJob(jobId, userId, passwordHash);
+
+    res.status(200).json({ status: 'success', message: 'Job deleted successfully' });
+  } catch (error){
+    next(error);
+  }
+};

@@ -64,7 +64,7 @@ exports.validateRegister = (req, res, next) => {
       'string.email': 'Invalid email format',
       'any.required': 'Email is required',
     }),
-    passwordHash: Joi.string().min(4).trim().required().messages({
+    password: Joi.string().min(4).trim().required().messages({
       'string.min': 'Password must be at least 4 characters long',
       'any.required': 'Password is required',
     }),
@@ -116,7 +116,7 @@ exports.validateLogin = (req, res, next) => {
       'string.email': 'Invalid email format',
       'any.required': 'Email is required',
     }),
-    passwordHash: Joi.string().min(4).trim().required().messages({
+    password: Joi.string().min(4).trim().required().messages({
       'string.min': 'Password must be at least 4 characters long',
       'any.required': 'Password is required',
     }),

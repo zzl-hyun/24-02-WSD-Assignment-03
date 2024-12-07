@@ -1,8 +1,9 @@
 // services/job.service.js
 const Job = require('../models/Job'); // Job 스키마 불러오기
+const User = require('../models/User');
+const bcrypt = require('bcrypt');
 const AppError = require('../utils/AppError');
 const errorCodes = require('../config/errorCodes');
-
 
 /**
  * 채용공고 조회
@@ -132,11 +133,54 @@ exports.getJobDetails = async (jobId) => {
     return { jobDetails, relatedJobs };
   } 
   catch (error) {
-    throw new AppError(
-      errorCodes.SERVER_ERROR.code,
-      error.message || 'An unexpected error occurred.',
-      errorCodes.SERVER_ERROR.status
-    );
+    throw error
+  }
+};
+
+exports.deleteJob = async (jobId, userId, passwordHash) => {
+  try {
+    const user = await User.findById(userId, { companyId: 1, passwordHash: 1 });
+    if (!user) {
+      throw new AppError(
+        errorCodes.USER_NOT_FOUND.code,
+        errorCodes.USER_NOT_FOUND.message,
+        errorCodes.USER_NOT_FOUND.status
+      );
+    }
+
+    const isPasswordValid = await bcrypt.compare(passwordHash, user.passwordHash);
+    if (!isPasswordValid) {
+      throw new AppError(
+        errorCodes.INCORRECT_PASSWORD.code,
+        errorCodes.INCORRECT_PASSWORD.message,
+        errorCodes.INCORRECT_PASSWORD.status
+      );
+    }
+
+  
+    const job = await Job.findById(jobId, { companyId: 1 });
+    if (!job) {
+      throw new AppError(
+        errorCodes.NOT_FOUND.code,
+        'Job not found.',
+        errorCodes.NOT_FOUND.status
+      );
+    }
+
+
+    if (user.companyId.toString() !== job.companyId.toString()) {
+      throw new AppError(
+        errorCodes.FORBIDDEN_ACTION.code,
+        '회사 소속이 아닙니다.',
+        errorCodes.FORBIDDEN_ACTION.status
+      );
+    }
+
+
+    await Job.findByIdAndDelete(jobId);
+  } catch (error) {
+
+    throw error;
   }
 };
 
