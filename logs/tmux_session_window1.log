@@ -1121,3 +1121,323 @@ Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3N
 Redis result: [1mnull[22m
 [2024-12-07T06:57:05.646Z] [ERROR] Code: EXPIRED_TOKEN, Message: Token has expired., Route: /api/debug/token, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:44:19)
 [0mPOST /api/debug/token [33m403 [0m8.978 ms - 72[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZDQ3NzVkZDQ3ZWQxMDY5ZTJlZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMzU1MzU5MywiZXhwIjoxNzMzNTU0NDkzfQ.RYxguUltDoP6Uodyjor2b2Yx1F5DMGksPDLTRX336Y0
+Redis result: [1mnull[22m
+[2024-12-07T07:04:11.809Z] [ERROR] Code: EXPIRED_TOKEN, Message: Token has expired., Route: /api/admin/applications/6753d22ebfa617d0e259a3c4?status=Accepted, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:44:19)
+[0mPUT /api/admin/applications/6753d22ebfa617d0e259a3c4?status=Accepted [33m403 [0m34.738 ms - 72[0m
+^[[B^[[A^[[B^[[B^[[B^[[B^[[B^[[B[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/admin.js:139
+router.delete('/jobs/:id', authenticateToken, isAdmin, validateID, deleteJob);
+                                                                   ^
+
+ReferenceError: deleteJob is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/admin.js:139:68[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:6:21[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/admin.js:139
+router.delete('/jobs/:id', authenticateToken, isAdmin, validateID, deleteJob);
+                                                                   ^
+
+ReferenceError: deleteJob is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/admin.js:139:68[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:6:21[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/admin.js:139
+router.delete('/jobs/:id', authenticateToken, isAdmin, validateID, deleteJob);
+                                                                   ^
+
+ReferenceError: deleteJob is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/admin.js:139:68[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:6:21[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/admin.js:139
+router.delete('/jobs/:id', authenticateToken, isAdmin, validateID, deleteJob);
+                                                                   ^
+
+ReferenceError: deleteJob is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/admin.js:139:68[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:6:21[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+^[[A^[[B^[[B^[[B^Cshutting down...
+Server closed
+
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ [Kubuntu@3333:~/24-02-WSD-Assignment-03$ [Kubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ [Kubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ ^C[?2004l[?2004h[?2004l
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ [Kubuntu@3333:~/24-02-WSD-Assignment-03$ clear
+[?2004l[H[J[3J[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ clearnpm run dev
+[?2004l
+> wsd@0.0.0 dev
+> nodemon ./bin/www
+
+[1G[0K[33m[nodemon] 3.1.7[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.463 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.363 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.301 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.894 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.712 ms - 50129[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.161 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.701 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.932 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.498 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.776 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.642 ms - 50132[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.655 ms - -[0m
+[0mGET /api/debug/job [36m304 [0m135.744 ms - -[0m
+[0mGET /api/debug/user [36m304 [0m11.013 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m15.069 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.648 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.523 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m1.786 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.687 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.281 ms - -[0m
+[2024-12-07T07:26:57.459Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/admin/applications/-09%E3%85%91?status=Accepted, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPUT /api/admin/applications/-09%E3%85%91?status=Accepted [33m403 [0m14.587 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m4.763 ms - 52[0m
+[2024-12-07T07:27:52.816Z] [ERROR] Code: MISSING_TOKEN, Message: Access Denied. Missing or invalid Authorization header., Route: /api/applications, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
+[0mGET /api/applications [31m500 [0m9.278 ms - 109[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[2024-12-07T07:28:51.904Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/login, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/login [33m403 [0m44.193 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m14.675 ms - 52[0m
+[2024-12-07T07:29:00.710Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/login, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/login [33m403 [0m4.960 ms - 72[0m
+[2024-12-07T07:29:06.113Z] [ERROR] Code: MISSING_TOKEN, Message: Access Denied. Missing or invalid Authorization header., Route: /api/applications, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
+[0mGET /api/applications [31m500 [0m4.658 ms - 109[0m
+[2024-12-07T07:29:39.541Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/applications, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/applications [33m403 [0m4.437 ms - 72[0m
+[0mGET /api/jobs?page=1&size=20&sortBy=createdAt&sortOrder=desc [36m304 [0m66.366 ms - -[0m
+[2024-12-07T07:31:54.428Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/refresh, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/refresh [33m403 [0m3.524 ms - 72[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+Redis Connected...
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m11.278 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.808 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m1.910 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.843 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m1.948 ms - 50013[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.682 ms - -[0m
+[0mGET /api-docs/ [32m200 [0m2.401 ms - 3106[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.591 ms - 50013[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [32m200 [0m12.321 ms - 230007[0m
+[0mGET /api-docs/swagger-ui.css [32m200 [0m11.086 ms - 152072[0m
+[0mGET /api-docs/swagger-ui-bundle.js [32m200 [0m12.860 ms - 1426050[0m
+[0mGET /api-docs/favicon-32x32.png [32m200 [0m5.451 ms - 628[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.139 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.421 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.382 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.191 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m4.585 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.941 ms - -[0m
+[2024-12-07T07:40:39.938Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/login, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/login [33m403 [0m28.374 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m4.409 ms - 52[0m
+[2024-12-07T07:40:56.664Z] [ERROR] Code: VALIDATION_ERROR, Message: Password is required,"password" is not allowed, Route: /api/auth/login, Location:     at exports.validateLogin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:128:11)
+[0mPOST /api/auth/login [33m422 [0m64.227 ms - 105[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[2024-12-07T07:41:33.995Z] [ERROR] Code: SERVER_ERROR, Message: data and hash arguments required, Route: /api/auth/login, Location:     at exports.login (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:135:11)
+[0mPOST /api/auth/login [31m500 [0m87.530 ms - 85[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[2024-12-07T07:42:08.768Z] [ERROR] Code: N/A, Message: data and hash arguments required, Route: /api/auth/login, Location:     at Object.compare (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/bcrypt/bcrypt.js:208:17)
+[0mPOST /api/auth/login [31m500 [0m80.675 ms - 85[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[2024-12-07T07:43:01.620Z] [ERROR] Code: N/A, Message: data and hash arguments required, Route: /api/auth/login, Location:     at Object.compare (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/bcrypt/bcrypt.js:208:17)
+[0mPOST /api/auth/login [31m500 [0m81.758 ms - 85[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mPOST /api/auth/login [32m200 [0m230.747 ms - 242[0m
+[0mPOST /api/auth/login [32m200 [0m140.366 ms - 242[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [32m200 [0m4.608 ms - 3106[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m1.029 ms - 50013[0m
+[0mGET /api-docs/swagger-ui.css [32m200 [0m3.465 ms - 152072[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [32m200 [0m3.513 ms - 230007[0m
+[0mGET /api-docs/swagger-ui-bundle.js [32m200 [0m3.390 ms - 1426050[0m
+[0mGET /api-docs/favicon-32x32.png [32m200 [0m2.899 ms - 628[0m
+[2024-12-07T07:43:56.678Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/login, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/login [33m403 [0m32.268 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m3.973 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m3.411 ms - 52[0m
+[0mPOST /api/auth/login [32m200 [0m167.416 ms - 242[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[2024-12-07T07:46:37.354Z] [ERROR] Code: VALIDATION_ERROR, Message: Password is required,"passwordHash" is not allowed, Route: /api/auth/register, Location:     at exports.validateRegister (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:100:11)
+[0mPOST /api/auth/register [33m422 [0m90.538 ms - 109[0m
+[0mGET /api-docs/ [36m304 [0m6.668 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.681 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m4.561 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.594 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.374 ms - 50005[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.059 ms - -[0m
+[2024-12-07T07:46:48.755Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/register, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/register [33m403 [0m4.682 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m4.195 ms - 52[0m
+[2024-12-07T07:48:50.349Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/register, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/register [33m403 [0m11.654 ms - 72[0m
+[2024-12-07T07:49:06.768Z] [ERROR] Code: SERVER_ERROR, Message: User validation failed: companyId: Cast to ObjectId failed for value "Unknown Type: objectId" (type string) at path "companyId" because of "BSONError", Route: /api/auth/register, Location:     at exports.register (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:64:11)
+[0mPOST /api/auth/register [31m500 [0m208.366 ms - 209[0m
+[0mPOST /api/auth/register [32m201 [0m144.671 ms - 481[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.616 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.853 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.189 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.966 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m4.159 ms - 50042[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.889 ms - -[0m
+[2024-12-07T07:50:19.226Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/register, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/register [33m403 [0m29.302 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m3.698 ms - 52[0m
+[2024-12-07T07:50:34.726Z] [ERROR] Code: VALIDATION_ERROR, Message: Company ID is required for admin role, Route: /api/auth/register, Location:     at exports.validateRegister (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:100:11)
+[0mPOST /api/auth/register [33m422 [0m85.148 ms - 94[0m
+[0mGET /api/debug/user [32m200 [0m36.654 ms - 1749[0m

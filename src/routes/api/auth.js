@@ -40,7 +40,7 @@ const {
  *             required:
  *                - username
  *                - email
- *                - passwordHash
+ *                - password
  *                - fullName
  *                - phoneNumber
  *             properties:
@@ -51,7 +51,7 @@ const {
  *                  type: string
  *                  format: email
  *                  example: user@example.com
- *                passwordHash:
+ *                password:
  *                  type: string
  *                  example: securepassword
  *                role:
@@ -60,6 +60,7 @@ const {
  *                  example: jobseeker
  *                companyId:
  *                  type: objectId
+ *                  example: ""
  *                profile:
  *                   type: object
  *                   required:
@@ -126,13 +127,13 @@ router.post('/register', validateRegister, register);
  *                 type: string
  *                 description: 사용자의 이메일 주소
  *                 example: user@example.com
- *               passwordHash:
+ *               password:
  *                 type: string
  *                 description: 사용자의 비밀번호
- *                 example: password123
+ *                 example: 1234
  *             required:
  *               - email
- *               - passwordHash
+ *               - password
  *     responses:
  *       200:
  *         description: 로그인 성공. Access Token 반환.
@@ -364,7 +365,7 @@ router.delete('/delete', authenticateToken, deleteProfile);
  * /auth/logout:
  *   post:
  *     summary: Logout
- *     description: 헤더 또는 본문에 refreshToken을 제공하여 refresh token을 DB에서 찾아 삭제합니다.
+ *     description: 로그아웃
  *     tags: [Auth]
  *     security:
  *       - bearerAuth: []

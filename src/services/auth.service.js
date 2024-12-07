@@ -14,9 +14,10 @@ const errorCodes = require('../config/errorCodes');
  * @param {Object} param0 
  * @returns {Promise<Object>}
  */
-exports.register = async ({ username, email, passwordHash, role, companyId, profile }) => {
+exports.register = async ({ username, email, password, role, companyId, profile }) => {
   // 이메일 중복 확인
-  try {  const existingUser = await User.findOne({ email });
+  try {  
+    const existingUser = await User.findOne({ email });
     if (existingUser) {
       throw new AppError(
           errorCodes.ALREADY_REGISTERED.code,
@@ -38,7 +39,7 @@ exports.register = async ({ username, email, passwordHash, role, companyId, prof
     }
       
     // 비밀번호 해싱
-    const hashedPassword = await bcrypt.hash(passwordHash, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     // 새 사용자 생성
     const newUser = new User({
@@ -75,8 +76,9 @@ exports.register = async ({ username, email, passwordHash, role, companyId, prof
  * @param {String} ip
  * @returns accessToken, refreshTOken
  */
-exports.login = async ({ email, passwordHash, ip }) => {
-  try {  const user = await User.findOne({ email });
+exports.login = async ({ email, password, ip }) => {
+  try {  
+    const user = await User.findOne({ email });
     if (!user) {
       throw new AppError(
         errorCodes.INVALID_CREDENTIALS.code,
@@ -85,7 +87,7 @@ exports.login = async ({ email, passwordHash, ip }) => {
       );
     }
 
-    const isPasswordValid = await bcrypt.compare(passwordHash, user.passwordHash);
+    const isPasswordValid = await bcrypt.compare(password, user.passwordHash);
     if (!isPasswordValid) {
       throw new AppError(
         errorCodes.INVALID_CREDENTIALS.code,
@@ -131,11 +133,7 @@ exports.login = async ({ email, passwordHash, ip }) => {
     return { accessToken, refreshToken };
   }
   catch (error) {
-    throw new AppError(
-      errorCodes.SERVER_ERROR.code,
-      error.message || 'An unexpected error occurred.',
-      errorCodes.SERVER_ERROR.status
-    );
+    throw error;
   }
 };
 

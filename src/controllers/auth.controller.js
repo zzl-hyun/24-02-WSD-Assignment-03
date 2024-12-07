@@ -9,10 +9,10 @@ exports.register = async (req, res, next) => {
     const {
       username,
       email,
-      passwordHash, // 요청 필드 이름과 맞춤
+      password, 
       role,
       companyId,
-      profile: { fullName, phoneNumber, bio, skills, resumeUrl } = {}, // profile 내부 파싱
+      profile: { fullName, phoneNumber, bio, skills, resumeUrl } = {}, 
     } = req.body;
 
     // console.log(req.body);
@@ -20,7 +20,7 @@ exports.register = async (req, res, next) => {
     const result = await authService.register({
       username,
       email,
-      passwordHash,
+      password,
       role,
       companyId,
       profile: { fullName, phoneNumber, bio, skills, resumeUrl },
@@ -34,9 +34,9 @@ exports.register = async (req, res, next) => {
 
 exports.login = async (req, res, next) => {
   try {
-    const { email, passwordHash } = req.body;
+    const { email, password } = req.body;
     const ip = req.ip;
-    const { accessToken, refreshToken } = await authService.login({ email, passwordHash, ip,});
+    const { accessToken, refreshToken } = await authService.login({ email, password, ip,});
 
     // Refresh Token을 쿠키에 저장
     res.cookie('refreshToken', refreshToken, {
