@@ -1441,3 +1441,805 @@ MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
 [2024-12-07T07:50:34.726Z] [ERROR] Code: VALIDATION_ERROR, Message: Company ID is required for admin role, Route: /api/auth/register, Location:     at exports.validateRegister (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:100:11)
 [0mPOST /api/auth/register [33m422 [0m85.148 ms - 94[0m
 [0mGET /api/debug/user [32m200 [0m36.654 ms - 1749[0m
+^[[B^[[B[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+node:internal/modules/cjs/loader:1252
+  throw err;
+  ^
+
+Error: Cannot find module '../middlewares/authMiddleware'
+Require stack:
+- /home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/app.js
+- /home/ubuntu/24-02-WSD-Assignment-03/bin/www
+[90m    at Function._resolveFilename (node:internal/modules/cjs/loader:1249:15)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1075:27)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:3:31[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m {
+  code: [32m'MODULE_NOT_FOUND'[39m,
+  requireStack: [
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/app.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/bin/www'[39m
+  ]
+}
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+node:internal/modules/cjs/loader:1252
+  throw err;
+  ^
+
+Error: Cannot find module '../middlewares/authMiddleware'
+Require stack:
+- /home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/app.js
+- /home/ubuntu/24-02-WSD-Assignment-03/bin/www
+[90m    at Function._resolveFilename (node:internal/modules/cjs/loader:1249:15)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1075:27)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:3:31[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m {
+  code: [32m'MODULE_NOT_FOUND'[39m,
+  requireStack: [
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/app.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/bin/www'[39m
+  ]
+}
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+node:internal/modules/cjs/loader:1252
+  throw err;
+  ^
+
+Error: Cannot find module '../middlewares/authMiddleware'
+Require stack:
+- /home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/app.js
+- /home/ubuntu/24-02-WSD-Assignment-03/bin/www
+[90m    at Function._resolveFilename (node:internal/modules/cjs/loader:1249:15)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1075:27)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:3:31[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m {
+  code: [32m'MODULE_NOT_FOUND'[39m,
+  requireStack: [
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/app.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/bin/www'[39m
+  ]
+}
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+node:internal/modules/cjs/loader:1252
+  throw err;
+  ^
+
+Error: Cannot find module '../middlewares/authMiddleware'
+Require stack:
+- /home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/app.js
+- /home/ubuntu/24-02-WSD-Assignment-03/bin/www
+[90m    at Function._resolveFilename (node:internal/modules/cjs/loader:1249:15)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1075:27)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:3:31[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m {
+  code: [32m'MODULE_NOT_FOUND'[39m,
+  requireStack: [
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/app.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/bin/www'[39m
+  ]
+}
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+node:internal/modules/cjs/loader:1252
+  throw err;
+  ^
+
+Error: Cannot find module '../middlewares/authenticateToken'
+Require stack:
+- /home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/app.js
+- /home/ubuntu/24-02-WSD-Assignment-03/bin/www
+[90m    at Function._resolveFilename (node:internal/modules/cjs/loader:1249:15)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1075:27)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:3:31[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m {
+  code: [32m'MODULE_NOT_FOUND'[39m,
+  requireStack: [
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/app.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/bin/www'[39m
+  ]
+}
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js:60
+router.post('/bookmarks', authenticateToken, bookmarkController.toggleBookmark);
+                                             ^
+
+ReferenceError: bookmarkController is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:60:46[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:9:24[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js:60
+router.post('/bookmarks', authenticateToken, bookmarkController.toggleBookmark);
+                                             ^
+
+ReferenceError: bookmarkController is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:60:46[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:9:24[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js:60
+router.post('/bookmarks', authenticateToken, bookmarkController.toggleBookmark);
+                                             ^
+
+ReferenceError: bookmarkController is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:60:46[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:9:24[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js:60
+router.post('/bookmarks', authenticateToken, bookmarkController.toggleBookmark);
+                                             ^
+
+ReferenceError: bookmarkController is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:60:46[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:9:24[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+(node:314862) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 exit listeners added to [Bus]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/bookmarks.js:60
+router.post('/bookmarks', authenticateToken, bookmarkController.toggleBookmark);
+                                             ^
+
+ReferenceError: bookmarkController is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:60:46[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:9:24[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:202
+        throw new Error(msg);
+        ^
+
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/route.js:202:15[90m)[39m
+    at proto.<computed> [as post] [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/index.js:510:19[90m)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:60:8[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:202
+        throw new Error(msg);
+        ^
+
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/route.js:202:15[90m)[39m
+    at proto.<computed> [as post] [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/index.js:510:19[90m)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:60:8[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+^C
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ 
+[?2004l[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ npm run dev
+[?2004l
+> wsd@0.0.0 dev
+> nodemon ./bin/www
+
+[1G[0K[33m[nodemon] 3.1.7[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:202
+        throw new Error(msg);
+        ^
+
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/route.js:202:15[90m)[39m
+    at proto.<computed> [as post] [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/index.js:510:19[90m)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:60:8[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/node_modules/express/lib/router/route.js:202
+        throw new Error(msg);
+        ^
+
+Error: Route.get() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as get] [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/route.js:202:15[90m)[39m
+    at proto.<computed> [as get] [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39mnode_modules/[4mexpress[24m/lib/router/index.js:510:19[90m)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/bookmarks.js:130:8[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+^[[A^[[A^[[A[0mGET /api-docs/ [36m304 [0m15.677 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.752 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.904 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.705 ms - 55440[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.063 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m3.931 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.097 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.455 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.914 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.725 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.708 ms - 55738[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m3.131 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+[0mGET /api-docs/ [36m304 [0m6.358 ms - -[0m
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.071 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m1.847 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.399 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m0.965 ms - 55211[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.157 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m15.181 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.168 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m7.043 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.353 ms - 54861[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m5.806 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.073 ms - -[0m
+[2024-12-07T08:23:40.583Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/bookmarks, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/bookmarks [33m403 [0m18.059 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m6.483 ms - 52[0m
+[2024-12-07T08:23:59.004Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/bookmarks, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/bookmarks [33m403 [0m6.683 ms - 72[0m
+[2024-12-07T08:24:16.138Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/bookmarks, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/bookmarks [33m403 [0m5.024 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m2.451 ms - 52[0m
+[2024-12-07T08:24:35.490Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/bookmarks, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/bookmarks [33m403 [0m5.226 ms - 72[0m
+[2024-12-07T08:24:59.112Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/login, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/login [33m403 [0m39.556 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m2.845 ms - 52[0m
+[2024-12-07T08:25:18.285Z] [ERROR] Code: INVALID_CREDENTIALS, Message: Invalid email or password., Route: /api/auth/login, Location:     at exports.login (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:92:13)
+[0mPOST /api/auth/login [33m401 [0m197.697 ms - 86[0m
+[2024-12-07T08:25:27.633Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/bookmarks, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/bookmarks [33m403 [0m3.343 ms - 72[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.203 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.202 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.303 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.257 ms - 54869[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m6.277 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.926 ms - -[0m
+[0mGET /api/csrf-token [32m200 [0m8.294 ms - 52[0m
+[2024-12-07T08:26:16.210Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/bookmarks, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/bookmarks [33m403 [0m10.881 ms - 72[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[2024-12-07T08:27:04.499Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/bookmarks, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/bookmarks [33m403 [0m18.708 ms - 72[0m
+[2024-12-07T08:27:05.846Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/bookmarks, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/bookmarks [33m403 [0m3.376 ms - 72[0m
+[0mGET /api-docs/ [36m304 [0m7.125 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.011 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.268 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m1.900 ms - 54927[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.204 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.647 ms - -[0m
+[0mGET /api/csrf-token [32m200 [0m4.868 ms - 52[0m
+[0mPOST /api/bookmarks [33m404 [0m253.182 ms - 1338[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mPOST /api/bookmarks [33m404 [0m178.575 ms - 1338[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mPOST /api/bookmarks [33m404 [0m163.664 ms - 1338[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mPOST /api/bookmarks [33m404 [0m157.238 ms - 1338[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m24.529 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.588 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.926 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.688 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.569 ms - 55156[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.167 ms - -[0m
+[2024-12-07T08:30:48.233Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/bookmarks, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/bookmarks [33m403 [0m34.847 ms - 72[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api/csrf-token [32m200 [0m16.028 ms - 52[0m
+[0mPOST /api/bookmarks [33m404 [0m169.649 ms - 1338[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mPOST /api/bookmarks [33m404 [0m173.389 ms - 1338[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mPOST /api/bookmarks [33m404 [0m170.885 ms - 1338[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mPOST /api/bookmarks [33m404 [0m182.833 ms - 1338[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mPOST /api/bookmarks [33m404 [0m180.577 ms - 1338[0m
+[0mGET /api-docs/ [36m304 [0m7.827 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.617 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.372 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m4.309 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m5.871 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.356 ms - -[0m
+[0mGET /api/csrf-token [32m200 [0m4.578 ms - 52[0m
+[0mPOST /api/bookmarks [33m404 [0m44.027 ms - 1338[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mPOST /api/bookmarks [33m404 [0m179.236 ms - 1338[0m
+[2024-12-07T08:35:06.389Z] [ERROR] Code: MISSING_TOKEN, Message: Access Denied. Missing or invalid Authorization header., Route: /api/auth/logout, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
+[0mPOST /api/auth/logout [31m500 [0m11.201 ms - 109[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m15.109 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.723 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.895 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.732 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.711 ms - 55166[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.320 ms - -[0m
+[0mGET /api/csrf-token [32m200 [0m6.045 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m2.622 ms - 52[0m
+[2024-12-07T08:35:54.105Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/bookmarks/bookmarks, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/bookmarks/bookmarks [33m403 [0m28.529 ms - 72[0m
+[2024-12-07T08:36:17.745Z] [ERROR] Code: MISSING_TOKEN, Message: Access Denied. Missing or invalid Authorization header., Route: /api/bookmarks/bookmarks, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
+[0mPOST /api/bookmarks/bookmarks [31m500 [0m8.590 ms - 109[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.397 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.383 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.195 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.650 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.414 ms - 55156[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.011 ms - -[0m
+[0mGET /api/csrf-token [32m200 [0m6.684 ms - 52[0m
+[2024-12-07T09:07:33.414Z] [ERROR] Code: MISSING_TOKEN, Message: Access Denied. Missing or invalid Authorization header., Route: /api/bookmarks, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
+[0mPOST /api/bookmarks [31m500 [0m38.436 ms - 109[0m
+Client IP: ::ffff:147.185.133.96
+[0mGET / [32m200 [0m311.404 ms - 1490[0m
+[0mGET /api-docs [36m301 [0m6.416 ms - 183[0m
+[0mGET /api-docs/ [32m200 [0m4.058 ms - 3106[0m
+[0mGET /api-docs/swagger-ui.css [32m200 [0m8.590 ms - 152072[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m2.841 ms - 55156[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [32m200 [0m8.144 ms - 230007[0m
+[0mGET /api-docs/swagger-ui-bundle.js [32m200 [0m11.842 ms - 1426050[0m
+[0mGET /api-docs/favicon-32x32.png [32m200 [0m2.782 ms - 628[0m
+[2024-12-07T12:21:17.660Z] [ERROR] Code: SERVER_ERROR, Message: Email is already registered., Route: /api/auth/register, Location:     at exports.register (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:64:11)
+[0mPOST /api/auth/register [31m500 [0m136.551 ms - 81[0m
+[2024-12-07T12:21:24.974Z] [ERROR] Code: VALIDATION_ERROR, Message: Invalid email format, Route: /api/auth/register, Location:     at exports.validateRegister (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:100:11)
+[0mPOST /api/auth/register [33m422 [0m21.626 ms - 77[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/auth.js:217
+router.get('/profile', authenticateToken, getProfile);
+                                          ^
+
+ReferenceError: getProfile is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/auth.js:217:43[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:7:20[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/auth.js:217
+router.get('/profile', authenticateToken, getProfile);
+                                          ^
+
+ReferenceError: getProfile is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/auth.js:217:43[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:7:20[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.601 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.945 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m7.114 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.603 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.557 ms - 56082[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.923 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m14.129 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.325 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.698 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.931 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.935 ms - 56054[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.334 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.842 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.510 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.013 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.756 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m4.155 ms - 56031[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.940 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.335 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.406 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.905 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m2.064 ms - 56020[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.609 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.971 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m14.534 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.011 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.453 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m1.370 ms - 56072[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.663 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.307 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m12.417 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.537 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.051 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.508 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.326 ms - 56112[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.899 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m3.143 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.518 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m3.981 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.369 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.759 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.614 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.477 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.594 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.615 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.760 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m4.031 ms - 65110[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.038 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m14.231 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.254 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.945 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m2.410 ms - 65111[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.781 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.998 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m3.447 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.552 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m4.425 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m1.958 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.366 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.766 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.153 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.832 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.603 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m2.748 ms - 65987[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m5.800 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.891 ms - -[0m
+[0mGET /api/debug/loginHistory [32m200 [0m37.959 ms - 5703[0m
+[0mGET /api-docs/ [36m304 [0m3.237 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.327 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m4.239 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m1.913 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m4.067 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.625 ms - -[0m

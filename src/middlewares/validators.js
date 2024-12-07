@@ -163,12 +163,19 @@ exports.validateProfileUpdate = (req, res, next) => {
 }
 
 exports.validateID = (req, res, next) => {
-  const { id } = req.params;
+  const { id } = req.params.id || req.body.id;
+  if (!id) {
+    // ID가 제공되지 않은 경우 처리
+    throw new AppError(
+      errorCodes.VALIDATION_ERROR.code,
+      'Job ID is required.',
+      errorCodes.VALIDATION_ERROR.status
+    );
+  }
   if (!mongoose.Types.ObjectId.isValid(id)) {
     throw new AppError(errorCodes.VALIDATION_ERROR.code, 'Invalid Job ID format. It must be a valid MongoDB ObjectId.', errorCodes.VALIDATION_ERROR.status);
   }
-  
-  next();
+  else next();
 };
 
 exports.validateStatus = (req, res, next) => {
