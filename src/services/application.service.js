@@ -69,7 +69,7 @@ exports.createApplication = async ({ userId, link, resume }) => {
  * @param {String} status
  * @returns 
  */
-exports.getApplications = async ({ userId, role, status, sortBy = 'appliedAt', sortOrder = 'desc' }) => {
+exports.getApplications = async ({ userId, role, status = 'All', sortBy = 'appliedAt', sortOrder = 'desc' }) => {
   try {
     const query = {};
 
@@ -90,7 +90,7 @@ exports.getApplications = async ({ userId, role, status, sortBy = 'appliedAt', s
         query.userId = userId;
     }
 
-    if (status) {
+    if (status && status !== 'All') {
         query.status = status; // 상태 필터 추가
     }
 

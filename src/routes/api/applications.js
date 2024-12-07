@@ -69,6 +69,12 @@ router.post('/', authenticateToken, createApplication);
  *         description: Filter by application status (Pending, Accepted, etc.)
  *         schema:
  *           type: string
+ *           enum:
+ *             - All
+ *             - Accepted
+ *             - Rejected
+ *             - Pending
+ *             - Cancled
  *       - name: sortBy
  *         in: query
  *         description: Field to sort by

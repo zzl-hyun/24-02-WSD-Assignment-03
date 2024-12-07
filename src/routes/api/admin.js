@@ -52,13 +52,13 @@ router.get('/applications', authenticateToken, isAdmin, getApplications);
  *     parameters:
  *       - name: id
  *         in: path
- *         description: The ID of the application to update
+ *         description: 반영할 application의 _id
  *         required: true
  *         schema:
  *           type: string
  *       - name: status
  *         in: query
- *         description: The new status of the application
+ *         description: 반영할 status
  *         required: true
  *         schema:
  *           type: string
@@ -99,7 +99,7 @@ router.put('/applications/:id', authenticateToken, isAdmin, validateID, validate
  *     parameters:
  *       - name: id
  *         in: path
- *         description: The ID of the Job to delete
+ *         description: 삭제할 공고의 _id
  *         required: true
  *         schema:
  *           type: string
@@ -112,7 +112,7 @@ router.put('/applications/:id', authenticateToken, isAdmin, validateID, validate
  *             properties:
  *               passwordHash:
  *                 type: string
- *                 description: The admin's password to confirm identity before deleting the Job
+ *                 description: 삭제하려면 관리자 비밀번호가 필요함
  *                 example: "1234"
  *     responses:
  *       200:

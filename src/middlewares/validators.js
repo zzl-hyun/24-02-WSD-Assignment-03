@@ -163,12 +163,12 @@ exports.validateProfileUpdate = (req, res, next) => {
 }
 
 exports.validateID = (req, res, next) => {
-  const { id } = req.params.id || req.body.id;
+  const id  = req.params.id || req.body.job_id;
   if (!id) {
     // ID가 제공되지 않은 경우 처리
     throw new AppError(
       errorCodes.VALIDATION_ERROR.code,
-      'Job ID is required.',
+      'ID  required.',
       errorCodes.VALIDATION_ERROR.status
     );
   }
