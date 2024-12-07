@@ -70,9 +70,9 @@ exports.getProfile = async(req, res, next) => {
   try {
     const userId = req.user.id;
 
-    const { profile } = await authService.getProfile(userId);
+    const { username, email, role, companyId, profile } = await authService.getProfile(userId);
 
-    res.status(200).json({status: 'success', data: { profile }});
+    res.status(200).json({status: 'success', data: { username, email, role, companyId, profile }});
   } catch (error){
     netx(error);
   }
