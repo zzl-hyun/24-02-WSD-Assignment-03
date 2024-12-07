@@ -10,7 +10,7 @@ const getAsync = (key) =>
 
 const addToBlacklist = async (token, previousExpirationTime) => {
   try {
-    expirationTime = previousExpirationTime - Math.floor(Date.now() / 1000);
+    expirationTime = previousExpirationTime;
     const reply = await setAsync(token, 'blacklisted', expirationTime );
     console.log('Adding to blacklist:', token, expirationTime);
     return reply;
