@@ -1,6 +1,7 @@
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
 const mongooseToSwagger = require("mongoose-to-swagger");
+const { default: mongoose } = require("mongoose");
 const Job = require("../src/models/Job");
 const User = require("../src/models/User");
 const Token = require('../src/models/Token');
@@ -8,7 +9,7 @@ const Company = require('../src/models/Company');
 const Application = require('../src/models/Application');
 const Bookmark = require('../src/models/Bookmark');
 const LoginHistory = require('../src/models/LoginHistory');
-const { default: mongoose } = require("mongoose");
+const Notification = require('../src/models/Notification');
 const ErrorResponse = {
   type: 'object',
   properties: {
@@ -50,6 +51,7 @@ const options = {
         Bookmark: mongooseToSwagger(Bookmark),
         Token: mongooseToSwagger(Token),
         LoginHistory: mongooseToSwagger(LoginHistory),
+        Notification: mongooseToSwagger(Notification),
         ErrorResponse: ErrorResponse,
       },
       securitySchemes: {
