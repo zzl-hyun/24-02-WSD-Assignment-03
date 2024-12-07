@@ -416,3 +416,107 @@ validation error
 [0mPOST /api/auth/register [33m422 [0m11.604 ms - 92[0m
 {"level":"error","message":"Expected double-quoted property name in JSON at position 134 (line 8 column 3)","route":"/api/auth/register","stack":"SyntaxError: Expected double-quoted property name in JSON at position 134 (line 8 column 3)\n    at JSON.parse (<anonymous>)\n    at parse (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/body-parser/lib/types/json.js:89:19)\n    at /home/ubuntu/24-02-WSD-Assignment-03/node_modules/body-parser/lib/read.js:121:18\n    at invokeCallback (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/raw-body/index.js:224:16)\n    at done (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (node:events:518:28)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)","timestamp":"2024-12-06T16:36:40.155Z"}
 [0mPOST /api/auth/register [33m400 [0m2.664 ms - 131[0m
+[0mGET /api/debug/user [32m200 [0m40.529 ms - 1295[0m
+[0mGET /api/debug/token [36m304 [0m8.606 ms - -[0m
+[0mPOST /api/auth/login [32m200 [0m164.671 ms - 242[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api/debug/token [32m200 [0m45.018 ms - 578[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1MDMyMjUsImV4cCI6MTczMzUwNDEyNX0.3Yw1kHRq9SbrDe4184dwJiWL9YfHu_WknbuFdVDoGVs
+Redis result: [1mnull[22m
+[0mPOST /api/debug/token [32m200 [0m18.654 ms - 437[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1MDMyMjUsImV4cCI6MTczMzUwNDEyNX0.3Yw1kHRq9SbrDe4184dwJiWL9YfHu_WknbuFdVDoGVs
+Redis result: [1mnull[22m
+Adding to blacklist: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1MDMyMjUsImV4cCI6MTczMzUwNDEyNX0.3Yw1kHRq9SbrDe4184dwJiWL9YfHu_WknbuFdVDoGVs [33m401[39m
+[0mPOST /api/auth/logout [32m200 [0m54.289 ms - 56[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1MDMyMjUsImV4cCI6MTczMzUwNDEyNX0.3Yw1kHRq9SbrDe4184dwJiWL9YfHu_WknbuFdVDoGVs
+Redis result: blacklisted
+/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56
+      throw new AppError(error.code, error.message, 500);
+            ^
+
+AppError: Access token is invalid
+    at authenticateToken [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/middlewares/authenticateToken.js:56:13[90m)[39m
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m {
+  code: [32m'TOKEN_BLACKLISTED'[39m,
+  status: [33m500[39m
+}
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1MDMyMjUsImV4cCI6MTczMzUwNDEyNX0.3Yw1kHRq9SbrDe4184dwJiWL9YfHu_WknbuFdVDoGVs
+Redis result: blacklisted
+{"code":"TOKEN_BLACKLISTED","level":"error","message":"Access token is invalid","route":"/api/debug/token","stack":"Error: Access token is invalid\n    at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-06T16:51:01.733Z"}
+[0mPOST /api/debug/token [31m500 [0m35.777 ms - 81[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1MDMyMjUsImV4cCI6MTczMzUwNDEyNX0.3Yw1kHRq9SbrDe4184dwJiWL9YfHu_WknbuFdVDoGVs
+Redis result: blacklisted
+line 31
+line 56
+{"code":"TOKEN_BLACKLISTED","level":"error","message":"Access token is invalid","route":"/api/debug/token","stack":"Error: Access token is invalid\n    at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:57:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-06T16:52:52.344Z"}
+[0mPOST /api/debug/token [31m500 [0m23.592 ms - 81[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1MDMyMjUsImV4cCI6MTczMzUwNDEyNX0.3Yw1kHRq9SbrDe4184dwJiWL9YfHu_WknbuFdVDoGVs
+Redis result: [1mnull[22m
+{"code":"EXPIRED_TOKEN","level":"error","message":"Token has expired.","route":"/api/debug/token","stack":"Error: Token has expired.\n    at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:44:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-06T16:56:54.188Z"}
+[0mPOST /api/debug/token [33m403 [0m31.722 ms - 72[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1MDMyMjUsImV4cCI6MTczMzUwNDEyNX0.3Yw1kHRq9SbrDe4184dwJiWL9YfHu_WknbuFdVDoGVs
+Redis result: [1mnull[22m
+{"code":"EXPIRED_TOKEN","level":"error","message":"Token has expired.","route":"/api/debug/token","stack":"Error: Token has expired.\n    at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:44:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-06T16:58:28.572Z"}
+[0mPOST /api/debug/token [33m403 [0m30.909 ms - 72[0m
+[0mGET /api/debug/token [32m200 [0m39.573 ms - 30[0m
+[0mPOST /api/auth/login [32m200 [0m175.528 ms - 242[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1MDMyMjUsImV4cCI6MTczMzUwNDEyNX0.3Yw1kHRq9SbrDe4184dwJiWL9YfHu_WknbuFdVDoGVs
+Redis result: [1mnull[22m
+{"code":"EXPIRED_TOKEN","level":"error","message":"Token has expired.","route":"/api/auth/logout","stack":"Error: Token has expired.\n    at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:44:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-06T17:02:27.807Z"}
+[0mPOST /api/auth/logout [33m403 [0m9.558 ms - 72[0m
+[0mGET /api/debug/token [32m200 [0m8.054 ms - 578[0m
+Expiration time for blacklist: [33m1733505433[39m
+Adding to blacklist: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1MDQ1MzMsImV4cCI6MTczMzUwNTQzM30.cw7_iQE8SyCMbxTvRbuRENAgMTdqPLUur-VVwyi4SlY [33m813[39m
+[0mPOST /api/auth/refresh [32m200 [0m25.566 ms - 242[0m
+[0mGET /api/debug/token [32m200 [0m8.676 ms - 578[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1MDQ1MzMsImV4cCI6MTczMzUwNTQzM30.cw7_iQE8SyCMbxTvRbuRENAgMTdqPLUur-VVwyi4SlY
+Redis result: blacklisted
+line 31
+{"code":"TOKEN_BLACKLISTED","level":"error","message":"Access token is invalid","route":"/api/debug/token","stack":"Error: Access token is invalid\n    at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-06T17:04:13.892Z"}
+[0mPOST /api/debug/token [31m500 [0m5.407 ms - 81[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM1MDQ2MjAsImV4cCI6MTczMzUwNTUyMH0.j8ihMRGQexmLGeOkXMzRMJFXAQH65V9gVriU6cdTUok
+Redis result: [1mnull[22m
+[0mPOST /api/debug/token [32m200 [0m6.607 ms - 437[0m
+[0mGET /api/debug/token [32m200 [0m8.165 ms - 578[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m315.551 ms - -[0m
+[0mGET /stylesheets/style.css [33m404 [0m22.796 ms - 1338[0m
+[0mGET /api-docs/ [36m304 [0m1.556 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.449 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m4.862 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m1.640 ms - 45883[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.224 ms - -[0m
