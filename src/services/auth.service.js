@@ -192,6 +192,17 @@ exports.refreshToken = async (refreshToken) => {
   }
 };
 
+exports.getProfile = async (userId) => {
+  try {
+    const profile = await User.findById(userId);
+    if(!profile) throw new AppError(errorCodes.USER_NOT_FOUND.code, errorCodes.USER_NOT_FOUND.message, errorCodes.USER_NOT_FOUND.status);
+    
+    return profile;
+  }catch (error){
+    throw error;
+  }
+};
+
 /**
  * 회원 정보 수정
  * @param {ObjectId} userId 
@@ -278,7 +289,7 @@ exports.updatePassword = async (userId, oldPassword, newPassword) => {
  * @param {ObjectId} userId 
  * @param {String} passwordHash 
  */
-exports.deleteProfile = async (userId, passwordHash) => {
+exports.deleteProfile = async (userId, password) => {
   // 사용자가 존재하는지 확인
   try {  
     const user = await User.findById(userId);
@@ -290,7 +301,7 @@ exports.deleteProfile = async (userId, passwordHash) => {
       );
     }
 
-    const isPasswordValid = await bcrypt.compare(passwordHash, user.passwordHash);
+    const isPasswordValid = await bcrypt.compare(password, user.passwordHash);
     if (!isPasswordValid) {
       throw new AppError(
         errorCodes.INCORRECT_PASSWORD.code, 

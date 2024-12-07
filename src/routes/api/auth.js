@@ -5,6 +5,7 @@ const {
   login,
   logout,
   refreshToken,
+  getProfile,
   updateProfile,
   deleteProfile,
   token,
@@ -217,6 +218,31 @@ router.post('/refresh', refreshToken);
 /**
  * @swagger
  * /auth/profile:
+ *   get:
+ *     summary: 유저정보 조회
+ *     description: 유저정보를 조회합니다.
+ *     tags: [Auth]
+ *     responses:
+ *       200:
+ *         description: A list of users
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/User'
+ *       400:
+ *         description: Invalid input
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ */
+router.get('/profile', authenticateToken, getProfile);
+
+/**
+ * @swagger
+ * /auth/profile:
  *   put:
  *     summary: 사용자 업데이트
  *     description: CSRF로 보호됨
@@ -307,8 +333,8 @@ router.put('/profile', authenticateToken, validateProfileUpdate, updateProfile);
  * @swagger
  * /auth/delete:
  *   delete:
- *     summary: Delete user profile
- *     description: This endpoint allows the authenticated user to delete their profile by providing their password.
+ *     summary: 회원 탈퇴
+ *     description: 비밀번호를 함께 전달해 사용자 인증 후 회원탈퇴 처리
  *     tags:
  *       - Auth
  *     security:
@@ -321,10 +347,10 @@ router.put('/profile', authenticateToken, validateProfileUpdate, updateProfile);
  *           schema:
  *             type: object
  *             properties:
- *               passwordHash:
+ *               password:
  *                 type: string
  *                 description: The user's password to confirm identity before deleting the profile
- *                 example: "userPassword123"
+ *                 example: "Password"
  *     responses:
  *       200:
  *         description: Profile successfully deleted
@@ -364,7 +390,7 @@ router.delete('/delete', authenticateToken, deleteProfile);
  * @swagger
  * /auth/logout:
  *   post:
- *     summary: Logout
+ *     summary: 로그아웃
  *     description: 로그아웃
  *     tags: [Auth]
  *     security:

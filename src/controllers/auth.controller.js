@@ -66,10 +66,26 @@ exports.refreshToken = async (req, res, next) => {
   }
 };
 
+exports.getProfile = async(req, res, next) => {
+  try {
+    const userId = req.user.id;
+
+    const { profile } = await authService.getProfile(userId);
+
+    res.status(200).json({status: 'success', data: { profile }});
+  } catch (error){
+    netx(error);
+  }
+};
+
 exports.updateProfile = async (req, res, next) => {
   try {
     const { fullName, phoneNumber, bio, skills, resumeUrl, oldPassword, newPassword } = req.body;
-
+    
+    if (oldPassword && newPassword) {
+      await authService.updatePassword(req.user.id, oldPassword, newPassword);
+    }
+    
     if (fullName || phoneNumber || bio || skills || resumeUrl) {
       await authService.updateProfile(req.user.id, {
         fullName,
@@ -78,10 +94,6 @@ exports.updateProfile = async (req, res, next) => {
         skills,
         resumeUrl,
       });
-    }
-
-    if (oldPassword && newPassword) {
-      await authService.updatePassword(req.user.id, oldPassword, newPassword);
     }
 
     res.status(200).json({ status: 'success', message: 'Profile and/or password updated successfully.' });
@@ -93,9 +105,9 @@ exports.updateProfile = async (req, res, next) => {
 exports.deleteProfile = async (req, res, next) => {
   try{
     const userId = req.user.id;
-    const { passwordHash } = req.body;
+    const { password } = req.body;
 
-    await authService.deleteProfile(userId, passwordHash);
+    await authService.deleteProfile(userId, password);
 
     res.status(200).json({ status: 'success', message: 'Profile deleted successfully' });
 
