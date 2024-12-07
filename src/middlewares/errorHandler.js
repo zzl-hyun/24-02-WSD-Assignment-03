@@ -5,11 +5,19 @@ const logger = winston.createLogger({
   level: 'error',
   format: winston.format.combine(
     winston.format.timestamp(),
-    winston.format.json()
+    winston.format.json() // 기본 포맷 (파일용)
   ),
   transports: [
+    new winston.transports.Console({
+      format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.printf(({ timestamp, level, message, code, route, stack }) => {
+          const firstAtLine = stack ? stack.split('\n').find(line => line.trim().startsWith('at')) : 'N/A';
+          return `[${timestamp}] [${level.toUpperCase()}] Code: ${code || 'N/A'}, Message: ${message}, Route: ${route || 'N/A'}, Location: ${firstAtLine}`;
+        })
+      ),
+    }),
     new winston.transports.File({ filename: './logs/errors.log' }),
-    new winston.transports.Console(),
   ],
 });
 
