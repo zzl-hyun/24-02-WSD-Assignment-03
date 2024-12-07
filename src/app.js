@@ -56,6 +56,8 @@ app.use('/api', apiLimiter, apiRouter);
 // app.use('/api/jobs', jobsRouter);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
+// 정적 파일 제공
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(errorHandler);
 
 /**

@@ -37,8 +37,20 @@ http://113.198.66.75:10042/api-docs
 
 ## 설치 및 실행 가이드
 ~~~
-npm install
-npm start
+Node.js 설치
+npm 설치
+mongoDB 설치 및 실행
+Redis 설치 및 실행
+~~~
+~~~
+$ npm install
+$ npm start
+~~~
+
+## Jcloud 접속시
+session1로 접속시 현재 실행중인 터미널로 접속할 수 있음
+~~~
+$ tmux attach -t session1
 ~~~
 
 ## MVCS 패턴 적용

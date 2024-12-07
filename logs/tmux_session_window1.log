@@ -2920,3 +2920,114 @@ MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
 [32m[nodemon] starting `node ./bin/www`[39m
 Redis Connected...
 MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m21.270 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.274 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.672 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m7.474 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m4.379 ms - 66133[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m235.498 ms - -[0m
+[0mGET /stylesheets/style.css [33m404 [0m11.460 ms - 1338[0m
+[0mGET /favicon.ico [33m404 [0m7.426 ms - 1338[0m
+[2024-12-07T14:39:46.832Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/login, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/login [33m403 [0m33.207 ms - 72[0m
+[0mGET /api-docs/ [36m304 [0m6.132 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m3.706 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m3.799 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.797 ms - 66133[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m3.798 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m2.715 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.267 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m2.285 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.500 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m1.638 ms - -[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m51.782 ms - -[0m
+[0mGET /stylesheets/style.css [33m404 [0m14.401 ms - 1338[0m
+[0mGET /api-docs/ [36m304 [0m3.423 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.521 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m2.754 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m3.022 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m3.531 ms - -[0m
+[2024-12-07T14:53:48.494Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/login, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/login [33m403 [0m12.120 ms - 72[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m41.203 ms - -[0m
+[0mGET /stylesheets/style.css [33m404 [0m14.461 ms - 1338[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m29.161 ms - -[0m
+[0mGET /stylesheets/style.css [33m404 [0m13.448 ms - 1338[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m55.567 ms - -[0m
+[0mGET /stylesheets/style.css [33m404 [0m15.561 ms - 1338[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m25.757 ms - -[0m
+[0mGET /stylesheets/style.css [33m404 [0m9.250 ms - 1338[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m20.967 ms - -[0m
+[0mGET /stylesheets/style.css [33m404 [0m10.173 ms - 1338[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m20.862 ms - -[0m
+[0mGET /stylesheets/style.css [33m404 [0m9.570 ms - 1338[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m24.292 ms - -[0m
+[0mGET /stylesheets/style.css [33m404 [0m10.093 ms - 1338[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m19.958 ms - -[0m
+[0mGET /stylesheets/style.css [33m404 [0m9.414 ms - 1338[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m17.135 ms - -[0m
+[0mGET /stylesheets/style.css [33m404 [0m8.542 ms - 1338[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m23.014 ms - 1478[0m
+[0mGET /style.css [33m404 [0m9.734 ms - 1327[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m27.133 ms - 1481[0m
+[0mGET /view/style.css [33m404 [0m62.977 ms - 1330[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m28.373 ms - 1489[0m
+[0mGET /stylesheets/style.css [33m404 [0m9.096 ms - 1338[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m186.807 ms - -[0m
+[0mGET /stylesheets/style.css [33m404 [0m9.393 ms - 1338[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m175.213 ms - -[0m
+[0mGET /stylesheets/style.css [32m200 [0m3.116 ms - 1744[0m
+[2024-12-07T15:00:38.643Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/login, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/login [33m403 [0m31.517 ms - 72[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m64.406 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m2.059 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m1.666 ms - -[0m
+[0mGET /src [33m404 [0m23.745 ms - 1338[0m
+[0mGET /stylesheets/style.css [36m304 [0m1.493 ms - -[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m33.214 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m1.370 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m3.765 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m3.051 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m3.297 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.441 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.223 ms - -[0m
+[0mGET /src [33m404 [0m17.809 ms - 1330[0m
+[0mGET /view/style.css [33m404 [0m15.507 ms - 1330[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /src [33m404 [0m158.391 ms - 1330[0m
+[0mGET /view/style.css [33m404 [0m16.918 ms - 1330[0m
+[0mGET /src [33m404 [0m18.743 ms - 1338[0m
+[0mGET /stylesheets/style.css [36m304 [0m2.828 ms - -[0m
+[0mGET /src [33m404 [0m97.182 ms - 2865[0m
+[0mGET /src [33m404 [0m48.474 ms - 2865[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m56.307 ms - 3016[0m
