@@ -7,8 +7,7 @@ const isAdmin = (req, res, next) => {
     console.log('its admin'); 
     return next(); 
   }
-
-  throw new AppError(errorCodes.FORBIDDEN_ACTION.code, errorCodes.FORBIDDEN_ACTION.message, errorCodes.FORBIDDEN_ACTION.status);
+  else throw new AppError(errorCodes.FORBIDDEN_ACTION.code, errorCodes.FORBIDDEN_ACTION.message, errorCodes.FORBIDDEN_ACTION.status);
 };
 
 module.exports = isAdmin;

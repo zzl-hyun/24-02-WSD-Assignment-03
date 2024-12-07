@@ -13,7 +13,7 @@ exports.createApplication = async (req, res, next) => {
   }
 };
 
-exports.getApplications = async (req, res) => {
+exports.getApplications = async (req, res, next) => {
     try {
       const { status, sortBy, sortOrder } = req.query;
       const userId = req.user.id; // From authentication middleware
@@ -22,11 +22,11 @@ exports.getApplications = async (req, res) => {
       const applications = await applicationService.getApplications({ userId, role, status, sortBy, sortOrder });
       res.status(200).json({ status: 'success', data: applications });
     } catch (error) {
-      res.status(400).json({ status: 'error', message: error.message });
+      next(error);
     }
   };
 
-exports.deleteApplication = async (req, res) => {
+exports.deleteApplication = async (req, res, next) => {
   try {
     const applicationId = req.params.id;
     const userId = req.user.id; // From authentication middleware
@@ -34,6 +34,18 @@ exports.deleteApplication = async (req, res) => {
     const application = await applicationService.deleteApplication({ applicationId, userId });
     res.status(200).json({ status: 'success', data: application });
   } catch (error) {
-    res.status(400).json({ status: 'error', message: error.message });
+    next(error);
+  }
+};
+
+exports.changeStatus = async (req, res, next) => {
+  try{
+    const applicationId = req.params.id;
+    const status   = req.query.status;
+
+    const application = await applicationService.changeStatus({ applicationId, status });
+    res.status(200).json({ status: 'success', data: application});
+  } catch(error){
+    next(error);
   }
 };

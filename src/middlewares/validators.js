@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const mongoose = require('mongoose');
 const AppError = require('../utils/AppError');
 const errorCodes = require('../config/errorCodes');
 const sanitizeInput = (input) => {
@@ -96,7 +97,6 @@ exports.validateRegister = (req, res, next) => {
 
   if (error) {
     const errorMessages = error.details.map((detail) => detail.message);
-    console.log('validation error');
     throw new AppError(errorCodes.VALIDATION_ERROR.code, errorMessages, errorCodes.VALIDATION_ERROR.status);
   }
 
@@ -162,3 +162,28 @@ exports.validateProfileUpdate = (req, res, next) => {
   next();
 }
 
+exports.validateID = (req, res, next) => {
+  const { id } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    throw new AppError(errorCodes.VALIDATION_ERROR.code, 'Invalid Job ID format. It must be a valid MongoDB ObjectId.', errorCodes.VALIDATION_ERROR.status);
+  }
+  
+  next();
+};
+
+exports.validateStatus = (req, res, next) => {
+  const schema = Joi.object({
+    status: Joi.string().trim().required().valid('Accepted', 'Rejected').messages({
+      'string.empty': 'Status cannot be empty',
+      'any.only': 'Status must be either Accepted or Rejected',
+    }),
+  });
+
+  const { error } = schema.validate(req.query, { abortEarly: false });
+
+  if (error) {
+    const errorMessages = error.details.map((detail) => detail.message);
+    throw new AppError(errorCodes.VALIDATION_ERROR.code, errorMessages, errorCodes.VALIDATION_ERROR.status);
+  }
+  next();
+};
