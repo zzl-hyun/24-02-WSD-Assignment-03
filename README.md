@@ -40,7 +40,7 @@ gantt
 
 
 ## Swagger 접속
-http://113.198.66.75:10042/api-docs
+![link.pdf](link.pdf)
 
 ![alt text](image.png)
 - 접속 후 Authorize 칸에  JWT Access Token, CSRF Token을 기입해야 함
