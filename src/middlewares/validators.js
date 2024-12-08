@@ -194,3 +194,16 @@ exports.validateStatus = (req, res, next) => {
   }
   next();
 };
+
+exports.validateLink = (req, res, next) => {
+  const link  = req.body.link;
+  if (!link) {
+    // link 제공되지 않은 경우 처리
+    throw new AppError(
+      errorCodes.VALIDATION_ERROR.code,
+      'link  required.',
+      errorCodes.VALIDATION_ERROR.status
+    );
+  }
+  else next();
+};

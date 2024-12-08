@@ -4139,3 +4139,166 @@ MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
 [32m[nodemon] starting `node ./bin/www`[39m
 Redis Connected...
 MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/swagger-ui.css [36m304 [0m7.846 ms - -[0m
+[0mGET /api-docs/swagger-ui.css.map [36m304 [0m2.880 ms - -[0m
+[0mGET /api-docs/ [32m200 [0m6.743 ms - 3106[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m5.470 ms - 68376[0m
+[0mGET /api-docs/swagger-ui.css [32m200 [0m8.251 ms - 152072[0m
+[0mGET /api-docs/swagger-ui.css.map [36m304 [0m2.856 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [32m200 [0m6.679 ms - 230007[0m
+[0mGET /api-docs/swagger-ui-bundle.js [32m200 [0m8.422 ms - 1426050[0m
+[0mGET /api-docs/favicon-32x32.png [32m200 [0m3.269 ms - 628[0m
+[0mGET /api-docs/ [32m200 [0m2.414 ms - 3106[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m4.942 ms - 68376[0m
+[0mGET /api-docs/swagger-ui.css [32m200 [0m10.136 ms - 152072[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [32m200 [0m10.295 ms - 230007[0m
+[0mGET /api-docs/swagger-ui.css.map [32m200 [0m3.700 ms - 262650[0m
+[0mGET /api-docs/swagger-ui-bundle.js [32m200 [0m10.556 ms - 1426050[0m
+[0mGET /api-docs/favicon-32x32.png [32m200 [0m2.911 ms - 628[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api/csrf-token [32m200 [0m16.085 ms - 52[0m
+[2024-12-08T07:06:16.164Z] [ERROR] Code: INVALID_CREDENTIALS, Message: Invalid email or password., Route: /api/auth/login, Location:     at exports.login (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:79:13)
+[0mPOST /api/auth/login [33m401 [0m83.451 ms - 86[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[2024-12-08T07:07:42.769Z] [ERROR] Code: INVALID_CREDENTIALS, Message: Invalid email or password., Route: /api/auth/login, Location:     at exports.login (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:79:13)
+[0mPOST /api/auth/login [33m401 [0m92.477 ms - 86[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[2024-12-08T07:08:32.997Z] [ERROR] Code: INVALID_CREDENTIALS, Message: Invalid email or password., Route: /api/auth/login, Location:     at exports.login (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:79:13)
+[0mPOST /api/auth/login [33m401 [0m87.944 ms - 86[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mPOST /api/auth/login [32m200 [0m255.626 ms - 242[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[2024-12-08T07:10:09.932Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mGET /api/admin/applications [33m403 [0m24.338 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[2024-12-08T07:10:17.199Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/applications/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk?status=Accepted, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mPUT /api/admin/applications/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk?status=Accepted [33m403 [0m11.854 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[2024-12-08T07:10:28.918Z] [ERROR] Code: FORBIDDEN_ACTION, Message: You do not have permission to perform this action., Route: /api/admin/jobs/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk, Location:     at isAdmin (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/isAdmin.js:10:14)
+[0mDELETE /api/admin/jobs/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk [33m403 [0m11.662 ms - 107[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[2024-12-08T07:10:36.461Z] [ERROR] Code: JOB_NOT_FOUND, Message: Job not found., Route: /api/applications, Location:     at exports.createApplication (/home/ubuntu/24-02-WSD-Assignment-03/src/services/application.service.js:28:13)
+[0mPOST /api/applications [33m404 [0m22.922 ms - 68[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[2024-12-08T07:10:43.120Z] [ERROR] Code: JOB_NOT_FOUND, Message: Job not found., Route: /api/applications, Location:     at exports.createApplication (/home/ubuntu/24-02-WSD-Assignment-03/src/services/application.service.js:28:13)
+[0mPOST /api/applications [33m404 [0m19.431 ms - 68[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[2024-12-08T07:10:49.757Z] [ERROR] Code: JOB_NOT_FOUND, Message: Job not found., Route: /api/applications, Location:     at exports.createApplication (/home/ubuntu/24-02-WSD-Assignment-03/src/services/application.service.js:28:13)
+[0mPOST /api/applications [33m404 [0m16.308 ms - 68[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[2024-12-08T07:10:54.965Z] [ERROR] Code: JOB_NOT_FOUND, Message: Job not found., Route: /api/applications, Location:     at exports.createApplication (/home/ubuntu/24-02-WSD-Assignment-03/src/services/application.service.js:28:13)
+[0mPOST /api/applications [33m404 [0m21.220 ms - 68[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[2024-12-08T07:11:34.389Z] [ERROR] Code: VALIDATION_ERROR, Message: ID  required., Route: /api/applications, Location:     at exports.validateID (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:169:11)
+[0mPOST /api/applications [33m422 [0m49.213 ms - 70[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[2024-12-08T07:11:44.348Z] [ERROR] Code: VALIDATION_ERROR, Message: ID  required., Route: /api/applications, Location:     at exports.validateID (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:169:11)
+[0mPOST /api/applications [33m422 [0m9.213 ms - 70[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[2024-12-08T07:11:50.726Z] [ERROR] Code: JOB_NOT_FOUND, Message: Job not found., Route: /api/applications, Location:     at exports.createApplication (/home/ubuntu/24-02-WSD-Assignment-03/src/services/application.service.js:28:13)
+[0mPOST /api/applications [33m404 [0m73.101 ms - 68[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[2024-12-08T07:13:28.573Z] [ERROR] Code: JOB_NOT_FOUND, Message: Job not found., Route: /api/applications, Location:     at exports.createApplication (/home/ubuntu/24-02-WSD-Assignment-03/src/services/application.service.js:28:13)
+[0mPOST /api/applications [33m404 [0m72.757 ms - 68[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[2024-12-08T07:13:34.127Z] [ERROR] Code: VALIDATION_ERROR, Message: link  required., Route: /api/applications, Location:     at exports.validateLink (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/validators.js:202:11)
+[0mPOST /api/applications [33m422 [0m10.094 ms - 72[0m
+[0mGET /api-docs/ [36m304 [0m7.049 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m3.083 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m2.969 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m3.649 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m2.747 ms - 68376[0m
+[0mGET /api/jobs?page=1&size=20&sortBy=createdAt&sortOrder=desc&position=%EC%A0%95%EA%B7%9C%EC%A7%81&experience=%EB%AC%B4%EA%B4%80&education=%EB%8C%80%EC%A1%B8 [32m200 [0m50.221 ms - 14761[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[0mPOST /api/applications [32m201 [0m56.260 ms - 295[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[0mPOST /api/bookmarks [32m200 [0m21.292 ms - 60[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [32m200 [0m38.956 ms - 913[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[0mGET /api/bookmarks?page=1&limit=10 [36m304 [0m18.026 ms - -[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[0mGET /api/applications [32m200 [0m12.447 ms - 297[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUzY2RmYjM3ZDk0Yjg1Nzc0OTc0YSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDE3OTcsImV4cCI6MTczMzY0MjY5N30.rPxiOeYdJHKEw2k67Sz2fGUSTmeCb1ivrRJqTlBvuRk
+Redis result: [1mnull[22m
+[2024-12-08T07:17:49.682Z] [ERROR] Code: ALREADY_APPLIED, Message: You have already applied for this job., Route: /api/applications, Location:     at exports.createApplication (/home/ubuntu/24-02-WSD-Assignment-03/src/services/application.service.js:38:13)
+[0mPOST /api/applications [33m400 [0m85.863 ms - 94[0m
+[0mGET /api-docs/ [36m304 [0m7.802 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.218 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.368 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m3.546 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m4.866 ms - 68431[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.461 ms - -[0m
+[2024-12-08T07:18:05.644Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/applications, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/applications [33m403 [0m22.069 ms - 72[0m
+[2024-12-08T07:19:08.927Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/delete, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mDELETE /api/auth/delete [33m403 [0m5.445 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m3.634 ms - 52[0m
+[2024-12-08T07:19:34.896Z] [ERROR] Code: MISSING_TOKEN, Message: Access Denied. Missing or invalid Authorization header., Route: /api/auth/delete, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
+[0mDELETE /api/auth/delete [31m500 [0m4.754 ms - 109[0m
+[0mPOST /api/auth/login [32m200 [0m216.973 ms - 242[0m

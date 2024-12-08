@@ -67,41 +67,43 @@ describe('Auth API Tests', () => {
   });
   
 
-//   // 로그인 테스트
-//   describe('POST /auth/login', () => {
-//     it('should log in an existing user and return a token', (done) => {
-//       const loginData = {
-//         email: 'testuser@example.com',
-//         password: 'securepassword',
-//       };
+  // 로그인 테스트
+  describe('POST /auth/login', () => {
+    it('should log in an existing user and return a token', (done) => {
+      const loginData = {
+        email: 'newuser@example.com',
+        password: 'newpassword',
+      };
 
-//       chai.request(app)
-//         .post('/auth/login')
-//         .send(loginData)
-//         .end((err, res) => {
-//           expect(res).to.have.status(200);
-//           expect(res.body).to.have.property('status', 'success');
-//           expect(res.body.data).to.have.property('accessToken');
-//           done();
-//         });
-//     });
+      chai.request(app)
+        .post('/test/auth/login')
+        .send(loginData)
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          expect(res.body).to.have.property('status', 'success');
+          expect(res.body.data).to.have.property('accessToken');
+          done();
+        });
+    });
 
-//     it('should return 401 for invalid credentials', (done) => {
-//       const invalidLogin = {
-//         email: 'testuser@example.com',
-//         password: 'wrongpassword',
-//       };
+    it('should return 401 for invalid credentials', (done) => {
+      const invalidLogin = {
+        email: 'testuser@example.com',
+        password: 'wrongpassword',
+      };
 
-//       chai.request(app)
-//         .post('/auth/login')
-//         .send(invalidLogin)
-//         .end((err, res) => {
-//           expect(res).to.have.status(401);
-//           expect(res.body).to.have.property('error');
-//           done();
-//         });
-//     });
-//   });
+      chai.request(app)
+        .post('/test/auth/login')
+        .send(invalidLogin)
+        .end((err, res) => {
+          expect(res).to.have.status(401);
+          expect(res.body).to.have.property('status', 'error');
+          expect(res.body).to.have.property('code', 'INVALID_CREDENTIALS');
+          expect(res.body).to.have.property('message', 'Invalid email or password.');
+          done();
+        });
+    });
+  });
 
 //   // 프로필 조회 테스트
 //   describe('GET /auth/profile', () => {

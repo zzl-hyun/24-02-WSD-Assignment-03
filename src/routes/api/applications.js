@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { createApplication, getApplications, deleteApplication } = require('../../controllers/application.controller');
 const authenticateToken = require('../../middlewares/authenticateToken');
-const { validateID } = require('../../middlewares/validators');
+const { validateID,validateLink } = require('../../middlewares/validators');
 
 /**
  * @swagger
@@ -31,7 +31,8 @@ const { validateID } = require('../../middlewares/validators');
  *                 description: The ID of the job being applied for
  *               resume:
  *                 type: string
- *                 description: The URL or file path of the attached resume
+ *                 format: uri
+ *                 example: http://example.com/resume.pdf
  *     responses:
  *       201:
  *         description: Application created successfully
@@ -53,7 +54,7 @@ const { validateID } = require('../../middlewares/validators');
  *             schema:
  *               $ref: '#/components/schemas/ErrorResponse'
  */
-router.post('/', authenticateToken, createApplication);
+router.post('/', authenticateToken, validateLink, createApplication);
 
 /**
  * @swagger
@@ -69,6 +70,7 @@ router.post('/', authenticateToken, createApplication);
  *         description: Filter by application status (Pending, Accepted, etc.)
  *         schema:
  *           type: string
+ *           default: All
  *           enum:
  *             - All
  *             - Accepted
