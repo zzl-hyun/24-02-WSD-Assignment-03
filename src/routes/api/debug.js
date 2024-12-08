@@ -8,7 +8,8 @@ const Company = require('../../models/Company');
 const Job = require('../../models/Job');
 const LoginHistory = require('../../models/LoginHistory');
 const Token = require('../../models/Token');
-const User = require('../../models/User'); // User 모델 가져오기
+const User = require('../../models/User'); 
+const Notification = require('../../models/Notification'); 
 const authenticateToken = require('../../middlewares/authenticateToken');
 
 
@@ -154,7 +155,7 @@ router.get('/token', async(req, res, next) => {
  * @swagger
  * /debug/token:
  *   post:
- *     summary: Verify accessToken
+ *     summary: accessToken 검증
  *     description: accessToken이 유효한지 테스트
  *     tags: [Debug]
  *     security:
@@ -223,7 +224,32 @@ router.post('/token', authenticateToken, async(req, res, next) => {
 router.get('/user', async (req, res, next) => {
     try {
         const users = await User.find(); // 모든 사용자 데이터 조회
-        res.status(200).json({status: 'success', data: users}); // 데이터를 JSON 형식으로 반환
+        res.status(200).json({status: 'success', data: users}); 
+    } catch (err) {
+        next(err);
+    }
+});
+
+/**
+ * @swagger
+ * /debug/notification:
+ *   get:
+ *     summary: notification collection 조회
+ *     tags: [Debug]
+ *     responses:
+ *       200:
+ *         description: A list of notificationx
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Notification'
+ */
+router.get('/notification', async (req, res, next) => {
+    try {
+        const notifications = await Notification.find(); // 모든 사용자 데이터 조회
+        res.status(200).json({status: 'success', data: notifications}); 
     } catch (err) {
         next(err);
     }

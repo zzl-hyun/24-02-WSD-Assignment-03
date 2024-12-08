@@ -2,14 +2,23 @@ openapi: 3.0.0
 info:
   title: 알림 관리 API
   version: 1.0.0
-  description: API documentation for managing user notifications
+  description: 사용자 알림을 관리하기 위한 API 문서
 paths:
   /notifications/create:
     post:
-      summary: Create a new notification
-      description: Creates a notification for a user based on a specific event.
+      summary: 알림 생성
+      description: 특정 이벤트를 기반으로 사용자의 알림을 생성합니다.
       tags:
         - Notifications
+      parameters:
+        - name: type
+          in: query
+          schema:
+            required: true
+            type: string
+            description: The type of notification.
+            enum: [system, user]
+            example: user
       requestBody:
         required: true
         content:
@@ -20,16 +29,12 @@ paths:
                 userId:
                   type: string
                   description: The ID of the user receiving the notification.
-                  example: 64b3e2c86f4f3e0019f9a789
+                  example: _id...
                 type:
-                  type: string
-                  description: The type of notification.
-                  enum: [system, user]
-                  example: user
                 message:
                   type: string
                   description: The message content of the notification.
-                  example: "Your profile has been approved."
+                  example: "Your Application has been Rejected."
       responses:
         '201':
           description: Notification created successfully
@@ -47,7 +52,6 @@ paths:
                       id:
                         type: string
                         description: Notification ID
-                        example: 64b3e2c86f4f3e0019f9a780
                       userId:
                         type: string
                         description: User ID
@@ -63,15 +67,35 @@ paths:
                         example: false
         '400':
           description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 
   /notifications:
     get:
-      summary: Get user notifications
-      description: Retrieve all notifications for the authenticated user.
+      summary: 수신 목록 조회
+      description: 사용자의 모든 알림을 조회합니다.
       tags:
         - Notifications
+      parameters:
+        - name: read
+          in: query
+          schema:
+            type: string
+            required: true
+            description: The type of recieve.
+            enum: 
+              - All
+              - true
+              - false
+            example: All
       responses:
         '200':
           description: Successfully retrieved notifications
@@ -91,9 +115,6 @@ paths:
                         id:
                           type: string
                           example: 64b3e2c86f4f3e0019f9a780
-                        userId:
-                          type: string
-                          example: 64b3e2c86f4f3e0019f9a789
                         type:
                           type: string
                           example: user
@@ -107,17 +128,13 @@ paths:
                           type: string
                           format: date-time
                           example: "2024-12-07T09:00:00.000Z"
-                        updatedAt:
-                          type: string
-                          format: date-time
-                          example: "2024-12-07T10:00:00.000Z"
         '500':
           description: Internal server error
 
   /notifications/{id}/read:
     patch:
-      summary: Mark a notification as read
-      description: Updates the status of a notification to mark it as read.
+      summary: 알림을 읽음으로 표시
+      description:  알림의 상태를 읽음으로 업데이트합니다.
       tags:
         - Notifications
       parameters:
@@ -149,8 +166,8 @@ paths:
 
   /notifications/{id}:
     delete:
-      summary: Delete a notification
-      description: Deletes a specific notification by its ID.
+      summary: 알림 삭제
+      description: 알림을 삭제합니다.
       tags:
         - Notifications
       parameters:

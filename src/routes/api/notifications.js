@@ -7,7 +7,7 @@ const {
     markAsRead,
     deleteNotification
 } = require('../../controllers/notification.controller');
-
+const isAdmin = require('../../middlewares/isAdmin');
 
 /**
  * @swagger

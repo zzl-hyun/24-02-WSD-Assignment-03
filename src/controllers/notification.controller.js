@@ -13,7 +13,8 @@ exports.createNotification = async (req, res, next) => {
 exports.getNotifications = async (req, res, next) => {
   try {
     const userId = req.user.id; // 사용자 ID는 인증 미들웨어에서 제공된다고 가정
-    const notifications = await notificationService.getNotifications(userId);
+    const isRead = req.query.read;
+    const notifications = await notificationService.getNotifications(userId, isRead);
     res.status(200).json({ status: 'success', data: notifications });
   } catch (error) {
     next(error);

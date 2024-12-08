@@ -3,6 +3,7 @@ const User = require('../models/User');
 const Job = require('../models/Job');
 const AppError = require('../utils/AppError');
 const errorCodes = require('../config/errorCodes');
+const { createNotification } = require('./notification.service');
 
 
 /**
@@ -166,6 +167,14 @@ exports.changeStatus = async ({ applicationId, status }) => {
       );
     }
     application.status = status;
+
+    // 알림 생성
+    await createNotification({
+      userId: application.userId, 
+      type: 'user', 
+      message:`your Application has been ${status}`
+    });
+
     return await application.save();
   } catch (error) {
     throw new AppError(

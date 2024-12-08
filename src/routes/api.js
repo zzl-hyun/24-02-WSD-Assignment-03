@@ -8,6 +8,7 @@ const authRouter = require('./api/auth');
 const applicationRouter = require('./api/applications');
 const bookmarkRouter = require('./api/bookmarks');
 const jobsRouter = require('./api/jobs');
+const notificationRouter = require('./api/notifications');
 // const usersRouter = require('./api/users');
 const debugRouter = require('./api/debug');
 /**
@@ -50,12 +51,14 @@ router.get('/csrf-token', csrfProtextion, (req, res) => {
     res.status(200).json({ csrfToken: req.csrfToken() });
 });
 
-// router.use('/users', usersRouter); // /api/users
+// router.use('/users', usersRouter); 
 router.use('/admin',csrfProtextion, adminRouter);
-router.use('/auth', csrfProtextion, authRouter);   // /api/auth
+router.use('/auth', csrfProtextion, authRouter);   
 router.use('/applications', csrfProtextion, applicationRouter);
 router.use('/bookmarks', csrfProtextion, bookmarkRouter);
-router.use('/jobs', csrfProtextion, jobsRouter);   // /api/jobs
+router.use('/jobs', csrfProtextion, jobsRouter);   
+router.use('/notifications', notificationRouter);
+
 router.use('/debug', debugRouter);
 
 module.exports = router;
