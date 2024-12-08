@@ -15,8 +15,8 @@ const errorCodes = require('../config/errorCodes');
  * @returns {Promise<Object>}
  */
 exports.register = async ({ username, email, password, role, companyId, profile }) => {
-  // 이메일 중복 확인
-
+    // 이메일 중복 확인
+  try {    
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       throw new AppError(
@@ -59,8 +59,10 @@ exports.register = async ({ username, email, password, role, companyId, profile 
 
     // 데이터 저장
     return await newUser.save();
-  
-
+  }
+  catch(error) {
+    throw error;
+  }
 };
 
 /**
@@ -230,11 +232,7 @@ exports.updateProfile = async (userId, profileData) => {
     return updatedUser.profile;
   }
   catch (error) {
-    throw new AppError(
-      errorCodes.SERVER_ERROR.code,
-      error.message || 'An unexpected error occurred.',
-      errorCodes.SERVER_ERROR.status
-    );
+    throw error;
   }
 };
 
