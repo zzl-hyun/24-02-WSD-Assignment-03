@@ -37,7 +37,12 @@ gantt
 ![jcloud](https://img.shields.io/badge/jcloud-ed1944?style=for-the-badge&logo=Openstack&logoColor=white)
 
 
-
+## 사용법
+모든 API는 /api 경로를 통해서 접근할 수 있습니다.
+API 호출 시, 기본적으로 ip:port/api를 포함하여 요청해야 합니다.
+~~~
+GET http://<ip>:<port>/api/csrf-token
+~~~
 
 ## Swagger 접속
 ![link.pdf](link.pdf)
