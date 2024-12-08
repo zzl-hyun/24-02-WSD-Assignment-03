@@ -3482,3 +3482,5 @@ MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
 [0mGET /api-docs/swagger-ui-init.js [36m304 [0m1.811 ms - -[0m
 [0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.451 ms - -[0m
 [0mGET /api-docs/favicon-32x32.png [36m304 [0m1.689 ms - -[0m
+Client IP: ::ffff:147.185.133.39
+[0mGET / [32m200 [0m304.708 ms - 3017[0m
