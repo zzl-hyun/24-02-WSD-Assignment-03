@@ -3031,3 +3031,454 @@ MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
 [0mGET /src [33m404 [0m48.474 ms - 2865[0m
 Client IP: ::ffff:61.81.179.227
 [0mGET / [32m200 [0m56.307 ms - 3016[0m
+^Cshutting down...
+Server closed
+
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ npm run dev[6Pclearnpm run dev[Knpm run dev[K[K[K[K[K[K[Kstart
+[?2004l
+> wsd@0.0.0 start
+> node ./bin/www
+
+[1G[0KRedis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m17.663 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.133 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.485 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m2.799 ms - 66133[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.833 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.886 ms - -[0m
+[0mPOST /api/notifications/create [33m404 [0m251.256 ms - 2865[0m
+^Cshutting down...
+Server closed
+
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ npm startrun dev
+[?2004l
+> wsd@0.0.0 dev
+> nodemon ./bin/www
+
+[1G[0K[33m[nodemon] 3.1.7[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mPOST /api/notifications/create [33m404 [0m240.419 ms - 2865[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+node:internal/modules/cjs/loader:1252
+  throw err;
+  ^
+
+Error: Cannot find module '../models/notification.model'
+Require stack:
+- /home/ubuntu/24-02-WSD-Assignment-03/src/services/notification.service.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/controllers/notification.controller.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/notify.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/app.js
+- /home/ubuntu/24-02-WSD-Assignment-03/bin/www
+[90m    at Function._resolveFilename (node:internal/modules/cjs/loader:1249:15)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1075:27)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/services/notification.service.js:1:22[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m {
+  code: [32m'MODULE_NOT_FOUND'[39m,
+  requireStack: [
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/services/notification.service.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/controllers/notification.controller.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/notify.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/app.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/bin/www'[39m
+  ]
+}
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m14.171 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.443 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.945 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.415 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m3.093 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.285 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+node:internal/modules/cjs/loader:1252
+  throw err;
+  ^
+
+Error: Cannot find module './api/notify'
+Require stack:
+- /home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js
+- /home/ubuntu/24-02-WSD-Assignment-03/src/app.js
+- /home/ubuntu/24-02-WSD-Assignment-03/bin/www
+[90m    at Function._resolveFilename (node:internal/modules/cjs/loader:1249:15)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1075:27)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:11:22[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m {
+  code: [32m'MODULE_NOT_FOUND'[39m,
+  requireStack: [
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/src/app.js'[39m,
+    [32m'/home/ubuntu/24-02-WSD-Assignment-03/bin/www'[39m
+  ]
+}
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.990 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.778 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.401 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.648 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.884 ms - 66741[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.054 ms - -[0m
+[0mGET /api/debug/notification [32m200 [0m21.989 ms - 30[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m14.085 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.633 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m7.070 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.879 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m4.698 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.108 ms - -[0m
+[0mPOST /api/notifications/create [32m201 [0m60.215 ms - 257[0m
+[0mPOST /api/notifications/create [32m201 [0m11.766 ms - 257[0m
+[0mPOST /api/notifications/create [32m201 [0m8.847 ms - 257[0m
+[0mPOST /api/notifications/create [32m201 [0m8.616 ms - 257[0m
+[0mPOST /api/notifications/create [32m201 [0m7.357 ms - 257[0m
+[0mPOST /api/notifications/create [32m201 [0m6.996 ms - 257[0m
+[0mPOST /api/notifications/create [32m201 [0m7.581 ms - 257[0m
+[0mGET /api/debug/notification [32m200 [0m27.145 ms - 1639[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api/debug/notification [36m304 [0m48.345 ms - -[0m
+[2024-12-08T02:52:53.098Z] [ERROR] Code: USER_NOT_FOUND, Message: User not found., Route: /api/notifications/create, Location:     at exports.createNotification (/home/ubuntu/24-02-WSD-Assignment-03/src/services/notification.service.js:10:29)
+[0mPOST /api/notifications/create [33m404 [0m32.654 ms - 70[0m
+[0mGET /api-docs/ [36m304 [0m13.352 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m9.973 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m20.712 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m3.325 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.879 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.954 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m4.604 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m3.692 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m4.218 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.118 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.468 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.645 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m2.556 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.877 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.444 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.528 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m5.848 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.673 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m2.282 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.617 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m3.004 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m1.551 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.187 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.813 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m2.023 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m2.332 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.610 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.948 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.463 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.812 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m16.198 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.386 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m4.470 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.732 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.032 ms - 66848[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.815 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m14.058 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m4.837 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.403 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.578 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m4.145 ms - 66830[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.467 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Not all input has been taken into account at your final specification.
+Here's the report: 
+
+
+ Error in ./swagger/Notification.yaml :
+YAMLSyntaxError: All collection items must start at the same column at line 38, column 9:
+
+        '201':
+        ^^^^^^…
+
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m7.901 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.854 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.956 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.434 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m1.998 ms - 57957[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.779 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m14.149 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.781 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m4.957 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.380 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.691 ms - 67248[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.823 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m6.869 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m3.504 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m3.575 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.986 ms - 67847[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.288 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.336 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m2.879 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.945 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.875 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.683 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m3.222 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.612 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m12.725 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m1.915 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m1.953 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m1.341 ms - 67871[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.188 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.176 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m5.344 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m2.365 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.306 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m0.775 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m1.376 ms - 67905[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.843 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m11.696 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.987 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m2.434 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.684 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.718 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.657 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m5.905 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.089 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m0.982 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m0.684 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m1.426 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.828 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m6.397 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m3.352 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.838 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m1.939 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.380 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.878 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.512 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.380 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.806 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m5.146 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m4.546 ms - 67475[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.166 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.008 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.178 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.060 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.342 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m3.509 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.962 ms - -[0m
+[2024-12-08T03:15:45.828Z] [ERROR] Code: MISSING_TOKEN, Message: Access Denied. Missing or invalid Authorization header., Route: /api/notifications?read=All, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
+[0mGET /api/notifications?read=All [31m500 [0m12.109 ms - 109[0m
+[2024-12-08T03:31:27.781Z] [ERROR] Code: N/A, Message: Cast to ObjectId failed for value "_id..." (type string) at path "_id" for model "User", Route: /api/notifications/create, Location:     at SchemaObjectId.cast (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/mongoose/lib/schema/objectId.js:250:11)
+[0mPOST /api/notifications/create [31m500 [0m57.209 ms - 146[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m21.391 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.870 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m7.223 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.688 ms - 67509[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.080 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.063 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m11.862 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m1.906 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m1.963 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m0.678 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m1.135 ms - 67513[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.697 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api/debug/notification [36m304 [0m44.941 ms - -[0m
+[0mGET /api/debug/application [32m200 [0m9.300 ms - 612[0m
+[0mGET /api-docs/ [36m304 [0m4.971 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.168 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.054 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m3.778 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m4.284 ms - -[0m
+[0mGET /api/csrf-token [32m200 [0m4.812 ms - 52[0m
+[0mPOST /api/auth/login [32m200 [0m258.114 ms - 237[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZDQ3NzVkZDQ3ZWQxMDY5ZTJlZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMzYyOTQxOCwiZXhwIjoxNzMzNjMwMzE4fQ.KiXWeKUJ0XbhfH3Wh_ygi5srV84t59sCizCmVJEzBLM
+Redis result: [1mnull[22m
+its admin
+[
+  { _id: new ObjectId([32m'674e7990de126bae7c37a1e0'[39m) },
+  { _id: new ObjectId([32m'674e7990de126bae7c37a250'[39m) }
+]
+[0mGET /api/admin/applications [32m200 [0m39.031 ms - 321[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZDQ3NzVkZDQ3ZWQxMDY5ZTJlZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMzYyOTQxOCwiZXhwIjoxNzMzNjMwMzE4fQ.KiXWeKUJ0XbhfH3Wh_ygi5srV84t59sCizCmVJEzBLM
+Redis result: [1mnull[22m
+its admin
+[0mPUT /api/admin/applications/6753d22ebfa617d0e259a3c4?status=Rejected [32m200 [0m38.126 ms - 319[0m
+[0mGET /api/debug/application [32m200 [0m8.798 ms - 612[0m
+[0mGET /api/debug/notification [32m200 [0m12.881 ms - 1872[0m
+[2024-12-08T03:44:59.519Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/login, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/login [33m403 [0m11.753 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m2.217 ms - 52[0m
+[2024-12-08T03:45:15.777Z] [ERROR] Code: INVALID_CREDENTIALS, Message: Invalid email or password., Route: /api/auth/login, Location:     at exports.login (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:92:13)
+[0mPOST /api/auth/login [33m401 [0m128.272 ms - 86[0m
+[2024-12-08T03:45:36.104Z] [ERROR] Code: INVALID_CREDENTIALS, Message: Invalid email or password., Route: /api/auth/login, Location:     at exports.login (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:83:13)
+[0mPOST /api/auth/login [33m401 [0m26.025 ms - 86[0m
+[2024-12-08T03:45:40.417Z] [ERROR] Code: INVALID_CREDENTIALS, Message: Invalid email or password., Route: /api/auth/login, Location:     at exports.login (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:92:13)
+[0mPOST /api/auth/login [33m401 [0m120.539 ms - 86[0m
+[2024-12-08T03:45:49.681Z] [ERROR] Code: MISSING_TOKEN, Message: Access Denied. Missing or invalid Authorization header., Route: /api/auth/profile, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
+[0mGET /api/auth/profile [31m500 [0m3.709 ms - 109[0m
+[0mGET /api/debug/user [32m200 [0m8.108 ms - 1767[0m
+[0mPOST /api/auth/login [32m200 [0m137.219 ms - 242[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2Mjk1NjksImV4cCI6MTczMzYzMDQ2OX0.N3qq8FmaW7wrhp0uPxe3zaNE980sdvoNpLMnYD1Yu20
+Redis result: [1mnull[22m
+[0mGET /api/notifications?read=All [32m200 [0m13.495 ms - 262[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2Mjk1NjksImV4cCI6MTczMzYzMDQ2OX0.N3qq8FmaW7wrhp0uPxe3zaNE980sdvoNpLMnYD1Yu20
+Redis result: [1mnull[22m
+[0mGET /api/notifications?read=true [32m200 [0m11.238 ms - 30[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2Mjk1NjksImV4cCI6MTczMzYzMDQ2OX0.N3qq8FmaW7wrhp0uPxe3zaNE980sdvoNpLMnYD1Yu20
+Redis result: [1mnull[22m
+[0mGET /api/notifications?read=false [32m200 [0m8.883 ms - 262[0m
+[0mPATCH /api/notifications/67551617aadecf1bade1e873/read [32m200 [0m19.343 ms - 61[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2Mjk1NjksImV4cCI6MTczMzYzMDQ2OX0.N3qq8FmaW7wrhp0uPxe3zaNE980sdvoNpLMnYD1Yu20
+Redis result: [1mnull[22m
+[0mGET /api/notifications?read=false [32m200 [0m11.969 ms - 30[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2Mjk1NjksImV4cCI6MTczMzYzMDQ2OX0.N3qq8FmaW7wrhp0uPxe3zaNE980sdvoNpLMnYD1Yu20
+Redis result: [1mnull[22m
+[0mGET /api/notifications?read=All [32m200 [0m10.689 ms - 261[0m
+[0mDELETE /api/notifications/67551617aadecf1bade1e873 [32m200 [0m6.781 ms - 67[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2Mjk1NjksImV4cCI6MTczMzYzMDQ2OX0.N3qq8FmaW7wrhp0uPxe3zaNE980sdvoNpLMnYD1Yu20
+Redis result: [1mnull[22m
+[0mGET /api/notifications?read=All [32m200 [0m9.187 ms - 30[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m9.405 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.508 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.534 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.655 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m5.207 ms - 67426[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.039 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.104 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.353 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.497 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.762 ms - 67541[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m5.453 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.954 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m2.967 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.111 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m4.236 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m1.811 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.451 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.689 ms - -[0m

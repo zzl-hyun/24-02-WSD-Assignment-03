@@ -7,6 +7,24 @@
 - 문서화 및 인증: Swagger를 이용한 API 문서화와 JWT 기반 인증 시스템 적용.
 - 클라우드 배포: JCloud를 사용하여 백엔드 서버를 배포.
 
+
+```mermaid
+gantt
+  dateFormat  YYYY-MM-DD
+  section 초기 세팅
+  서버 세팅 :a1, 2024-11-27, 1d
+  크롤링: a2, 2024-11-28, 1d
+  section API 개발
+  Job API: a3, 2024-11-29, 2d
+  Auth API: a3, 2024-11-30, 3d
+  Debug API: a3, 2024-12-2, 1d
+  지원 API: a3, 2024-12-3, 2d
+  북마크 API: a3, 2024-12-6, 2d
+  알림 API: a3, 2024-12-7, 2d
+  section 마무리
+  Refactor: a4, 2024-12-05, 4d
+```
+
 ## 기술 스택
 <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white" alt="dd">
 

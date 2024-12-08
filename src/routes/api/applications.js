@@ -90,6 +90,10 @@ router.post('/', authenticateToken, createApplication);
  *         description: Successfully retrieved applications
  *       400:
  *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 router.get('/', authenticateToken, getApplications);
 

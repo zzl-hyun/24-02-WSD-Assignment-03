@@ -16,7 +16,7 @@ const { validateID } = require('../../middlewares/validators');
  * @swagger
  * /jobs:
  *   get:
- *     summary: Get job listings
+ *     summary: 채용공고 목록 조회
  *     tags:
  *       - Jobs
  *     parameters:
@@ -114,7 +114,8 @@ router.get('/', getJobs);
  * @swagger
  * /jobs/{id}:
  *   get:
- *     summary: Get job details
+ *     summary: 채용공고 상세 조회
+ *     description: 채용공고를 상세 조회하며 조회수가 증가합니다.
  *     tags:
  *       - Jobs
  *     parameters:
