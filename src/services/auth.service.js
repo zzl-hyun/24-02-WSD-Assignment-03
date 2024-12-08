@@ -180,11 +180,7 @@ exports.refreshToken = async (refreshToken) => {
         errorCodes.EXPIRED_TOKEN.status
       );
     }
-    throw new AppError(
-      errorCodes.INVALID_REFRESH_TOKEN.code, 
-      errorCodes.INVALID_REFRESH_TOKEN.message, 
-      errorCodes.INVALID_REFRESH_TOKEN.status
-    );
+    throw error;
   }
 };
 
@@ -268,11 +264,7 @@ exports.updatePassword = async (userId, oldPassword, newPassword) => {
     await user.save();
   }
   catch (error) {
-    throw new AppError(
-      errorCodes.SERVER_ERROR.code,
-      error.message || 'An unexpected error occurred.',
-      errorCodes.SERVER_ERROR.status
-    );
+    throw error;
   }
 };
 
@@ -306,11 +298,7 @@ exports.deleteProfile = async (userId, password) => {
     await User.findByIdAndDelete(userId);
   }
   catch (error) {
-    throw new AppError(
-      errorCodes.SERVER_ERROR.code,
-      error.message || 'An unexpected error occurred.',
-      errorCodes.SERVER_ERROR.status
-    );
+    throw error;
   }
 };
 
@@ -341,10 +329,6 @@ exports.logout = async (refreshToken) => {
     await Token.deleteOne({ refresh_token: refreshToken });
   }
   catch (error) {
-    throw new AppError(
-      errorCodes.SERVER_ERROR.code,
-      error.message || 'An unexpected error occurred.',
-      errorCodes.SERVER_ERROR.status
-    );
+    throw error;
   }
 };

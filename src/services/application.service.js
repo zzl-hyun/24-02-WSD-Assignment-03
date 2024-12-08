@@ -56,11 +56,7 @@ exports.createApplication = async ({ userId, link, resume }) => {
     const application = new Application({ userId, jobId: job._id, resume: resumeUrl });
     return await application.save();
 } catch (error) {
-    throw new AppError(
-      errorCodes.SERVER_ERROR.code,
-      error.message || 'An unexpected error occurred.',
-      errorCodes.SERVER_ERROR.status
-    );
+    throw error;
   }
 };
 
@@ -99,11 +95,7 @@ exports.getApplications = async ({ userId, role, status = 'All', sortBy = 'appli
 
     return await Application.find(query).sort(sort);
   } catch (error) {
-    throw new AppError(
-      errorCodes.SERVER_ERROR.code,
-      error.message || 'An unexpected error occurred.',
-      errorCodes.SERVER_ERROR.status
-    );
+    throw error;
   }
 };
 
@@ -148,11 +140,7 @@ exports.deleteApplication = async ({ applicationId, userId }) => {
       application.status = 'Cancelled';
       return await application.save();
   } catch (error) {
-    throw new AppError(
-      errorCodes.SERVER_ERROR.code,
-      error.message || 'An unexpected error occurred.',
-      errorCodes.SERVER_ERROR.status
-    );
+    throw error;
   }
 };
   
@@ -177,10 +165,6 @@ exports.changeStatus = async ({ applicationId, status }) => {
 
     return await application.save();
   } catch (error) {
-    throw new AppError(
-      errorCodes.SERVER_ERROR.code,
-      error.message || 'An unexpected error occurred.',
-      errorCodes.SERVER_ERROR.status
-    );
+    throw error;
   }
 };

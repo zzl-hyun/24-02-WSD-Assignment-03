@@ -97,11 +97,7 @@ exports.getJobs = async ({ page, size, sortBy, sortOrder, filters }) => {
     };
   } 
   catch (error) {
-    throw new AppError(
-      errorCodes.SERVER_ERROR.code,
-      error.message || 'An unexpected error occurred.',
-      errorCodes.SERVER_ERROR.status
-    );
+    throw error;
   }
 };
 
@@ -181,7 +177,6 @@ exports.deleteJob = async (jobId, userId, passwordHash) => {
 
     await Job.findByIdAndDelete(jobId);
   } catch (error) {
-
     throw error;
   }
 };
