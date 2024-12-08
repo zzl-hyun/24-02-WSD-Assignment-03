@@ -178,8 +178,8 @@ User <- View <- Controller <- Service <- Model
 	- [x] 조회수 증가 ✅ 2024-12-03
 	- [x] 관련 공고 추천 ✅ 2024-12-03
 - [x] 채용 공고 등록 API ✅ 2024-12-07
-- [ ] 채용 공고 수정 API
-- [ ] 채용 공고 삭제 API
+- [x] 채용 공고 수정 API ✅ 2024-12-08
+- [x] 채용 공고 삭제 API ✅ 2024-12-07
 
 ### 지원 관련 API
 - [x] 지원하기 (POST /applications) ✅ 2024-12-07
@@ -235,7 +235,7 @@ User <- View <- Controller <- Service <- Model
 - [ ] 보안 강화 (Optional)
 	- [x] XSS 방지 ✅ 2024-12-04
 	- [x] CSRF 보호 ✅ 2024-12-04
-	- [ ] SQL Injection 방지
+	- [x] SQL Injection 방지 ✅ 2024-12-08
 	- [x] 암호화 처리 ✅ 2024-12-04
 - [ ] 고급 API 기능 구현
 	- [x] 정렬 기능 ✅ 2024-12-05
@@ -247,7 +247,7 @@ User <- View <- Controller <- Service <- Model
 	- [ ] 부분 응답 처리
 - [ ] API 테스트 (Optional)
 	- [ ] 단위 테스트 작성
-	- [ ] 통합 테스트 작성
+	- [x] 통합 테스트 작성 ✅ 2024-12-08
 	- [ ] 엣지 케이스 테스트
 	- [ ] 테스트 커버리지 측정
 
