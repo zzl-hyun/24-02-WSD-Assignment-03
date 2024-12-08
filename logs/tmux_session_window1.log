@@ -4302,3 +4302,334 @@ Redis result: [1mnull[22m
 [2024-12-08T07:19:34.896Z] [ERROR] Code: MISSING_TOKEN, Message: Access Denied. Missing or invalid Authorization header., Route: /api/auth/delete, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
 [0mDELETE /api/auth/delete [31m500 [0m4.754 ms - 109[0m
 [0mPOST /api/auth/login [32m200 [0m216.973 ms - 242[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.443 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.175 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.580 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.582 ms - 68472[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.694 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.112 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m2.566 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.824 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m4.035 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m9.094 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.733 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.782 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m1.939 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.953 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m6.500 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.549 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.350 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.723 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m4.795 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.334 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m2.396 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m0.750 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m1.373 ms - 68451[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.591 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m14.192 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.298 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.589 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.449 ms - 68453[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.161 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.807 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m2.625 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m5.239 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m9.112 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m7.789 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m7.925 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.705 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m11.138 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.729 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m4.862 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.284 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.381 ms - 68478[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.883 ms - -[0m
+[0mGET /api-docs/ [32m200 [0m2.441 ms - 3106[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.024 ms - 68478[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [32m200 [0m12.360 ms - 230007[0m
+[0mGET /api-docs/swagger-ui.css [32m200 [0m11.322 ms - 152072[0m
+[0mGET /api-docs/swagger-ui-bundle.js [32m200 [0m12.242 ms - 1426050[0m
+[0mGET /api-docs/favicon-32x32.png [32m200 [0m2.619 ms - 628[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.783 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.447 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.407 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.621 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.993 ms - 68421[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.949 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m25.595 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.206 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.683 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m3.288 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m4.346 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.290 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/admin.js:139
+router.put('/jobs/:id', authenticateToken, isAdmin, validateID, updateJob);
+                                                                ^
+
+ReferenceError: updateJob is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/admin.js:139:65[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:6:21[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/admin.js:139
+router.put('/jobs/:id', authenticateToken, isAdmin, validateID, updateJob);
+                                                                ^
+
+ReferenceError: updateJob is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/admin.js:139:65[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:6:21[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/admin.js:139
+router.put('/jobs/:id', authenticateToken, isAdmin, validateID, updateJob);
+                                                                ^
+
+ReferenceError: updateJob is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/admin.js:139:65[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:6:21[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/admin.js:139
+router.put('/jobs/:id', authenticateToken, isAdmin, validateID, updateJob);
+                                                                ^
+
+ReferenceError: updateJob is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/admin.js:139:65[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:6:21[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/admin.js:139
+router.put('/jobs/:id', authenticateToken, isAdmin, validateID, updateJob);
+                                                                ^
+
+ReferenceError: updateJob is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/admin.js:139:65[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:6:21[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/services/job.service.js:138
+exports.updateJob = async (jobId, )
+^
+
+ReferenceError: async is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/services/job.service.js:138:1[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/controllers/job.controller.js:1:20[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/services/job.service.js:138
+exports.updateJob = async (jobId, )
+^
+
+ReferenceError: async is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/services/job.service.js:138:1[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/controllers/job.controller.js:1:20[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/admin.js:139
+router.put('/jobs/:id', authenticateToken, isAdmin, validateID, updateJob);
+                                                                ^
+
+ReferenceError: updateJob is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/admin.js:139:65[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:6:21[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+/home/ubuntu/24-02-WSD-Assignment-03/src/routes/api/admin.js:139
+router.put('/jobs/:id', authenticateToken, isAdmin, validateID, updateJob);
+                                                                ^
+
+ReferenceError: updateJob is not defined
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api/admin.js:139:65[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1546:14)[39m
+[90m    at Object..js (node:internal/modules/cjs/loader:1689:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1318:32)[39m
+[90m    at Function._load (node:internal/modules/cjs/loader:1128:12)[39m
+[90m    at TracingChannel.traceSync (node:diagnostics_channel:315:14)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:218:24)[39m
+[90m    at Module.require (node:internal/modules/cjs/loader:1340:12)[39m
+[90m    at require (node:internal/modules/helpers:141:16)[39m
+    at Object.<anonymous> [90m(/home/ubuntu/24-02-WSD-Assignment-03/[39msrc/routes/api.js:6:21[90m)[39m
+
+Node.js v22.11.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+(node:270357) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 exit listeners added to [Bus]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.848 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.073 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.310 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m2.883 ms - 72058[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.040 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.111 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m21.165 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.537 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m7.215 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m3.291 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m5.022 ms - 72058[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.374 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api/debug/job [32m200 [0m117.519 ms - 155909[0m
+[2024-12-08T07:51:12.725Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/admin/jobs/674e7990de126bae7c37a1e1, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPUT /api/admin/jobs/674e7990de126bae7c37a1e1 [33m403 [0m30.862 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m4.460 ms - 52[0m
+[0mPUT /api/admin/jobs/674e7990de126bae7c37a1e1 [32m200 [0m24.357 ms - 58[0m
+[0mGET /api/debug/job [32m200 [0m95.711 ms - 155877[0m
+[0mGET /api/jobs?page=1&size=20&sortBy=createdAt&sortOrder=desc&position=%EC%A0%95%EA%B7%9C%EC%A7%81&experience=%EB%AC%B4%EA%B4%80&education=%EB%8C%80%EC%A1%B8 [36m304 [0m31.605 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m14.096 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m6.075 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m6.162 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m3.655 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m4.384 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.101 ms - -[0m
+[2024-12-08T07:54:28.293Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/login, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/login [33m403 [0m29.591 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m4.694 ms - 52[0m
+[0mPOST /api/auth/login [32m200 [0m245.956 ms - 242[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDQ0ODQsImV4cCI6MTczMzY0NTM4NH0.BK2NF27xTnEnDgxLOeBfqMFPyP8gINtq-xnhJPkJI84
+Redis result: [1mnull[22m
+[0mGET /api/applications?status=All [32m200 [0m34.263 ms - 612[0m
+Expiration time for blacklist: [33m869[39m
+Adding to blacklist: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDQ0ODQsImV4cCI6MTczMzY0NTM4NH0.BK2NF27xTnEnDgxLOeBfqMFPyP8gINtq-xnhJPkJI84 [33m869[39m
+[0mPOST /api/auth/refresh [32m200 [0m27.563 ms - 242[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDQ0ODQsImV4cCI6MTczMzY0NTM4NH0.BK2NF27xTnEnDgxLOeBfqMFPyP8gINtq-xnhJPkJI84
+Redis result: blacklisted
+line 31
+[2024-12-08T07:55:24.146Z] [ERROR] Code: TOKEN_BLACKLISTED, Message: Access token is invalid, Route: /api/applications?status=All, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
+[0mGET /api/applications?status=All [31m500 [0m6.773 ms - 81[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM2NDQ0ODQsImV4cCI6MTczMzY0NTM4NH0.BK2NF27xTnEnDgxLOeBfqMFPyP8gINtq-xnhJPkJI84
+Redis result: blacklisted
+line 31
+[2024-12-08T07:55:32.496Z] [ERROR] Code: TOKEN_BLACKLISTED, Message: Access token is invalid, Route: /api/bookmarks, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
+[0mPOST /api/bookmarks [31m500 [0m5.952 ms - 81[0m

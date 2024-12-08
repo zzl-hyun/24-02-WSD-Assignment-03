@@ -33,7 +33,7 @@ const options = {
     openapi: "3.0.0",
     info: {
       title: "WSD Assignment 03 API",
-      description: "구인구직 정보를 제공",
+      description: "202246109 김기현",
       version: "1.0.0",
     },
     servers: [
@@ -81,7 +81,7 @@ const options = {
     "./src/models/*.js",
     "./src/controllers/*.controller.js",
     "./src/services/*.service.js",
-  ], // API 경로 추가
+  ], 
 };
 
 const specs = swaggerJsdoc(options);

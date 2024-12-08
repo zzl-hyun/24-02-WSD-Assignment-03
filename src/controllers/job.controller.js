@@ -66,6 +66,29 @@ exports.getJobDetails = async (req, res, next) => {
   }
 };
 
+exports.updateJob = async (req, res, next) => {
+  try {
+    const { jobTitle, experienceRequired, educationRequired, employmentType, skills, benefits, deadline } = req.body;
+        
+    if (jobTitle || experienceRequired || educationRequired || employmentType || skills || benefits || deadline) {
+      await jobService.updateJob(req.params.id, {
+        jobTitle,
+        experienceRequired,
+        educationRequired,
+        employmentType,
+        skills,
+        benefits,
+        deadline,
+      });
+    }
+
+    res.status(200).json({ status: 'success', message: 'Job updated successfully.' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+
 exports.deleteJob = async (req, res, next) => {
   try {
     const userId = req.user.id;

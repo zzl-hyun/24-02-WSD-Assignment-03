@@ -4,7 +4,7 @@ const authenticateToken = require('../../middlewares/authenticateToken');
 const isAdmin = require('../../middlewares/isAdmin');
 const { validateID ,validateStatus } = require('../../middlewares/validators');
 const { getApplications, changeStatus } = require('../../controllers/application.controller');
-const { deleteJob } = require('../../controllers/job.controller');
+const { deleteJob, updateJob } = require('../../controllers/job.controller');
 
 /**
  * @swagger
@@ -93,6 +93,83 @@ router.put('/applications/:id', authenticateToken, isAdmin, validateID, validate
 /**
  * @swagger
  * /admin/jobs/{id}:
+ *   put:
+ *     summary: 공고 수정
+ *     tags: [Admin]
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         description: 수정할 공고의 _id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               jobTitle:
+ *                 type: string
+ *                 description: 공고 제목
+ *                 example: "Software Engineer"
+ *               experienceRequired:
+ *                 type: string
+ *                 description: 필요한 경력
+ *                 example: "3+ years in software development"
+ *               educationRequired:
+ *                 type: string
+ *                 description: 필요한 학력
+ *                 example: "Bachelor's degree in Computer Science"
+ *               employmentType:
+ *                 type: string
+ *                 description: 고용 형태
+ *                 example: "Full-time"
+ *               skills:
+ *                 type: array
+ *                 description: 필요 기술
+ *                 items:
+ *                   type: string
+ *                 example: ["JavaScript", "React", "Node.js"]
+ *               benefits:
+ *                 type: array
+ *                 description: 제공 혜택
+ *                 items:
+ *                   type: string
+ *                 example: ["Health Insurance", "Stock Options"]
+ *               deadline:
+ *                 type: string
+ *                 description: 지원 마감일
+ *                 format: date
+ *                 example: "2024-12-31"
+ *     responses:
+ *       200:
+ *         description: Job deleted successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: success
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     $ref: '#/components/schemas/Job'
+ *       400:
+ *         description: error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ */
+router.put('/jobs/:id', authenticateToken, isAdmin, validateID, updateJob);
+
+/**
+ * @swagger
+ * /admin/jobs/{id}:
  *   delete:
  *     summary: 공고 삭제
  *     tags: [Admin]
@@ -128,7 +205,7 @@ router.put('/applications/:id', authenticateToken, isAdmin, validateID, validate
  *                 data:
  *                   type: array
  *                   items:
- *                     $ref: '#/components/schemas/Application'
+ *                     $ref: '#/components/schemas/Job'
  *       400:
  *         description: error
  *         content:

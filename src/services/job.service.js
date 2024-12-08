@@ -135,6 +135,41 @@ exports.getJobDetails = async (jobId) => {
   }
 };
 
+exports.updateJob = async (jobId, jobData) => {
+  try {
+    // 데이터 분리
+    const detailsFields = ['skills', 'benefits'];
+    const topFields = ['jobTitle', 'experienceRequired', 'educationRequired', 'employmentType', 'deadline'];
+
+    const updateData = {
+      ...Object.fromEntries(
+        Object.entries(jobData).filter(([key]) => topFields.includes(key))
+      ),
+      ...Object.fromEntries(
+        Object.entries(jobData)
+          .filter(([key]) => detailsFields.includes(key))
+          .map(([key, value]) => [`details.${key}`, value])
+      ),
+    };
+
+    // Job 업데이트
+    const updateJob = await Job.findByIdAndUpdate(jobId, { $set: updateData }, { new: true });
+
+    if (!updateJob) {
+      throw new AppError(
+          errorCodes.JOB_NOT_FOUND.code,
+          errorCodes.JOB_NOT_FOUND.message,
+          errorCodes.JOB_NOT_FOUND.status
+      );
+    }
+
+    return updateJob;
+  } catch (error) {
+    throw error;
+  }
+};
+
+
 exports.deleteJob = async (jobId, userId, passwordHash) => {
   try {
     const user = await User.findById(userId, { companyId: 1, passwordHash: 1 });
