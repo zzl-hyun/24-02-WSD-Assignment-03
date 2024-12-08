@@ -54,6 +54,16 @@ mongoDB 설치 및 실행
 Redis 설치 및 실행
 ~~~
 ~~~
+.env 설정
+PORT=
+MONGO_URI=
+REDIS_HOST=
+REDIS_PORT=
+JWT_SECRET=
+REFRESH_TOKEN_SECRET=
+COOKIE_SECRET=
+~~~
+~~~
 $ npm install
 $ npm start
 ~~~
