@@ -4633,3 +4633,93 @@ Redis result: blacklisted
 line 31
 [2024-12-08T07:55:32.496Z] [ERROR] Code: TOKEN_BLACKLISTED, Message: Access token is invalid, Route: /api/bookmarks, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
 [0mPOST /api/bookmarks [31m500 [0m5.952 ms - 81[0m
+Client IP: ::ffff:114.202.23.66
+[0mGET / [32m200 [0m351.220 ms - 3016[0m
+[0mGET /favicon.ico [33m404 [0m56.613 ms - 2865[0m
+[0mGET /api-docs/ [36m304 [0m3.382 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.654 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m3.062 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.087 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m3.014 ms - 72058[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m113.154 ms - 3016[0m
+[0mGET /favicon.ico [33m404 [0m46.851 ms - 2865[0m
+[0mGET /api-docs/ [36m304 [0m5.592 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m2.201 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.656 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.118 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m1.925 ms - -[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m36.081 ms - 1436[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m9.304 ms - 220[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m21.564 ms - 916[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m26.420 ms - 801[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m22.383 ms - 682[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m19.213 ms - 667[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m16.061 ms - -[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m14.539 ms - 649[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m16.214 ms - 513[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m15.231 ms - 566[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m13.551 ms - -[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m11.626 ms - -[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m15.203 ms - 583[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m13.054 ms - 374[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m10.496 ms - 342[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m12.974 ms - 321[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m7.838 ms - -[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m8.038 ms - 342[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m145.355 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m3.669 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.099 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.163 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.698 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.636 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m2.064 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m3.298 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m5.438 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m7.083 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m7.649 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.505 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m210.107 ms - 368[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m29.418 ms - 371[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m19.479 ms - 368[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [32m200 [0m21.977 ms - 374[0m
+[0mGET /api-docs/ [36m304 [0m4.278 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.875 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.645 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.418 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.441 ms - -[0m

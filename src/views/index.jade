@@ -2,45 +2,9 @@ extends layout
 
 block content
   h1= title
+  p 202246109 김기현
   p Welcome #{ip}
-  a(href="http://113.198.66.75:10042/api-docs/#/") API docs
   
   hr
-  
-  form(id="loginForm")
-    label(for="email") Email:
-    input(type="email" name="email" id="email" required)
-    br
-    label(for="passwordHash") Password:
-    input(type="password" name="passwordHash" id="passwordHash" required)
-    br
-    button(type="submit") Login
+  a(href="http://113.198.66.75:10042/api-docs/#/") 👉 API docs 
 
-  h2 Response:
-  pre#responseArea No response yet.
-  
-  script.
-    document.getElementById('loginForm').addEventListener('submit', async function(event) {
-      event.preventDefault(); // 폼의 기본 제출 방식을 막음
-
-      const email = document.getElementById('email').value;
-      const passwordHash = document.getElementById('passwordHash').value;
-
-      const responseArea = document.getElementById('responseArea');
-      responseArea.textContent = 'Loading...';
-
-      try {
-        const response = await fetch('http://113.198.66.75:10042/api/auth/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ email, passwordHash }),
-        });
-
-        const data = await response.json();
-        responseArea.textContent = JSON.stringify(data, null, 2); // 응답 내용을 JSON 형식으로 표시
-      } catch (error) {
-        responseArea.textContent = `Error: ${error.message}`;
-      }
-    });
