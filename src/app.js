@@ -44,6 +44,7 @@ const apiLimiter = rateLimit({
 // route
 const indexRouter = require('./routes/index');
 const apiRouter = require('./routes/api');
+const testRouter = require('./routes/test');
 // const usersRouter = require('./routes/users');
 // const authRouter = require('./routes/auth');
 // const jobsRouter = require('./routes/jobs');
@@ -54,7 +55,7 @@ app.use('/api', apiLimiter, apiRouter);
 // app.use('/api/users', apiLimiter, usersRouter);
 // app.use('/api/auth', authRouter);
 // app.use('/api/jobs', jobsRouter);
-
+app.use('/test', testRouter);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 // 정적 파일 제공
 app.use(express.static(path.join(__dirname, 'public')));
@@ -75,4 +76,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 module.exports = app;
