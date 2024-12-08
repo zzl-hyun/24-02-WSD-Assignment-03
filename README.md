@@ -179,7 +179,7 @@ User <- View <- Controller <- Service <- Model
 	- [x] 관련 공고 추천 ✅ 2024-12-03
 - [x] 채용 공고 등록 API ✅ 2024-12-07
 - [ ] 채용 공고 수정 API
-- [x] 채용 공고 삭제 API ✅ 2024-12-07
+- [ ] 채용 공고 삭제 API
 
 ### 지원 관련 API
 - [x] 지원하기 (POST /applications) ✅ 2024-12-07

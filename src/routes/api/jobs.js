@@ -43,7 +43,12 @@ const { validateID } = require('../../middlewares/validators');
  *         description: Sort order (asc or desc)
  *         schema:
  *           type: string
+ *           required: true
  *           default: desc
+ *           enum:
+ *              - desc
+ *              - asc
+ *           example: desc
  *       - name: keyword
  *         in: query
  *         description: Keyword to search in job title or description
@@ -59,6 +64,13 @@ const { validateID } = require('../../middlewares/validators');
  *         description: (정규직...)
  *         schema:
  *           type: string
+ *           required: true
+ *           default: 정규직
+ *           enum:
+ *              - 정규직
+ *              - 계약직
+ *              - 인턴직
+ *              - 파견직
  *       - name: location
  *         in: query
  *         description: (안양...)
@@ -69,11 +81,24 @@ const { validateID } = require('../../middlewares/validators');
  *         description:  (신입, 경력...)
  *         schema:
  *           type: string
+ *           required: true
+ *           default: 무관
+ *           enum:
+ *              - 신입
+ *              - 경력
+ *              - 무관
  *       - name: education
  *         in: query
  *         description: (고졸...)
  *         schema:
- *            type: string
+ *           type: string
+ *           required: true
+ *           default: 대졸
+ *           enum:
+ *              - 무관
+ *              - 대졸
+ *              - 초대졸
+ *              - 고졸
  *       - name: salary
  *         in: query
  *         description: (3000만원...)

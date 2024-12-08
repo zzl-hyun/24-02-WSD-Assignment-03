@@ -54,7 +54,7 @@ exports.getJobs = async ({ page, size, sortBy, sortOrder, filters }) => {
       query.location = { $regex: filters.location, $options: 'i' };
     }
     if (filters.experience) {
-      query.experienceRequired = filters.experience;
+      query.experienceRequired = {$regex: filters.experience, $options: 'i'};
     }
     if (filters.education) {
       query.educationRequired = {$regex: filters.education, $options: 'i'};
@@ -76,6 +76,8 @@ exports.getJobs = async ({ page, size, sortBy, sortOrder, filters }) => {
     // Sorting
     const sort = { [sortBy]: sortOrder === 'asc' ? 1 : -1 };
 
+    // console.log('Query:', query);
+    // console.log('Sort:', sort);
     // Fetching data
     const jobs = await Job.find(query)
       .sort(sort)

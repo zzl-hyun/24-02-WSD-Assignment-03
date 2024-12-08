@@ -15,12 +15,12 @@ const isAdmin = require('../../middlewares/isAdmin');
  *   name: Notifications
  *   description: 알림 관리 API
  */
-router.post('/create', createNotification);
+router.post('/create', authenticateToken, isAdmin, createNotification);
 
 router.get('/', authenticateToken, getNotifications);
 
-router.patch('/:id/read', markAsRead);
+router.patch('/:id/read', authenticateToken, markAsRead);
 
-router.delete('/:id', deleteNotification);
+router.delete('/:id', authenticateToken, deleteNotification);
 
 module.exports = router;
