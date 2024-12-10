@@ -12,6 +12,7 @@ const { validateID } = require('../../middlewares/validators');
  *   name: Jobs
  *   description: 채용공고 API
  */
+
 /**
  * @swagger
  * /jobs:
@@ -140,7 +141,7 @@ router.get('/', getJobs);
  * /jobs/{id}:
  *   get:
  *     summary: 채용공고 상세 조회
- *     description: 채용공고를 상세 조회하며 조회수가 증가합니다.
+ *     description: 채용공고와 회사정보가 제공되며 조회수가 증가합니다.
  *     tags:
  *       - Jobs
  *     parameters:

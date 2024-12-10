@@ -72,6 +72,31 @@ router.get('/bookmark', async (req, res, next) => {
 
 /**
  * @swagger
+ * /debug/company:
+ *   get:
+ *     summary: Company collection 조회
+ *     tags: [Debug]
+ *     responses:
+ *       200:
+ *         description: A list of companies
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Company'
+ */
+router.get('/company', async (req, res, next) => {
+    try {
+        const companies = await Company.find(); // 모든 사용자 데이터 조회
+        res.status(200).json({status: 'success', data: companies}); // 데이터를 JSON 형식으로 반환
+    } catch (err) {
+        next(err);
+    }
+});
+
+/**
+ * @swagger
  *  /debug/job:
  *    get:
  *      summary: Job collection 조회

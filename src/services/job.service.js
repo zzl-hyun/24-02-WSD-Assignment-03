@@ -109,7 +109,7 @@ exports.getJobs = async ({ page, size, sortBy, sortOrder, filters }) => {
  */
 exports.getJobDetails = async (jobId) => {
   try {  
-    const jobDetails = await Job.findById(jobId);
+    const jobDetails = await Job.findById(jobId).populate('companyId');
     console.log(jobDetails);
     if (!jobDetails) {
       throw new AppError(errorCodes.NOT_FOUND.code, 'Job not found.', errorCodes.NOT_FOUND.status);

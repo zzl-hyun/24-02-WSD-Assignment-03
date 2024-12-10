@@ -4741,3 +4741,227 @@ Client IP: ::ffff:61.81.179.227
 [0mGET /api/debug/user [32m200 [0m53.604 ms - 2152[0m
 [0mGET /api/debug [33m404 [0m35.448 ms - 1407[0m
 [0mGET /api/debug/token [32m200 [0m20.185 ms - 2215[0m
+[0mGET /api/csrf-token [32m200 [0m11.259 ms - 52[0m
+[0mGET /api/login [33m404 [0m24.399 ms - 1407[0m
+[0mGET /api/auth/login [33m404 [0m15.224 ms - 1407[0m
+[0mGET /api/auth/login [33m404 [0m15.235 ms - 1407[0m
+[0mGET /api/appliations [33m404 [0m17.542 ms - 1407[0m
+[2024-12-08T08:41:58.391Z] [ERROR] Code: MISSING_TOKEN, Message: Access Denied. Missing or invalid Authorization header., Route: /api/applications, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
+[0mGET /api/applications [31m500 [0m11.298 ms - 109[0m
+[0mGET /api-docs/favicon-32x32.png [32m200 [0m13.878 ms - 628[0m
+[0mGET /api/csrf-token [32m200 [0m7.887 ms - 52[0m
+[0mGET /api-docs/ [36m304 [0m2.179 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m2.671 ms - 72058[0m
+[0mGET /api-docs/swagger-ui.css [32m200 [0m4.015 ms - 152072[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [32m200 [0m6.986 ms - 230007[0m
+[0mGET /api-docs/swagger-ui-bundle.js [32m200 [0m4.910 ms - 1426050[0m
+[0mGET /api/csrf-token [32m200 [0m3.130 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.724 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.659 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.894 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.793 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.671 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m2.149 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.489 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m2.022 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.502 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.564 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.492 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.448 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.612 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.575 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.538 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.575 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.490 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.627 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.548 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.540 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.535 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.704 ms - 52[0m
+[0mGET /api-docs/ [36m304 [0m7.450 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m2.657 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m3.380 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.564 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m1.646 ms - -[0m
+[0mGET /api/csrf-token [32m200 [0m5.136 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m2.150 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m2.206 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m2.067 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.870 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.795 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.941 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.805 ms - 52[0m
+[0mGET /api/csrf-token [32m200 [0m1.781 ms - 52[0m
+Client IP: ::ffff:123.160.223.73
+[0mGET / [32m200 [0m31.791 ms - 375[0m
+[0mGET /favicon.ico [33m404 [0m14.366 ms - 1407[0m
+Client IP: ::ffff:111.7.96.173
+[0mGET / [32m200 [0m15.091 ms - 373[0m
+[0mGET /favicon.ico [33m404 [0m7.179 ms - 1407[0m
+Client IP: ::ffff:61.99.5.158
+[0mGET / [32m200 [0m27.415 ms - 372[0m
+[0mGET /favicon.ico [33m404 [0m20.431 ms - 1407[0m
+[0mGET /api-docs/ [36m304 [0m11.085 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.738 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m2.686 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.972 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.914 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m5.415 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.022 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m4.155 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m2.675 ms - 72647[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.796 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m1.907 ms - -[0m
+[0mGET /api/debug/company [32m200 [0m66.017 ms - 63889[0m
+[0mGET /api/debug/job [36m304 [0m129.440 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+{
+  details: {
+    skills: [ [32m'Python'[39m, [32m'Java'[39m, [32m'웹개발'[39m, [32m'백엔드/서버개발'[39m, [32m'앱개발'[39m ],
+    benefits: [ [32m'인기있는'[39m ]
+  },
+  _id: new ObjectId([32m'674e7990de126bae7c37a1e0'[39m),
+  companyId: {
+    _id: new ObjectId([32m'674c5a602237c36805591bec'[39m),
+    company_name: [32m'(주)만들다컴퍼니'[39m,
+    representative_name: [32m'정태양'[39m,
+    company_type: [32m'중소기업'[39m,
+    industry: [32m'시스템 소프트웨어 개발 및 공급업'[39m,
+    employee_count: [32m'N/A'[39m,
+    establishment_date: [32m'2024년 7월 9일(업력 1년차)'[39m,
+    revenue: [32m'N/A'[39m,
+    homepage: [32m'N/A'[39m,
+    company_address: [32m'경기 안양시 동안구 벌말로102번길 49, 5층 501-5호 (관양동,안양스마트베이2)'[39m,
+    __v: [33m0[39m
+  },
+  jobTitle: [32m'지속 성장가능한 개발 인력 모집-Flutter,Python,JAVA,재택가능'[39m,
+  link: [32m'https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=49472340&location=ts&searchword=python&searchType=search&paid_fl=n&search_uuid=e9d2aba4-58d9-443c-b0d8-ffa2cdb85756'[39m,
+  location: [32m'경기 안양시 동안구'[39m,
+  experienceRequired: [32m'경력무관'[39m,
+  educationRequired: [32m'대졸'[39m,
+  salary: [32m'3,000 만원'[39m,
+  employmentType: [32m'정규직'[39m,
+  deadline: [32m'채용시'[39m,
+  createdAt: [32m'24/11/26'[39m,
+  __v: [33m0[39m,
+  viewCount: [33m35[39m,
+  normalizedSalary: [33m30000000[39m
+}
+[0mGET /api/jobs/674e7990de126bae7c37a1e0 [32m200 [0m135.895 ms - 4774[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+{
+  details: {
+    skills: [ [32m'Python'[39m, [32m'Java'[39m, [32m'웹개발'[39m, [32m'백엔드/서버개발'[39m, [32m'앱개발'[39m ],
+    benefits: [ [32m'인기있는'[39m ]
+  },
+  _id: new ObjectId([32m'674e7990de126bae7c37a1e0'[39m),
+  companyId: new ObjectId([32m'674c5a602237c36805591bec'[39m),
+  jobTitle: [32m'지속 성장가능한 개발 인력 모집-Flutter,Python,JAVA,재택가능'[39m,
+  link: [32m'https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=49472340&location=ts&searchword=python&searchType=search&paid_fl=n&search_uuid=e9d2aba4-58d9-443c-b0d8-ffa2cdb85756'[39m,
+  location: [32m'경기 안양시 동안구'[39m,
+  experienceRequired: [32m'경력무관'[39m,
+  educationRequired: [32m'대졸'[39m,
+  salary: [32m'3,000 만원'[39m,
+  employmentType: [32m'정규직'[39m,
+  deadline: [32m'채용시'[39m,
+  createdAt: [32m'24/11/26'[39m,
+  __v: [33m0[39m,
+  viewCount: [33m36[39m,
+  normalizedSalary: [33m30000000[39m
+}
+[0mGET /api/jobs/674e7990de126bae7c37a1e0 [32m200 [0m78.049 ms - 4361[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+{
+  details: {
+    skills: [ [32m'Python'[39m, [32m'Java'[39m, [32m'웹개발'[39m, [32m'백엔드/서버개발'[39m, [32m'앱개발'[39m ],
+    benefits: [ [32m'인기있는'[39m ]
+  },
+  _id: new ObjectId([32m'674e7990de126bae7c37a1e0'[39m),
+  companyId: {
+    _id: new ObjectId([32m'674c5a602237c36805591bec'[39m),
+    company_name: [32m'(주)만들다컴퍼니'[39m,
+    representative_name: [32m'정태양'[39m,
+    company_type: [32m'중소기업'[39m,
+    industry: [32m'시스템 소프트웨어 개발 및 공급업'[39m,
+    employee_count: [32m'N/A'[39m,
+    establishment_date: [32m'2024년 7월 9일(업력 1년차)'[39m,
+    revenue: [32m'N/A'[39m,
+    homepage: [32m'N/A'[39m,
+    company_address: [32m'경기 안양시 동안구 벌말로102번길 49, 5층 501-5호 (관양동,안양스마트베이2)'[39m,
+    __v: [33m0[39m
+  },
+  jobTitle: [32m'지속 성장가능한 개발 인력 모집-Flutter,Python,JAVA,재택가능'[39m,
+  link: [32m'https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=49472340&location=ts&searchword=python&searchType=search&paid_fl=n&search_uuid=e9d2aba4-58d9-443c-b0d8-ffa2cdb85756'[39m,
+  location: [32m'경기 안양시 동안구'[39m,
+  experienceRequired: [32m'경력무관'[39m,
+  educationRequired: [32m'대졸'[39m,
+  salary: [32m'3,000 만원'[39m,
+  employmentType: [32m'정규직'[39m,
+  deadline: [32m'채용시'[39m,
+  createdAt: [32m'24/11/26'[39m,
+  __v: [33m0[39m,
+  viewCount: [33m37[39m,
+  normalizedSalary: [33m30000000[39m
+}
+[0mGET /api/jobs/674e7990de126bae7c37a1e0 [32m200 [0m91.896 ms - 4774[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m12.707 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.267 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.314 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.476 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m4.437 ms - 72656[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.000 ms - -[0m
+{
+  details: {
+    skills: [ [32m'Python'[39m, [32m'Java'[39m, [32m'웹개발'[39m, [32m'백엔드/서버개발'[39m, [32m'앱개발'[39m ],
+    benefits: [ [32m'인기있는'[39m ]
+  },
+  _id: new ObjectId([32m'674e7990de126bae7c37a1e0'[39m),
+  companyId: {
+    _id: new ObjectId([32m'674c5a602237c36805591bec'[39m),
+    company_name: [32m'(주)만들다컴퍼니'[39m,
+    representative_name: [32m'정태양'[39m,
+    company_type: [32m'중소기업'[39m,
+    industry: [32m'시스템 소프트웨어 개발 및 공급업'[39m,
+    employee_count: [32m'N/A'[39m,
+    establishment_date: [32m'2024년 7월 9일(업력 1년차)'[39m,
+    revenue: [32m'N/A'[39m,
+    homepage: [32m'N/A'[39m,
+    company_address: [32m'경기 안양시 동안구 벌말로102번길 49, 5층 501-5호 (관양동,안양스마트베이2)'[39m,
+    __v: [33m0[39m
+  },
+  jobTitle: [32m'지속 성장가능한 개발 인력 모집-Flutter,Python,JAVA,재택가능'[39m,
+  link: [32m'https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=49472340&location=ts&searchword=python&searchType=search&paid_fl=n&search_uuid=e9d2aba4-58d9-443c-b0d8-ffa2cdb85756'[39m,
+  location: [32m'경기 안양시 동안구'[39m,
+  experienceRequired: [32m'경력무관'[39m,
+  educationRequired: [32m'대졸'[39m,
+  salary: [32m'3,000 만원'[39m,
+  employmentType: [32m'정규직'[39m,
+  deadline: [32m'채용시'[39m,
+  createdAt: [32m'24/11/26'[39m,
+  __v: [33m0[39m,
+  viewCount: [33m38[39m,
+  normalizedSalary: [33m30000000[39m
+}
+[0mGET /api/jobs/674e7990de126bae7c37a1e0 [32m200 [0m111.704 ms - 4774[0m
+[0mGET /api/debug/company [36m304 [0m70.699 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
