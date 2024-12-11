@@ -7,7 +7,12 @@ const errorCodes = require('../config/errorCodes');
 
 /**
  * 채용공고 조회
- * @param {*} param0 
+ * @param {Object} params
+ * @param {Number} params.page
+ * @param {Number} params.size
+ * @param {String} params.sortBy
+ * @param {String} params.sortOrder
+ * @param {Object} params.filters
  * @returns 
  */
 exports.getJobs = async ({ page, size, sortBy, sortOrder, filters }) => {
@@ -41,7 +46,7 @@ exports.getJobs = async ({ page, size, sortBy, sortOrder, filters }) => {
       ];
     }
     if (filters.company) {
-      query.companyId = filters.company; // Assuming companyId is provided as a filter
+      query.companyId = filters.company; 
     }
     if (filters.position) {
       query.$or = [
@@ -78,13 +83,12 @@ exports.getJobs = async ({ page, size, sortBy, sortOrder, filters }) => {
 
     // console.log('Query:', query);
     // console.log('Sort:', sort);
-    // Fetching data
+
     const jobs = await Job.find(query)
       .sort(sort)
       .skip(skip)
       .limit(limit);
 
-    // Count total documents for pagination metadata
     const totalJobs = await Job.countDocuments(query);
 
     return {
@@ -135,6 +139,12 @@ exports.getJobDetails = async (jobId) => {
   }
 };
 
+/**
+ * 
+ * @param {ObjectId} jobId 
+ * @param {Object} jobData 
+ * @returns 
+ */
 exports.updateJob = async (jobId, jobData) => {
   try {
     // 데이터 분리
@@ -169,7 +179,12 @@ exports.updateJob = async (jobId, jobData) => {
   }
 };
 
-
+/**
+ * 
+ * @param {ObjectId} jobId 
+ * @param {ObjectId} userId 
+ * @param {String} passwordHash 
+ */
 exports.deleteJob = async (jobId, userId, passwordHash) => {
   try {
     const user = await User.findById(userId, { companyId: 1, passwordHash: 1 });

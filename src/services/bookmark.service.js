@@ -1,5 +1,11 @@
 const Bookmark = require('../models/Bookmark');
 
+/**
+ * 
+ * @param {ObjectId} userId 
+ * @param {ObjectId} jobId 
+ * @returns {Boolean} true: 추가 false: 제거
+ */
 exports.toggleBookmark = async (userId, jobId) => {
   const existingBookmark = await Bookmark.findOne({ user_id: userId, job_id: jobId });
 
@@ -14,6 +20,13 @@ exports.toggleBookmark = async (userId, jobId) => {
   }
 };
 
+/**
+ * 
+ * @param {ObjectId} userId 
+ * @param {Number} page 
+ * @param {Number} limit 
+ * @returns {Object}
+ */
 exports.getBookmarks = async (userId, page, limit) => {
   const skip = (page - 1) * limit;
 
