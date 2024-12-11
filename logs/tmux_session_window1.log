@@ -5049,3 +5049,100 @@ MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
 [32m[nodemon] starting `node ./bin/www`[39m
 Redis Connected...
 MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Client IP: ::ffff:147.185.133.207
+[0mGET / [32m200 [0m270.149 ms - 376[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Client IP: ::ffff:61.99.5.68
+[0mGET / [32m200 [0m158.155 ms - 371[0m
+[0mGET /api-docs/ [32m200 [0m4.107 ms - 3106[0m
+[0mGET /api-docs/swagger-ui-init.js [32m200 [0m4.553 ms - 72656[0m
+[0mGET /api-docs/swagger-ui.css [32m200 [0m7.453 ms - 152072[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [32m200 [0m9.494 ms - 230007[0m
+[0mGET /api-docs/swagger-ui-bundle.js [32m200 [0m8.137 ms - 1426050[0m
+[0mGET /api-docs/favicon-32x32.png [32m200 [0m2.303 ms - 628[0m
+[2024-12-11T05:35:28.129Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/register, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/register [33m403 [0m36.071 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m8.690 ms - 52[0m
+[2024-12-11T05:35:43.377Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/register, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/register [33m403 [0m5.344 ms - 72[0m
+[0mPOST /api/auth/register [32m201 [0m276.625 ms - 481[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[2024-12-11T05:37:26.162Z] [ERROR] Code: ALREADY_REGISTERED, Message: Email is already registered., Route: /api/auth/register, Location:     at exports.register (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:28:13)
+[0mPOST /api/auth/register [33m400 [0m126.611 ms - 87[0m
+[2024-12-11T05:38:05.044Z] [ERROR] Code: N/A, Message: data and salt arguments required, Route: /api/auth/register, Location:     at Object.hash (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/bcrypt/bcrypt.js:137:17)
+[0mPOST /api/auth/register [31m500 [0m29.413 ms - 85[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mPOST /api/auth/register [32m201 [0m247.990 ms - 283[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[2024-12-11T05:53:46.853Z] [ERROR] Code: MISSING_TOKEN, Message: Refresh Token is missing, Route: /api/auth/refresh, Location:     at exports.refreshToken (/home/ubuntu/24-02-WSD-Assignment-03/src/controllers/auth.controller.js:82:19)
+[0mPOST /api/auth/refresh [33m401 [0m21.799 ms - 78[0m
+[2024-12-11T05:54:32.336Z] [ERROR] Code: MISSING_TOKEN, Message: Access Denied. Missing or invalid Authorization header., Route: /api/auth/profile, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:56:19)
+[0mGET /api/auth/profile [31m500 [0m10.054 ms - 109[0m
+[2024-12-11T05:54:43.613Z] [ERROR] Code: INVALID_CREDENTIALS, Message: Invalid email or password., Route: /api/auth/login, Location:     at exports.login (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:94:13)
+[0mPOST /api/auth/login [33m401 [0m219.620 ms - 86[0m
+[2024-12-11T05:54:53.803Z] [ERROR] Code: INVALID_CREDENTIALS, Message: Invalid email or password., Route: /api/auth/login, Location:     at exports.login (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:94:13)
+[0mPOST /api/auth/login [33m401 [0m125.999 ms - 86[0m
+[0mPOST /api/auth/login [32m200 [0m187.439 ms - 242[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzM4OTY1MDcsImV4cCI6MTczMzg5NzQwN30.liLJ2BKAthxMlBY9tJncEgkIwE5Gfri2k5GQ77aRbZo
+Redis result: [1mnull[22m
+[0mGET /api/auth/profile [32m200 [0m23.097 ms - 285[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]

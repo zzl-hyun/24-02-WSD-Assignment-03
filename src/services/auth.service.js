@@ -11,7 +11,13 @@ const errorCodes = require('../config/errorCodes');
 
 /**
  * 회원가입 
- * @param {Object} param0 
+ * @param {Object} params
+ * @param {string} params.username
+ * @param {string} params.email
+ * @param {string} params.password
+ * @param {string} params.role
+ * @param {ObjectId} params.companyId
+ * @param {Object} params.profile
  * @returns {Promise<Object>}
  */
 exports.register = async ({ username, email, password, role, companyId, profile }) => {
@@ -70,7 +76,7 @@ exports.register = async ({ username, email, password, role, companyId, profile 
  * @param {String} email
  * @param {String} passwordHash
  * @param {String} ip
- * @returns accessToken, refreshTOken
+ * @returns {Object} accessToken, refreshTOken
  */
 exports.login = async ({ email, password, ip }) => {
   try {  
@@ -83,6 +89,7 @@ exports.login = async ({ email, password, ip }) => {
       );
     }
 
+    // 비밀번호 확인
     const isPasswordValid = await bcrypt.compare(password, user.passwordHash);
     if (!isPasswordValid) {
       throw new AppError(
@@ -92,6 +99,7 @@ exports.login = async ({ email, password, ip }) => {
       );
     }
 
+    // 토큰 생성
     const accessToken = jwt.sign(
       { id: user._id, role: user.role },
       process.env.JWT_SECRET,
@@ -133,14 +141,14 @@ exports.login = async ({ email, password, ip }) => {
   }
 };
 
-
 /**
- * accessToken 갱신
+ * AccessToken 갱신
  * @param {String} refreshToken 
- * @returns accessToken
+ * @returns {Object} 새로운 accessToken
  */
 exports.refreshToken = async (refreshToken) => {
   try {
+    // 유효성 확인
     const tokenData = await Token.findOne({ refresh_token: refreshToken });
     if (!tokenData) {
       throw new AppError(
@@ -184,6 +192,11 @@ exports.refreshToken = async (refreshToken) => {
   }
 };
 
+/**
+ * 회원 정보 조회
+ * @param {String} userId 사용자 ID
+ * @returns {Object} 사용자 프로필 데이터
+ */
 exports.getProfile = async (userId) => {
   try {
     const profile = await User.findById(userId);
@@ -199,7 +212,7 @@ exports.getProfile = async (userId) => {
  * 회원 정보 수정
  * @param {ObjectId} userId 
  * @param {Array} profileData 
- * @returns 
+ * @returns {Object} 수정 데이터
  */
 exports.updateProfile = async (userId, profileData) => {
   // const filteredProfileData = Object.fromEntries(
@@ -237,7 +250,6 @@ exports.updateProfile = async (userId, profileData) => {
  * @param {String} userId 
  * @param {String} oldPassword 
  * @param {String} newPassword 
- * @description 
  */
 exports.updatePassword = async (userId, oldPassword, newPassword) => {
   try {  
@@ -250,7 +262,7 @@ exports.updatePassword = async (userId, oldPassword, newPassword) => {
       );
     }
 
-
+    // 기존 비밀번호 확인
     const isOldPasswordValid = await bcrypt.compare(oldPassword, user.passwordHash);
     if (!isOldPasswordValid) {
       throw new AppError(
@@ -260,6 +272,7 @@ exports.updatePassword = async (userId, oldPassword, newPassword) => {
       );
     }
 
+    // 새 비밀번호
     user.passwordHash = await bcrypt.hash(newPassword, 10);
     await user.save();
   }
@@ -274,8 +287,8 @@ exports.updatePassword = async (userId, oldPassword, newPassword) => {
  * @param {String} passwordHash 
  */
 exports.deleteProfile = async (userId, password) => {
-  // 사용자가 존재하는지 확인
   try {  
+    // 사용자가 존재하는지 확인
     const user = await User.findById(userId);
     if (!user) {
       throw new AppError(
@@ -285,6 +298,7 @@ exports.deleteProfile = async (userId, password) => {
       );
     }
 
+    // 비밀번호 체크
     const isPasswordValid = await bcrypt.compare(password, user.passwordHash);
     if (!isPasswordValid) {
       throw new AppError(

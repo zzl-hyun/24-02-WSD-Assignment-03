@@ -1,8 +1,12 @@
 const authService = require('../services/auth.service');
+const AppError = require('../utils/AppError')
+const errorCodes = require('../config/errorCodes');
+
 /**
- * 
- * @param {Object} req 
- * @param {Object} res 
+ * 회원가입
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
  */
 exports.register = async (req, res, next) => {
   try {
@@ -25,19 +29,31 @@ exports.register = async (req, res, next) => {
       companyId,
       profile: { fullName, phoneNumber, bio, skills, resumeUrl },
     });
-
-    res.status(201).json({ status: 'success', data: result });
+  
+    res.status(201).json({ status: 'success', data: { 
+      username: result.username, 
+      email: result.email, 
+      role: result.role, 
+      companyId: result.companyId,
+      profile: result.profile,
+    } });
   } catch (error) {
     next(error)
   }
 };
 
+/**
+ * 로그인
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const ip = req.ip;
-    const { accessToken, refreshToken } = await authService.login({ email, password, ip,});
 
+    const { accessToken, refreshToken } = await authService.login({ email, password, ip,});
     // Refresh Token을 쿠키에 저장
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
@@ -51,11 +67,19 @@ exports.login = async (req, res, next) => {
   }
 };
 
+/**
+ * 토큰 갱신
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.refreshToken = async (req, res, next) => {
   try {
-    const refreshToken = req.cookies.refreshToken; // 쿠키에서 Refresh Token 읽기
+    // 쿠키에서 Refresh Token 읽기
+    const refreshToken = req.cookies.refreshToken; 
     if (!refreshToken) {
-      return res.status(401).json({ message: 'Refresh Token is missing' });
+      // return res.status(401).json({ message: 'Refresh Token is missing' });
+      return next(new AppError(errorCodes.MISSING_TOKEN.code, 'Refresh Token is missing', errorCodes.MISSING_TOKEN.status));
     }
 
     const { accessToken } = await authService.refreshToken(refreshToken);
@@ -66,6 +90,12 @@ exports.refreshToken = async (req, res, next) => {
   }
 };
 
+/**
+ * 프로필 조회
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.getProfile = async(req, res, next) => {
   try {
     const userId = req.user.id;
@@ -78,14 +108,22 @@ exports.getProfile = async(req, res, next) => {
   }
 };
 
+/**
+ * 프로필 업데이트
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.updateProfile = async (req, res, next) => {
   try {
     const { fullName, phoneNumber, bio, skills, resumeUrl, oldPassword, newPassword } = req.body;
     
+    // 비밀번호 변경
     if (oldPassword && newPassword) {
       await authService.updatePassword(req.user.id, oldPassword, newPassword);
     }
     
+    // 프로필 업데이트
     if (fullName || phoneNumber || bio || skills || resumeUrl) {
       await authService.updateProfile(req.user.id, {
         fullName,
@@ -102,6 +140,12 @@ exports.updateProfile = async (req, res, next) => {
   }
 };
 
+/**
+ * 회원 탈퇴
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.deleteProfile = async (req, res, next) => {
   try{
     const userId = req.user.id;
@@ -116,13 +160,20 @@ exports.deleteProfile = async (req, res, next) => {
   }
 }
 
+/**
+ * 로그아웃
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.logout = async (req, res, next) => {
   try {
     const refreshToken = req.cookies.refreshToken; // 쿠키에서 Refresh Token 읽기
     if (!refreshToken) {
-      return res.status(400).json({ message: 'No Refresh Token provided' });
+      return next(new AppError(errorCodes.MISSING_TOKEN.code, 'Refresh Token is missing', errorCodes.MISSING_TOKEN.status));
     }
 
+    // 로그아웃 처리
     await authService.logout(refreshToken);
 
     // Refresh Token 쿠키 삭제
