@@ -3,6 +3,12 @@ const { isBlacklisted } = require('../utils/tokenBlacklist');
 const AppError = require('../utils/AppError');
 const errorCodes = require('../config/errorCodes');
 
+/**
+ * 토큰 인증
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 const authenticateToken = async (req, res, next) => {
   try {
     const authHeader = req.header('Authorization');

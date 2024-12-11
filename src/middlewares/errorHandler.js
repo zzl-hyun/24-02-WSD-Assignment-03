@@ -1,6 +1,9 @@
 const winston = require('winston');
 require('winston-logstash');
-// 로깅 설정
+
+/**
+ * 로깅 설정
+ */
 const logger = winston.createLogger({
   level: 'error',
   format: winston.format.combine(
@@ -21,6 +24,13 @@ const logger = winston.createLogger({
   ],
 });
 
+/**
+ * 
+ * @param {Object} err 
+ * @param {Object} req 
+ * @param {Object} res 
+ * @param {Function} next 
+ */
 const errorHandler = (err, req, res, next) => {
   // console.log('Error Object', err);
 

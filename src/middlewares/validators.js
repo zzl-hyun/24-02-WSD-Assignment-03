@@ -10,23 +10,11 @@ const sanitizeInput = (input) => {
  * @module validateRegister
  * @description 회원 가입 요청의 데이터를 유효성 검사하는 미들웨어.
  * 
- * @param {Object} req - Express 요청 객체
- * @param {Object} req.body - 회원 가입 데이터를 포함하는 요청 본문
- * @param {string} req.body.username - 사용자 이름 (필수, 공백 불가)
- * @param {string} req.body.email - 사용자 이메일 (필수, 이메일 형식이어야 함)
- * @param {string} req.body.passwordHash - 사용자 비밀번호 (필수, 최소 4자 이상)
- * @param {string} [req.body.role='jobseeker'] - 사용자 역할 (jobseeker 또는 admin 중 하나, 기본값: jobseeker)
- * @param {ObjjectId} req.body.companyId - 소속 회사 ID (admin일 때) 
- * @param {Object} [req.body.profile] - 사용자 프로필 데이터 (선택 사항)
- * @param {string} req.body.profile.fullName - 전체 이름 (필수, 공백 불가)
- * @param {string} [req.body.profile.phoneNumber] - 전화번호 (선택 사항)
- * @param {string} [req.body.profile.bio] - 사용자 소개 (선택 사항)
- * @param {string[]} [req.body.profile.skills] - 기술 목록 (선택 사항)
- * @param {string} [req.body.profile.resumeUrl] - 이력서 URL (선택 사항, URI 형식이어야 함)
- * @param {Object} res - Express 응답 객체
- * @param {Function} next - 다음 미들웨어를 호출하는 콜백 함수
+ * @param {Object} req - 요청 
+ * @param {Object} res - 응답
+ * @param {Function} next - 다음 미들웨어를 호출
  * 
- * @throws {Object} 400 에러와 유효성 검사 실패 메시지 목록을 반환
+ * @throws {Object} 422 에러와 유효성 검사 실패 메시지 목록을 반환
  * 
  * @example
  * // 클라이언트 요청 본문 예시
@@ -48,11 +36,9 @@ const sanitizeInput = (input) => {
  * // 에러 응답 예시
  * {
  *   "status": "error",
- *   "code": "ERROR_CODES"
- *   "message": [
- *     "Username is required",
- *     "Invalid email format"
- *   ]
+ *   "code": "VALIDATION_ERROR"
+ *   "message": "Invalid email format"
+ *   
  * }
  */
 exports.validateRegister = (req, res, next) => {
@@ -100,11 +86,12 @@ exports.validateRegister = (req, res, next) => {
 };
 
 /**
+ * 로그인 유효성 검사
+ * @param {Object} req - 요청 
+ * @param {Object} res - 응답
+ * @param {Function} next - 다음 미들웨어를 호출
  * 
- * @param {*} req 
- * @param {*} res 
- * @param {*} next 
- * @returns 
+ * @throws {Object} 422 에러와 유효성 검사 실패 메시지 목록을 반환
  */
 exports.validateLogin = (req, res, next) => {
   const schema = Joi.object({
@@ -128,11 +115,12 @@ exports.validateLogin = (req, res, next) => {
 }
 
 /**
+ * 프로필 유효성 검사
+ * @param {Object} req - 요청 
+ * @param {Object} res - 응답
+ * @param {Function} next - 다음 미들웨어를 호출
  * 
- * @param {*} req 
- * @param {*} res 
- * @param {*} next 
- * @returns 
+ * @throws {Object} 422 에러와 유효성 검사 실패 메시지 목록을 반환
  */
 exports.validateProfileUpdate = (req, res, next) => {
   const schema = Joi.object({
@@ -157,7 +145,14 @@ exports.validateProfileUpdate = (req, res, next) => {
 
   next();
 }
-
+/**
+ * ID 유효성 검사
+ * @param {Object} req - 요청 
+ * @param {Object} res - 응답
+ * @param {Function} next - 다음 미들웨어를 호출
+ * 
+ * @throws {Object} 422 에러와 유효성 검사 실패 메시지 목록을 반환
+ */
 exports.validateID = (req, res, next) => {
   const id  = req.params.id || req.body.job_id;
   if (!id) {
@@ -174,6 +169,14 @@ exports.validateID = (req, res, next) => {
   else next();
 };
 
+/**
+ * 상태 유효성 검사
+ * @param {Object} req - 요청 
+ * @param {Object} res - 응답
+ * @param {Function} next - 다음 미들웨어를 호출
+ * 
+ * @throws {Object} 422 에러와 유효성 검사 실패 메시지 목록을 반환
+ */
 exports.validateStatus = (req, res, next) => {
   const schema = Joi.object({
     status: Joi.string().trim().required().valid('Accepted', 'Rejected').messages({
@@ -191,6 +194,14 @@ exports.validateStatus = (req, res, next) => {
   next();
 };
 
+/**
+ * 링크 유효성 검사
+ * @param {Object} req - 요청 
+ * @param {Object} res - 응답
+ * @param {Function} next - 다음 미들웨어를 호출
+ * 
+ * @throws {Object} 422 에러와 유효성 검사 실패 메시지 목록을 반환
+ */
 exports.validateLink = (req, res, next) => {
   const link  = req.body.link;
   if (!link) {
