@@ -1,5 +1,11 @@
 const bookmarkService = require('../services/bookmark.service');
 
+/**
+ * 북마트 추가/제거
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.toggleBookmark = async (req, res, next) => {
   try {
     const userId = req.user.id; // 인증된 사용자 ID
@@ -21,6 +27,12 @@ exports.toggleBookmark = async (req, res, next) => {
   }
 };
 
+/**
+ * 북마크 목록 조회
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.getBookmarks = async (req, res, next) => {
   try {
     const userId = req.user.id; // 인증된 사용자 ID

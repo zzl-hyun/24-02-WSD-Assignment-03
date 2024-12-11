@@ -1,6 +1,11 @@
 const applicationService = require('../services/application.service');
 
-
+/**
+ * 공고 지원
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.createApplication = async (req, res, next) => {
   try {
     const { link, resume } = req.body;
@@ -13,6 +18,12 @@ exports.createApplication = async (req, res, next) => {
   }
 };
 
+/**
+ * 지원서 조회
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.getApplications = async (req, res, next) => {
     try {
       const { status, sortBy, sortOrder } = req.query;
@@ -26,6 +37,12 @@ exports.getApplications = async (req, res, next) => {
     }
   };
 
+/**
+ * 지원 취소
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.deleteApplication = async (req, res, next) => {
   try {
     const applicationId = req.params.id;
@@ -38,6 +55,12 @@ exports.deleteApplication = async (req, res, next) => {
   }
 };
 
+/**
+ * 지원서 상태 변경
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.changeStatus = async (req, res, next) => {
   try{
     const applicationId = req.params.id;
