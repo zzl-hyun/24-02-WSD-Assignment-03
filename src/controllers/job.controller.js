@@ -1,6 +1,11 @@
 const jobService = require('../services/job.service');
 
-// Fetch job listings
+/**
+ * 채용공고 리스트 조회
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.getJobs = async (req, res, next) => {
   try {
     const {
@@ -47,11 +52,17 @@ exports.getJobs = async (req, res, next) => {
   }
 };
 
+/**
+ * 채용공고 상세 조회
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.getJobDetails = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    // Fetch job details, update view count, and get related jobs
+    // {공고 상세정보, 공고 회사정보,} 관련 공고
     const { jobDetails, relatedJobs } = await jobService.getJobDetails(id);
 
     res.status(200).json({
@@ -66,6 +77,12 @@ exports.getJobDetails = async (req, res, next) => {
   }
 };
 
+/**
+ * 채용공고 수정
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.updateJob = async (req, res, next) => {
   try {
     const { jobTitle, experienceRequired, educationRequired, employmentType, skills, benefits, deadline } = req.body;
@@ -88,7 +105,12 @@ exports.updateJob = async (req, res, next) => {
   }
 };
 
-
+/**
+ * 채용공고 삭제
+ * @param {Object} req 요청
+ * @param {Object} res 응답
+ * @param {Function} next errorHanler
+ */
 exports.deleteJob = async (req, res, next) => {
   try {
     const userId = req.user.id;
