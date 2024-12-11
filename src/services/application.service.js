@@ -12,6 +12,10 @@ const { createNotification } = require('./notification.service');
  * @param {ObjectID} jobID
  * @param {String} resume
  * @returns {Promise<Object>} 생성한 지원서
+ * 
+ * @throws 404 유저 정보가 없음
+ * @throws 404 공고 정보가 없음
+ * @throws 400 이미 지원함
  */
 exports.createApplication = async ({ userId, link, resume }) => {
   try {  
@@ -112,7 +116,11 @@ exports.getApplications = async ({ userId, role, status = 'All', sortBy = 'appli
  * 지원 취소
  * @param {ObjectID} applicationId 
  * @param {ObjectID} userId 
- * @@returns {Promise<Object>} 취소된 지원서 
+ * @returns {Promise<Object>} 취소된 지원서 
+ * 
+ * @throws 404 지원서 정보가 없음
+ * @throws 403 권한이 없음
+ * @throws 403 취소 가능한 상태가 아님
  */
 exports.deleteApplication = async ({ applicationId, userId }) => {
   try {    
@@ -158,6 +166,8 @@ exports.deleteApplication = async ({ applicationId, userId }) => {
  * @param {ObjectId} params.applicationId
  * @param {status} params.status
  * @returns {Promise<Object>} 업데이트 지원서
+ * 
+ * @throws 404 지원서 정보가 없음
  */
 exports.changeStatus = async ({ applicationId, status }) => {
   try {

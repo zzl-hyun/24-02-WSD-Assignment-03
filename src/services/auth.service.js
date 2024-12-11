@@ -19,6 +19,9 @@ const errorCodes = require('../config/errorCodes');
  * @param {ObjectId} params.companyId
  * @param {Object} params.profile
  * @returns {Promise<Object>}
+ * 
+ * @throws 400 중복 가입
+ * @throws 404 회사 정보 없음
  */
 exports.register = async ({ username, email, password, role, companyId, profile }) => {
     // 이메일 중복 확인
@@ -77,6 +80,8 @@ exports.register = async ({ username, email, password, role, companyId, profile 
  * @param {String} passwordHash
  * @param {String} ip
  * @returns {Object} accessToken, refreshTOken
+ * 
+ * @throws 401 유효하지 않음 
  */
 exports.login = async ({ email, password, ip }) => {
   try {  
@@ -118,7 +123,8 @@ exports.login = async ({ email, password, ip }) => {
       tokenEntry.refresh_token = refreshToken;
       tokenEntry.expires_at = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7일 뒤
       await tokenEntry.save();
-    } else {
+    } 
+    else {
       await Token.create({
         user_id: user._id,
         access_token: accessToken,
@@ -145,6 +151,9 @@ exports.login = async ({ email, password, ip }) => {
  * AccessToken 갱신
  * @param {String} refreshToken 
  * @returns {Object} 새로운 accessToken
+ * 
+ * @throws 401 유효하지 않은 토큰
+ * @throws 403 만료된 토큰
  */
 exports.refreshToken = async (refreshToken) => {
   try {
@@ -196,6 +205,8 @@ exports.refreshToken = async (refreshToken) => {
  * 회원 정보 조회
  * @param {String} userId 사용자 ID
  * @returns {Object} 사용자 프로필 데이터
+ * 
+ * @throws 404 유저정보 없음
  */
 exports.getProfile = async (userId) => {
   try {
@@ -213,6 +224,8 @@ exports.getProfile = async (userId) => {
  * @param {ObjectId} userId 
  * @param {Array} profileData 
  * @returns {Object} 수정 데이터
+ * 
+ * @throws 404 유저정보 없음
  */
 exports.updateProfile = async (userId, profileData) => {
   // const filteredProfileData = Object.fromEntries(
@@ -250,6 +263,9 @@ exports.updateProfile = async (userId, profileData) => {
  * @param {String} userId 
  * @param {String} oldPassword 
  * @param {String} newPassword 
+ * 
+ * @throws 404 유저정보 없음
+ * @throws 400 비밀번호 불일치
  */
 exports.updatePassword = async (userId, oldPassword, newPassword) => {
   try {  
@@ -285,6 +301,9 @@ exports.updatePassword = async (userId, oldPassword, newPassword) => {
  * 회원 탈퇴
  * @param {ObjectId} userId 
  * @param {String} passwordHash 
+ * 
+ * @throws 404 유저정보 없음
+ * @throws 400 비밀번호 불일치
  */
 exports.deleteProfile = async (userId, password) => {
   try {  
@@ -319,6 +338,8 @@ exports.deleteProfile = async (userId, password) => {
 /**
  * 로그아웃
  * @param {String} refreshToken 
+ * 
+ * @throws 401 유효하지 않은 토큰
  */
 exports.logout = async (refreshToken) => {
   try {  
