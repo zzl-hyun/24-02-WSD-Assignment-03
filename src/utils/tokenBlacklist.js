@@ -9,7 +9,7 @@ const getAsync = (key) =>
   redisClient.get(key);
 
 /**
- * redis에 블랙리스트 추가
+ * @module redis에 블랙리스트 추가
  * @param {String} token 
  * @param {Number} previousExpirationTime 
  * @returns 
@@ -32,7 +32,7 @@ const addToBlacklist = async (token, previousExpirationTime) => {
 };
 
 /**
- * 블랙리스트 여부 확인
+ * @module 블랙리스트 여부 확인
  * @param {String} token 
  * @returns 
  */
@@ -41,7 +41,7 @@ const isBlacklisted = async (token) => {
     console.log('Checking blacklist for token:', token);
     const result = await getAsync(token);
     console.log('Redis result:', result);
-    
+
     return result === 'blacklisted';
   } catch (err) {
     console.error('Redis error while checking blacklist:', err);
