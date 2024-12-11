@@ -71,11 +71,7 @@ exports.validateRegister = (req, res, next) => {
     role: Joi.string().valid('jobseeker', 'admin').default('jobseeker').messages({
       'any.only': 'Role must be either jobseeker or admin',
     }),
-    companyId: Joi.string()
-      .optional()
-      .allow(null, '')
-      .empty('')
-      .default(null)
+    companyId: Joi.string().optional().allow(null, '').empty('').default(null)
       .when('role', {
         is: 'admin',
         then: Joi.required().messages({

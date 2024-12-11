@@ -4965,3 +4965,87 @@ MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
 [32m[nodemon] starting `node ./bin/www`[39m
 Redis Connected...
 MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api/debug/company [36m304 [0m101.522 ms - -[0m
+{
+  details: {
+    skills: [ [32m'Python'[39m, [32m'Java'[39m, [32m'웹개발'[39m, [32m'백엔드/서버개발'[39m, [32m'앱개발'[39m ],
+    benefits: [ [32m'인기있는'[39m ]
+  },
+  _id: new ObjectId([32m'674e7990de126bae7c37a1e0'[39m),
+  companyId: {
+    _id: new ObjectId([32m'674c5a602237c36805591bec'[39m),
+    company_name: [32m'(주)만들다컴퍼니'[39m,
+    representative_name: [32m'정태양'[39m,
+    company_type: [32m'중소기업'[39m,
+    industry: [32m'시스템 소프트웨어 개발 및 공급업'[39m,
+    employee_count: [32m'N/A'[39m,
+    establishment_date: [32m'2024년 7월 9일(업력 1년차)'[39m,
+    revenue: [32m'N/A'[39m,
+    homepage: [32m'N/A'[39m,
+    company_address: [32m'경기 안양시 동안구 벌말로102번길 49, 5층 501-5호 (관양동,안양스마트베이2)'[39m,
+    __v: [33m0[39m
+  },
+  jobTitle: [32m'지속 성장가능한 개발 인력 모집-Flutter,Python,JAVA,재택가능'[39m,
+  link: [32m'https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=search&rec_idx=49472340&location=ts&searchword=python&searchType=search&paid_fl=n&search_uuid=e9d2aba4-58d9-443c-b0d8-ffa2cdb85756'[39m,
+  location: [32m'경기 안양시 동안구'[39m,
+  experienceRequired: [32m'경력무관'[39m,
+  educationRequired: [32m'대졸'[39m,
+  salary: [32m'3,000 만원'[39m,
+  employmentType: [32m'정규직'[39m,
+  deadline: [32m'채용시'[39m,
+  createdAt: [32m'24/11/26'[39m,
+  __v: [33m0[39m,
+  viewCount: [33m39[39m,
+  normalizedSalary: [33m30000000[39m
+}
+[0mGET /api/jobs/674e7990de126bae7c37a1e0 [32m200 [0m78.920 ms - 4774[0m
+Client IP: ::ffff:61.99.5.190
+[0mGET / [32m200 [0m354.038 ms - 372[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]

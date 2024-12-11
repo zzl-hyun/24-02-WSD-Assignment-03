@@ -11,10 +11,12 @@ const { createNotification } = require('./notification.service');
  * @param {ObjectID} userId
  * @param {ObjectID} jobID
  * @param {String} resume
- * @returns 
+ * @returns {Promise<Object>} 생성한 지원서
  */
 exports.createApplication = async ({ userId, link, resume }) => {
-  try {  const user = await User.findById(userId);
+  try {  
+    // 사용자 확인
+    const user = await User.findById(userId);
     if (!user) {
       throw new AppError(
         errorCodes.USER_NOT_FOUND.code,
@@ -23,6 +25,7 @@ exports.createApplication = async ({ userId, link, resume }) => {
       );
     }
 
+    // 공고 확인
     const job = await Job.findOne({ link });
     if (!job) {
       throw new AppError(
@@ -42,7 +45,7 @@ exports.createApplication = async ({ userId, link, resume }) => {
       );
     }
 
-    // Use the user's resume if not provided
+    // 이력서 체크
     const resumeUrl = resume || user.profile.resumeUrl;
     if (!resumeUrl) {
       throw new AppError(
@@ -52,7 +55,7 @@ exports.createApplication = async ({ userId, link, resume }) => {
       );
     }
 
-    // Save the application
+    // 지원서 생성
     const application = new Application({ userId, jobId: job._id, resume: resumeUrl });
     return await application.save();
 } catch (error) {
@@ -62,29 +65,34 @@ exports.createApplication = async ({ userId, link, resume }) => {
 
 /**
  * 지원 내역 조회
- * @param {ObjectID} userId 
- * @param {String} status
- * @returns 
+ * @param {Object} params
+ * @param {string} params.userId 
+ * @param {String} params.Status
+ * @param {string} params.status
+ * @param {string} params.sortBy
+ * @param {string} params.sortOrder
+ * @returns {Promise<Object>} 지원서 리스트
  */
 exports.getApplications = async ({ userId, role, status = 'All', sortBy = 'appliedAt', sortOrder = 'desc' }) => {
   try {
     const query = {};
-
+    // 관리자 역할: 회사 지원서 조회
     if (role === 'admin') {
       const company = await User.findById(userId, {companyId: 1});
       if (!company) {
-          throw new Error('Admin user must be associated with a company.');
+          throw new AppError(errorCodes.COMPANY_NOT_FOUND.code, 'Admin user must be associated with a company.', errorCodes.COMPANY_NOT_FOUND.status);
       }
       const companyId = company.companyId;
 
-      // Admin: 회사의 모든 Applications 조회
-      // 먼저 해당 회사의 jobId들을 가져옴
+      // Admin: 소속 회사의 모든 지원서 조회
+      // 회사가 공고한 jobId들을 가져옴
       const jobIds = await Job.find({ companyId }).select('_id');
       query.jobId = { $in: jobIds.map(job => job._id) };
-      console.log(jobIds);
-    } else {
-        // 일반 사용자: 본인의 Applications만 조회
-        query.userId = userId;
+      // console.log(jobIds);
+    } 
+    // 일반 사용자: 본인 지원서만 조회
+    else {
+      query.userId = userId;
     }
 
     if (status && status !== 'All') {
@@ -104,48 +112,56 @@ exports.getApplications = async ({ userId, role, status = 'All', sortBy = 'appli
  * 지원 취소
  * @param {ObjectID} applicationId 
  * @param {ObjectID} userId 
- * @returns 
+ * @@returns {Promise<Object>} 취소된 지원서 
  */
 exports.deleteApplication = async ({ applicationId, userId }) => {
   try {    
+    // 지원서 확인
     const application = await Application.findById(applicationId);
+    if (!application) {
+        throw new AppError(
+          errorCodes.NOT_FOUND.code, 
+          'Application not found.', 
+          errorCodes.NOT_FOUND.status
+        );
+    }
 
-      if (!application) {
-          throw new AppError(
-            errorCodes.NOT_FOUND.code, 
-            'Application not found.', 
-            errorCodes.NOT_FOUND.status
-          );
-      }
+    // 권한 확인
+    if (!application.userId.equals(userId)) {
+        throw new AppError(
+          errorCodes.FORBIDDEN_ACTION.code, 
+          'You are not authorized to cancel this application.', 
+          errorCodes.FORBIDDEN_ACTION.status
+        );
+    }
 
-      // Check if the user is the owner
-      if (!application.userId.equals(userId)) {
-          throw new AppError(
-            errorCodes.FORBIDDEN_ACTION.code, 
-            'You are not authorized to cancel this application.', 
-            errorCodes.FORBIDDEN_ACTION.status
-          );
-      }
+    // 취소 가능상태 확인
+    if (application.status === 'Accepted' || application.status === 'Rejected') {
+        throw new AppError(
+          errorCodes.FORBIDDEN_ACTION.code, 
+          'Application cannot be cancelled at this stage.', 
+          errorCodes.FORBIDDEN_ACTION.status
+        );
+    }
 
-      // Check if cancellation is allowed (e.g., status is not 'Accepted' or 'Rejected')
-      if (application.status === 'Accepted' || application.status === 'Rejected') {
-          throw new AppError(
-            errorCodes.FORBIDDEN_ACTION.code, 
-            'Application cannot be cancelled at this stage.', 
-            errorCodes.FORBIDDEN_ACTION.status
-          );
-      }
-
-      // Update status to 'Cancelled'
-      application.status = 'Cancelled';
-      return await application.save();
+    // 상태를 'Cancelled'로 업데이트
+    application.status = 'Cancelled';
+    return await application.save();
   } catch (error) {
     throw error;
   }
 };
   
+/**
+ * 
+ * @param {Object} params
+ * @param {ObjectId} params.applicationId
+ * @param {status} params.status
+ * @returns {Promise<Object>} 업데이트 지원서
+ */
 exports.changeStatus = async ({ applicationId, status }) => {
   try {
+    // 지원서 확인
     const application = await Application.findById(applicationId);
     if (!application) {
       throw new AppError(
@@ -154,6 +170,8 @@ exports.changeStatus = async ({ applicationId, status }) => {
         errorCodes.NOT_FOUND.status
       );
     }
+
+    // 상태 업데이트
     application.status = status;
 
     // 알림 생성
