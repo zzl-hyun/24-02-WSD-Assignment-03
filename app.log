@@ -14,3 +14,10 @@ Client IP: ::ffff:61.81.179.227
 [0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m4.252 ms - -[0m
 [0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.091 ms - -[0m
 [0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.811 ms - -[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m45.976 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m2.569 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m2.517 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m3.242 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.199 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.321 ms - -[0m
