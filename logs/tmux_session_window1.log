@@ -5246,3 +5246,121 @@ MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
 [32m[nodemon] starting `node ./bin/www`[39m
 Redis Connected...
 MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Client IP: ::ffff:147.185.133.150
+[0mGET / [32m200 [0m196.006 ms - 376[0m
+Client IP: ::ffff:61.99.5.149
+[0mGET / [32m200 [0m43.480 ms - 372[0m
+[0mGET /favicon.ico [33m404 [0m26.727 ms - 1407[0m
+[0mGET /api-docs/ [36m304 [0m15.596 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m5.742 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m9.769 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.978 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m2.756 ms - -[0m
+[0mGET /api-docs/ [32m200 [0m3.236 ms - 3106[0m
+Client IP: ::ffff:61.99.5.149
+[0mGET / [32m200 [0m27.331 ms - 372[0m
+[0mGET /api [33m404 [0m24.372 ms - 1407[0m
+[0mGET /api/ [33m404 [0m17.674 ms - 1407[0m
+[0mGET /api/crsf-token [33m404 [0m12.510 ms - 1407[0m
+[0mGET /api/csrf-token [32m200 [0m6.655 ms - 52[0m
+[0mGET /api/job [33m404 [0m16.191 ms - 1407[0m
+[0mGET /api/jobs [32m200 [0m125.661 ms - 14537[0m
+[0mGET /api/jobs [32m200 [0m17.691 ms - 14537[0m
+[0mGET /api-docs/ [36m304 [0m9.997 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m4.344 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m7.300 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.272 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.360 ms - -[0m
+[0mGET /api/debug/notification [32m200 [0m31.797 ms - 1639[0m
+Client IP: ::ffff:147.185.133.233
+[0mGET / [32m200 [0m37.695 ms - 376[0m
+[0mGET /api-docs/ [36m304 [0m7.942 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m3.058 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m3.094 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.360 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.613 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m5.861 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m3.326 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.792 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m6.126 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.081 ms - -[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m20.041 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m15.673 ms - 1407[0m
+[0mGET /api-docs/ [36m304 [0m2.912 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m2.362 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m2.596 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.633 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m1.729 ms - -[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[0mGET /api-docs/ [36m304 [0m13.035 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.132 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.464 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.642 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m3.686 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.563 ms - -[0m
+[0mGET /api/debug/application [32m200 [0m35.619 ms - 880[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[2024-12-15T05:45:25.895Z] [ERROR] Code: MISSING_TOKEN, Message: Access Denied. Missing or invalid Authorization header., Route: /api/debug/token, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:62:19)
+[0mPOST /api/debug/token [31m500 [0m28.197 ms - 109[0m
+[2024-12-15T05:45:37.318Z] [ERROR] Code: EBADCSRFTOKEN, Message: invalid csrf token, Route: /api/auth/login, Location:     at csrf (/home/ubuntu/24-02-WSD-Assignment-03/node_modules/csurf/index.js:112:19)
+[0mPOST /api/auth/login [33m403 [0m30.527 ms - 72[0m
+[0mGET /api/csrf-token [32m200 [0m8.403 ms - 52[0m
+[2024-12-15T05:45:59.163Z] [ERROR] Code: INVALID_CREDENTIALS, Message: Invalid email or password., Route: /api/auth/login, Location:     at exports.login (/home/ubuntu/24-02-WSD-Assignment-03/src/services/auth.service.js:100:13)
+[0mPOST /api/auth/login [33m401 [0m189.498 ms - 86[0m
+[0mPOST /api/auth/login [32m200 [0m191.377 ms - 242[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzQyNDE1NjYsImV4cCI6MTczNDI0MjQ2Nn0.c3ksxQdKre3tQ1edbrYIQ2Gxeu6GrbVweKafOS8aCMw
+Redis result: [1mnull[22m
+[0mPOST /api/debug/token [32m200 [0m11.416 ms - 437[0m
+Expiration time for blacklist: [33m883[39m
+Adding to blacklist: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzQyNDE1NjYsImV4cCI6MTczNDI0MjQ2Nn0.c3ksxQdKre3tQ1edbrYIQ2Gxeu6GrbVweKafOS8aCMw [33m883[39m
+[0mPOST /api/auth/refresh [32m200 [0m23.412 ms - 242[0m
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzQyNDE1NjYsImV4cCI6MTczNDI0MjQ2Nn0.c3ksxQdKre3tQ1edbrYIQ2Gxeu6GrbVweKafOS8aCMw
+Redis result: blacklisted
+line 31
+[2024-12-15T05:46:27.527Z] [ERROR] Code: TOKEN_BLACKLISTED, Message: Access token is invalid, Route: /api/debug/token, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:62:19)
+[0mPOST /api/debug/token [31m500 [0m6.252 ms - 81[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Redis Connected...
+MongoDB Connected... [ { user: [32m'kgh'[39m, db: [32m'wsd'[39m } ]
+Checking blacklist for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTMxZTRmYjZjZjQ1YTYwNWMwNDMxNSIsInJvbGUiOiJqb2JzZWVrZXIiLCJpYXQiOjE3MzQyNDE1NjYsImV4cCI6MTczNDI0MjQ2Nn0.c3ksxQdKre3tQ1edbrYIQ2Gxeu6GrbVweKafOS8aCMw
+Redis result: blacklisted
+line 31
+[2024-12-15T05:58:01.506Z] [ERROR] Code: TOKEN_BLACKLISTED, Message: Access token is invalid, Route: /api/debug/token, Location:     at authenticateToken (/home/ubuntu/24-02-WSD-Assignment-03/src/middlewares/authenticateToken.js:62:19)
+[0mPOST /api/debug/token [31m500 [0m50.070 ms - 81[0m
+[0mGET /api/debug/token [32m200 [0m64.277 ms - 2215[0m
+^Cshutting down...
+Server closed
+
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ npm run dev[K[7mnohup node ./bin/www > app.log 2>&1 &[27m
+M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnohup node ./bin/www > app.log 2>&1 &
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[1] 949314
+[?2004hubuntu@3333:~/24-02-WSD-Assignment-03$ 

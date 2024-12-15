@@ -72,12 +72,16 @@ COOKIE_SECRET=
 $ npm install
 $ npm start
 ~~~
+## 백그라운드 실행(현재)
+~~~
+$ nohup node ./bin/www > app.log 2>&1 &
+~~~
 
 ## Jcloud 접속시
-session1로 접속시 현재 실행중인 터미널로 접속할 수 있음
 ~~~
-$ tmux attach -t session1
+$ tmux attach
 ~~~
+
 
 ## MVCS 패턴 적용
 ### 1. Model
@@ -149,92 +153,63 @@ User <- View <- Controller <- Service <- Model
 - CSRF 보호: [csurf](https://github.com/expressjs/csurf)
 - 암호화 처리: [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
 
-## REST API 개발
-### 회원 관리 관련 API
-- [x] 회원 가입/로그인 API ✅ 2024-12-07
-	- [x] 회원 가입 (POST /auth/register) ✅ 2024-12-03
-		- [x] 이메일 형식 검증 ✅ 2024-12-07
-		- [x] 비밀번호 암호화 (Base64) ✅ 2024-12-03
-		- [x] 중복 회원 검사 ✅ 2024-12-03
-	    - [x] 사용자 정보 저장 ✅ 2024-12-03
-	- [x] 로그인 (POST /auth/login) ✅ 2024-12-07
-		- [x] 사용자 인증 ✅ 2024-12-03
-		- [x] JWT 토큰 발급 ✅ 2024-12-03
-		- [x] 로그인 이력 저장 ✅ 2024-12-07
-		- [x] 실패 시 에러 처리 ✅ 2024-12-07
-	- [x] 토큰 갱신 (POST /auth/refresh) ✅ 2024-12-07
-		- [x] Refresh 토큰 검증 ✅ 2024-12-03
-		- [x] 새로운 Access 토큰 발급 ✅ 2024-12-03
-		- [x] 토큰 만료 처리 ✅ 2024-12-03
-	- [x] 회원 정보 수정 (PUT /auth/profile) ✅ 2024-12-07
-		- [x] 인증 미들웨어 적용 ✅ 2024-12-07
-		- [x] 비밀번호 변경 ✅ 2024-12-04
-		- [x] 프로필 정보 수정 ✅ 2024-12-04
-- [x] 회원 정보 조회 API ✅ 2024-12-07
-- [x] 회원 탈퇴 API ✅ 2024-12-04
-	
-### 채용 공고 관련 API
-- [x] 공고 목록 조회 (GET /jobs) ✅ 2024-12-07
-	- [x] 페이지네이션 처리 (필수) ✅ 2024-12-07
-		- [x] 페이지 크기: 20 ✅ 2024-12-03
-		- [x] 정렬 기준 제공 ✅ 2024-12-07
-	- [x] 필터링 기능 (필수) ✅ 2024-12-07
-		- [x] 지역별 ✅ 2024-12-03
-		- [x] 경력별 ✅ 2024-12-03
-		- [x] 급여별 ✅ 2024-12-03
-		- [x] 기술스택별 ✅ 2024-12-03
-		- [x] 학력별 ✅ 2024-12-03
-	- [x] 검색 기능 (필수) ✅ 2024-12-07
-		- [x] 키워드 검색 ✅ 2024-12-03
-		- [x] 회사명 검색 ✅ 2024-12-07
-		- [x] 포지션 검색 ✅ 2024-12-07
-- [x] 공고 상세 조회 (GET /jobs/:id) ✅ 2024-12-07
-	- [x] 상세 정보 제공 ✅ 2024-12-03
-	- [x] 조회수 증가 ✅ 2024-12-03
-	- [x] 관련 공고 추천 ✅ 2024-12-03
-- [x] 채용 공고 등록 API ✅ 2024-12-07
-- [x] 채용 공고 수정 API ✅ 2024-12-08
-- [x] 채용 공고 삭제 API ✅ 2024-12-07
-
-### 지원 관련 API
-- [x] 지원하기 (POST /applications) ✅ 2024-12-07
-	- [x] 인증 확인 ✅ 2024-12-04
-	- [x] 중복 지원 체크 ✅ 2024-12-04
-	- [x] 지원 정보 저장 ✅ 2024-12-04
-	- [x] 이력서 첨부 (선택) ✅ 2024-12-07
-- [x] 지원 취소 (DELETE /applications/:id) ✅ 2024-12-07
-	- [x] 인증 확인 ✅ 2024-12-04
-	- [x] 취소 가능 여부 확인 ✅ 2024-12-04
-	- [x] 상태 업데이트 ✅ 2024-12-04
-
-- [x] 지원 내역 조회 (GET /applications) ✅ 2024-12-07
-	- [x] 사용자별 지원 목록 ✅ 2024-12-07
-	- [x] 상태별 필터링 ✅ 2024-12-07
-	- [x] 날짜별 정렬 ✅ 2024-12-04
-- [x] 관심 등록 API ✅ 2024-12-07
-
-### 북마크 API (/bookmarks)
-- [x] 북마크 추가/제거 (POST /bookmarks) ✅ 2024-12-07
-	- [x] 인증 확인 ✅ 2024-12-07
-	- [x] 북마크 토글 처리 ✅ 2024-12-07
-	- [x] 사용자별 저장 ✅ 2024-12-07
-- [x] 북마크 목록 조회 (GET /bookmarks) ✅ 2024-12-07
-	- [x] 사용자별 북마크 ✅ 2024-12-07
-	- [x] 페이지네이션 ✅ 2024-12-07
-	- [x] 최신순 정렬 ✅ 2024-12-07
+아래는 요청하신 API 문서를 마크다운 형식으로 정리한 내용입니다:
 
 
-### 관리자 API
-- [x] 지원자 조회 ✅ 2024-12-07
-	- [x] 권한 확인 ✅ 2024-12-07
-	- [x] 소속회사 체크 ✅ 2024-12-07
-- [x] 지원 수락/거절 ✅ 2024-12-07
-	- [x] 권한 확인 ✅ 2024-12-07
-	- [x] 유효성 검사 ✅ 2024-12-07
-	- [x] 상태 업데이트 ✅ 2024-12-07
-- [x] 채용 공고 삭제 ✅ 2024-12-07
-	- [x] 권한 확인 ✅ 2024-12-07
-	- [x] 상태 업데이트 ✅ 2024-12-07
+
+## REST API 엔드포인트 목록
+
+**Base URL**: `http://113.198.66.75:10042/api/`
+
+### CSRF
+- CSRF 토큰 요청: `GET /csrf-token`
+
+
+### **Admin (관리자 API)**
+- 지원자 조회: `GET /admin/applications`
+- 지원서 수락/거절: `PUT /admin/applications/{id}`
+- 공고 수정: `PUT /admin/jobs/{id}`
+- 공고 삭제: `DELETE /admin/jobs/{id}`
+
+### **Applications (지원 API)**
+- 지원: `POST /applications`
+- 지원 목록 조회: `GET /applications`
+- 지원 취소: `DELETE /applications/{id}`
+
+### **Auth (회원 관리 API)**
+- 회원 가입: `POST /auth/register`
+- 사용자 로그인: `POST /auth/login`
+- 토큰 갱신: `POST /auth/refresh`
+- 유저 정보 조회: `GET /auth/profile`
+- 사용자 업데이트: `PUT /auth/profile`
+- 회원 탈퇴: `DELETE /auth/delete`
+- 로그아웃: `POST /auth/logout`
+
+### **Bookmarks (북마크 관리 API)**
+- 북마크 추가/제거: `POST /bookmarks`
+- 북마크 목록 조회: `GET /bookmarks`
+
+### **Debug (디버깅용 API)**
+- Application collection 조회: `GET /debug/application`
+- Bookmark collection 조회: `GET /debug/bookmark`
+- Company collection 조회: `GET /debug/company`
+- Job collection 조회: `GET /debug/job`
+- LoginHistory collection 조회: `GET /debug/loginHistory`
+- Token collection 조회: `GET /debug/token`
+- accessToken 검증: `POST /debug/token`
+- User collection 조회: `GET /debug/user`
+- Notification collection 조회: `GET /debug/notification`
+
+### **Jobs (채용공고 API)**
+- 채용공고 목록 조회: `GET /jobs`
+- 채용공고 상세 조회: `GET /jobs/{id}`
+
+### **Notifications (알림 관리 API)**
+- 알림 생성: `POST /notifications/create`
+- 수신 목록 조회: `GET /notifications`
+- 알림을 읽음으로 표시: `PATCH /notifications/{id}/read`
+- 알림 삭제: `DELETE /notifications/{id}`
+
 
 ## d. 인증 및 보안 구현
 - [x] JWT 기반 인증 ✅ 2024-12-07
@@ -282,3 +257,6 @@ User <- View <- Controller <- Service <- Model
 	- [ ] 알림 시스템 구축
 	- [ ] 로그 분석 도구 연동
 	- [ ] 대시보드 구성
+
+
+

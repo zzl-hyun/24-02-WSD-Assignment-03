@@ -1,0 +1,16 @@
+nohup: ignoring input
+Redis Connected...
+MongoDB Connected... [ { user: 'kgh', db: 'wsd' } ]
+[0mGET /api-docs/ [36m304 [0m14.101 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m5.240 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m5.427 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m3.271 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m6.045 ms - -[0m
+[0mGET /api-docs/favicon-32x32.png [36m304 [0m2.033 ms - -[0m
+Client IP: ::ffff:61.81.179.227
+[0mGET / [36m304 [0m180.776 ms - -[0m
+[0mGET /api-docs/ [36m304 [0m2.151 ms - -[0m
+[0mGET /api-docs/swagger-ui.css [36m304 [0m4.439 ms - -[0m
+[0mGET /api-docs/swagger-ui-bundle.js [36m304 [0m4.252 ms - -[0m
+[0mGET /api-docs/swagger-ui-standalone-preset.js [36m304 [0m2.091 ms - -[0m
+[0mGET /api-docs/swagger-ui-init.js [36m304 [0m2.811 ms - -[0m
