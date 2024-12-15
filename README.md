@@ -165,9 +165,6 @@ User <- View <- Controller <- Service <- Model
 - CSRF 보호: [csurf](https://github.com/expressjs/csurf)
 - 암호화 처리: [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
 
-아래는 요청하신 API 문서를 마크다운 형식으로 정리한 내용입니다:
-
-
 
 ## REST API 엔드포인트 목록
 
