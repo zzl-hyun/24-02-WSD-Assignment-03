@@ -80,10 +80,19 @@ $ npm start
 $ nohup node ./bin/www > app.log 2>&1 &
 ~~~
 
+## 크롤링 실행 방법
+~~~
+$ . .venv/bin/activate
+$ python3 01.\ crawl_saramin.py 
+$ python3 corpInfo.py 
+~~~
+
 ## Jcloud 접속시
 ~~~
 $ tmux attach
 ~~~
+
+
 
 
 ## MVCS 패턴 적용
